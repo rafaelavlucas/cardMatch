@@ -1,0 +1,36 @@
+@use "./breakpoints.scss" as *;
+
+$spc-04: 0.25rem;
+$spc-08: 0.5rem;
+$spc-16: 1rem;
+$spc-24: 1.5rem;
+$spc-32: 2rem;
+$spc-40: 2.5rem;
+$spc-48: 3rem;
+$spc-56: 3.5rem;
+$spc-64: 4rem;
+$spc-72: 4.5rem;
+$spc-80: 5rem;
+$spc-88: 5.5rem;
+$spc-96: 6rem;
+$spc-120: 7.5rem;
+
+@mixin wrapper {
+  width: 100%;
+  max-width: 1732px;
+  margin: 0 auto;
+  padding: 0 2vw;
+}
+
+@mixin grid {
+  @include wrapper;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-column-gap: $spc-16;
+}
+
+@mixin justGrid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-column-gap: $spc-16;
+}

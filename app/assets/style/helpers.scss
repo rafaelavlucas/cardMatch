@@ -1,0 +1,78 @@
+@use "../style/index" as *;
+
+//////wrapper and grid//////
+
+.wrapper {
+  @include wrapper;
+}
+
+.grid {
+  @include grid;
+}
+
+.justGrid {
+  @include justGrid;
+}
+
+.fullGrid {
+  grid-column: 1 / -1;
+}
+
+//Colors
+$color: (
+  neu-01: --neu-01,
+  neu-02: --neu-02,
+  neu-03: --neu-03,
+  neu-04: --neu-04,
+  neu-05: --neu-05,
+  neu-06: --neu-06,
+  neu-07: --neu-07,
+  neu-08: --neu-08,
+  neu-09: --neu-09,
+  neu-10: --neu-10,
+  neu-11: --neu-11,
+  //
+  m-01: --m-01,
+  m-01--light-01: --m-01--light-01,
+  m-01--light-02: --m-01--light-02,
+  m-01--dark-01: --m-01--dark-01,
+  m-01--dark-02: --m-01--dark-02,
+  m-01--dark-03: --m-01--dark-03,
+);
+
+//font Colors
+@each $name, $variable in $color {
+  .color-#{$name} {
+    color: rgb(var($variable));
+  }
+}
+
+//BG Colors
+@each $name, $variable in $color {
+  .bg-#{$name} {
+    background-color: rgb(var($variable));
+  }
+}
+
+//////fonts//////
+
+.font-m {
+  @include font-m;
+}
+
+//////Aspect Ratio//////
+.ratio-1-1 {
+  @include ratio-1-1;
+}
+.ratio-3-4 {
+  @include ratio-3-4;
+}
+.ratio-4-3 {
+  @include ratio-4-3;
+}
+.ratio-16-9 {
+  @include ratio-16-9;
+}
+.ratio-21-9 {
+  @include ratio-21-9;
+}

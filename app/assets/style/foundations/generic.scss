@@ -1,0 +1,67 @@
+@use "./skeleton.scss" as *;
+@use "./breakpoints.scss" as *;
+
+//////shadows//////
+
+@mixin MS-01 {
+  box-shadow: 0px 1px 3px rgba(26, 24, 23, 0.16),
+    0px 0px 1px rgba(26, 24, 23, 0.08);
+}
+@mixin MS-02 {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.16), 0px 1px 6px rgba(0, 0, 0, 0.16);
+}
+@mixin MS-03 {
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.04),
+    0px 12px 16px 4px rgba(0, 0, 0, 0.04);
+}
+@mixin MS-04 {
+  box-shadow: 0px 16px 24px 4px rgba(0, 0, 0, 0.04),
+    0px 20px 40px rgba(0, 0, 0, 0.04);
+}
+@mixin MS-05 {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.04), 0px 20px 40px rgba(0, 0, 0, 0.12);
+}
+@mixin MS-06 {
+  box-shadow: 0px 64px 124px rgba(0, 0, 0, 0.32);
+}
+
+//////Aspect Ratio//////
+
+@mixin ratio-1-1 {
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  height: 100%;
+}
+@mixin ratio-3-4 {
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  height: 100%;
+}
+@mixin ratio-4-3 {
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  height: 100%;
+}
+@mixin ratio-16-9 {
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  height: 100%;
+}
+@mixin ratio-21-9 {
+  aspect-ratio: 21/9;
+  object-fit: cover;
+  height: 100%;
+}
+
+//////Line Clamp//////
+@mixin line-clamp($line) {
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -ms-box-orient: vertical;
+  display: -webkit-box;
+  -webkit-line-clamp: $line;
+  -moz-line-clamp: $line;
+  -ms-line-clamp: $line;
+  line-clamp: $line;
+  overflow: hidden;
+}
