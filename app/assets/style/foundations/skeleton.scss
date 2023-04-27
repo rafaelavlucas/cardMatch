@@ -19,14 +19,14 @@ $spc-120: 7.5rem;
   width: 100%;
   max-width: 1732px;
   margin: 0 auto;
-  padding: 0 2vw;
+  padding: 0 4vw;
 }
 
 @mixin grid {
   @include wrapper;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-column-gap: $spc-16;
+  grid-column-gap: 2vw;
 }
 
 @mixin justGrid {

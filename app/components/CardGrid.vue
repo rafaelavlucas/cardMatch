@@ -1,57 +1,10 @@
 <script setup lang="ts">
 import draggable from "vuedraggable";
 import useEventsBus from "@/utils/eventBus";
+import cardsData from "@/assets/cardsData.json";
 
-const cards = ref([
-  {
-    image:
-      "https://images.unsplash.com/photo-1552410260-0fd9b577afa6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-    name: "Leão",
-    habitat: "Selva",
-  },
-  {
-    image:
-      "https://images.unsplash.com/photo-1581852017103-68ac65514cf7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1173&q=80",
-    name: "Elefante",
-    habitat: "Selva",
-  },
-  {
-    image:
-      "https://images.unsplash.com/photo-1635983297009-5b540eaf368d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Z2lyYWZlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=400&q=60",
-    name: "Girafa",
-    habitat: "Selva",
-  },
-  {
-    image:
-      "https://images.unsplash.com/photo-1625265398537-abf52202a6fe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8aGlwcG98ZW58MHx8MHx8&auto=format&fit=crop&w=400&q=60",
-    name: "Hipópotamo",
-    habitat: "Selva",
-  },
-  {
-    image:
-      "https://images.unsplash.com/photo-1552410260-0fd9b577afa6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-    name: "Tigre",
-    habitat: "Selva",
-  },
-  {
-    image:
-      "https://images.unsplash.com/photo-1552410260-0fd9b577afa6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-    name: "Gorila",
-    habitat: "Selva",
-  },
-  {
-    image:
-      "https://images.unsplash.com/photo-1581852017103-68ac65514cf7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1173&q=80",
-    name: "Orca",
-    habitat: "Oceano",
-  },
-  {
-    image:
-      "https://images.unsplash.com/photo-1581852017103-68ac65514cf7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1173&q=80",
-    name: "Baleia",
-    habitat: "Oceano",
-  },
-]);
+console.log(cardsData);
+const cards = ref(cardsData);
 const list1 = ref({
   list: [...cards.value],
   dragging: true,
@@ -78,6 +31,10 @@ watch(
 );
 
 onMounted(() => {
+  loadCards();
+});
+
+const loadCards = () => {
   const newCards = [...cards.value];
 
   const randomCards = newCards
@@ -88,15 +45,12 @@ onMounted(() => {
   list1.value.list = randomCards;
 
   list2.value.list = list2Random;
-
-  console.log(list2Random);
-});
+};
 </script>
 
 <template>
-  <Filters />
-
   <div class="cardGrid">
+    <Filters class="cardGrid__filters" />
     <div class="cardGrid__wrapper grid">
       <draggable
         class="cardGrid__left dragArea list-group"
@@ -136,13 +90,19 @@ onMounted(() => {
   min-height: 100vh;
   display: flex;
   align-items: center;
+  flex-direction: column;
+  justify-content: center;
 
   &__wrapper {
+    margin-bottom: auto;
+  }
+
+  &__filters {
   }
   &__left,
   &__right {
     display: grid;
-    grid-template-columns: repeat(3, 30%);
+    grid-template-columns: repeat(3, 1fr);
     gap: 2vw;
     align-items: stretch;
   }
