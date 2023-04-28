@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import useEventsBus from "@/utils/eventBus";
+import { Genre } from "~/types/types";
 
 interface FiltersProps {
-  title: string;
+  title: Genre;
 }
 
 const { emit } = useEventsBus();
@@ -11,6 +12,7 @@ const filters = ref<FiltersProps[]>([
   { title: "Selva" },
   { title: "Quinta" },
   { title: "Oceano" },
+  { title: "Aves" },
 ]);
 
 const handleClick = (e: Event) => {
@@ -46,8 +48,7 @@ const handleClick = (e: Event) => {
   gap: clamp(0.4rem, 1vw, 1rem);
   align-items: center;
   justify-content: center;
-  margin-top: auto;
-  margin-bottom: $spc-32;
+  margin-bottom: 4vh;
 
   &__item {
     font-family: $font;

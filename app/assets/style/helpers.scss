@@ -1,6 +1,9 @@
 @use "../style/index" as *;
 
 //////wrapper and grid//////
+body {
+  background-color: rgb(var(--neu-02));
+}
 
 .wrapper {
   @include wrapper;

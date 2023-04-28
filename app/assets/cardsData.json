@@ -2,185 +2,185 @@
   {
     "image": "_nuxt/assets/images/lion.png",
     "name": "Leão",
-    "habitat": "Selva"
+    "genre": "Selva"
   },
   {
     "image": "_nuxt/assets/images/elephant.png",
     "name": "Elefante",
-    "habitat": "Selva"
+    "genre": "Selva"
   },
   {
     "image": "_nuxt/assets/images/giraffe.png",
     "name": "Girafa",
-    "habitat": "Selva"
+    "genre": "Selva"
   },
   {
     "image": "_nuxt/assets/images/hippo.png",
     "name": "Hipópotamo",
-    "habitat": "Selva"
+    "genre": "Selva"
   },
   {
     "image": "_nuxt/assets/images/tiger.png",
     "name": "Tigre",
-    "habitat": "Selva"
+    "genre": "Selva"
   },
   {
     "image": "_nuxt/assets/images/zebra.png",
     "name": "Zebra",
-    "habitat": "Selva"
+    "genre": "Selva"
   },
   {
     "image": "_nuxt/assets/images/gorila.png",
     "name": "Gorila",
-    "habitat": "Selva"
+    "genre": "Selva"
   },
   {
     "image": "_nuxt/assets/images/bear.png",
     "name": "Urso",
-    "habitat": "Selva"
+    "genre": "Selva"
   },
   {
     "image": "_nuxt/assets/images/leopard.png",
     "name": "Leopardo",
-    "habitat": "Selva"
+    "genre": "Selva"
   },
   {
     "image": "_nuxt/assets/images/deer.png",
     "name": "Veado",
-    "habitat": "Selva"
+    "genre": "Selva"
   },
   {
     "image": "_nuxt/assets/images/panther.png",
     "name": "Pantera",
-    "habitat": "Selva"
+    "genre": "Selva"
   },
   {
     "image": "_nuxt/assets/images/rhino.png",
     "name": "Rinoceronte",
-    "habitat": "Selva"
+    "genre": "Selva"
   },
 
   {
     "image": "_nuxt/assets/images/sheep.png",
     "name": "Ovelha",
-    "habitat": "Quinta"
+    "genre": "Quinta"
   },
   {
     "image": "_nuxt/assets/images/pig.png",
     "name": "Porco",
-    "habitat": "Quinta"
+    "genre": "Quinta"
   },
   {
     "image": "_nuxt/assets/images/donkey.png",
     "name": "Burro",
-    "habitat": "Quinta"
+    "genre": "Quinta"
   },
   {
     "image": "_nuxt/assets/images/cow.png",
     "name": "Vaca",
-    "habitat": "Quinta"
+    "genre": "Quinta"
   },
   {
     "image": "_nuxt/assets/images/duck.png",
     "name": "Pato",
-    "habitat": "Quinta"
+    "genre": "Quinta"
   },
   {
     "image": "_nuxt/assets/images/horse.png",
     "name": "Cavalo",
-    "habitat": "Quinta"
+    "genre": "Quinta"
   },
   {
     "image": "_nuxt/assets/images/chicken.png",
     "name": "Galinha",
-    "habitat": "Quinta"
+    "genre": ["Quinta", "Aves"]
   },
   {
     "image": "_nuxt/assets/images/goat.png",
     "name": "Cabra",
-    "habitat": "Quinta"
+    "genre": "Quinta"
   },
   {
     "image": "_nuxt/assets/images/rabbit.png",
     "name": "Coelho",
-    "habitat": "Quinta"
+    "genre": "Quinta"
   },
   {
     "image": "_nuxt/assets/images/cat.png",
     "name": "Gato",
-    "habitat": "Quinta"
+    "genre": "Quinta"
   },
 
   {
     "image": "_nuxt/assets/images/dog.png",
     "name": "Cão",
-    "habitat": "Quinta"
+    "genre": "Quinta"
   },
   {
     "image": "_nuxt/assets/images/turkey.png",
     "name": "Perú",
-    "habitat": "Quinta"
+    "genre": "Quinta"
   },
 
   {
     "image": "_nuxt/assets/images/orca.png",
     "name": "Orca",
-    "habitat": "Oceano"
+    "genre": "Oceano"
   },
   {
     "image": "_nuxt/assets/images/whale.png",
     "name": "Baleia",
-    "habitat": "Oceano"
+    "genre": "Oceano"
   },
   {
     "image": "_nuxt/assets/images/dolphin.png",
     "name": "Golfinho",
-    "habitat": "Oceano"
+    "genre": "Oceano"
   },
   {
     "image": "_nuxt/assets/images/octopus.png",
     "name": "Polvo",
-    "habitat": "Oceano"
+    "genre": "Oceano"
   },
 
   {
     "image": "_nuxt/assets/images/seal.png",
     "name": "Foca",
-    "habitat": "Oceano"
+    "genre": "Oceano"
   },
   {
     "image": "_nuxt/assets/images/sealion.png",
     "name": "Leão Marinho",
-    "habitat": "Oceano"
+    "genre": "Oceano"
   },
   {
     "image": "_nuxt/assets/images/turtle.png",
     "name": "Tartaruga",
-    "habitat": "Oceano"
+    "genre": "Oceano"
   },
   {
     "image": "_nuxt/assets/images/goldfish.png",
     "name": "Peixe",
-    "habitat": "Oceano"
+    "genre": "Oceano"
   },
   {
     "image": "_nuxt/assets/images/seahorse.png",
     "name": "Cavalo Marinho",
-    "habitat": "Oceano"
+    "genre": "Oceano"
   },
   {
     "image": "_nuxt/assets/images/jellyfish.png",
     "name": "Alforreca",
-    "habitat": "Oceano"
+    "genre": "Oceano"
   },
   {
     "image": "_nuxt/assets/images/shark.png",
     "name": "Tubarão",
-    "habitat": "Oceano"
+    "genre": "Oceano"
   },
   {
     "image": "_nuxt/assets/images/ray.png",
     "name": "Raia",
-    "habitat": "Oceano"
+    "genre": "Oceano"
   }
 ]

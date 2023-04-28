@@ -19,12 +19,19 @@ const { bus } = useEventsBus();
 watch(
   () => bus.value.get("filter"),
   ([clickedFilter]) => {
-    list1.value.list = cards.value.filter(
-      (card) => card.habitat === clickedFilter
+    const newCards = [...cards.value];
+    const filteredCards = newCards.filter((card) =>
+      card.genre.includes(clickedFilter)
     );
-    list2.value.list = cards.value.filter(
-      (card) => card.habitat === clickedFilter
-    );
+
+    const randomCards = filteredCards
+      .sort(() => Math.random() - Math.random())
+      .slice(0, 6);
+
+    const list2Random = randomCards.sort(() => Math.random() - Math.random());
+
+    list1.value.list = randomCards;
+    list2.value.list = list2Random;
 
     console.log(cards.value, list1.value.list, list2.value.list);
   }
@@ -98,17 +105,19 @@ const loadCards = () => {
   }
 
   &__filters {
+    margin-top: auto;
   }
   &__left,
   &__right {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2vw;
+    gap: 1.5vw;
     align-items: stretch;
   }
 
   &__left {
     grid-column: 1/7;
+    margin-right: 0.5vw;
     .sortable-ghost {
       opacity: 0;
     }
@@ -120,6 +129,7 @@ const loadCards = () => {
 
   &__right {
     grid-column: 7/13;
+    margin-left: 0.5vw;
   }
 }
 </style>
