@@ -20,20 +20,20 @@ watch(
   () => bus.value.get("filter"),
   ([clickedFilter]) => {
     const newCards = [...cards.value];
-    const filteredCards = newCards.filter((card) =>
-      card.genre.includes(clickedFilter)
+    const filteredCards = computed(() =>
+      newCards.filter((card) => card.genre.includes(clickedFilter))
     );
 
-    const randomCards = filteredCards
+    const randomCards = filteredCards.value
       .sort(() => Math.random() - Math.random())
       .slice(0, 6);
 
-    const list2Random = randomCards.sort(() => Math.random() - Math.random());
-
+    const list2Random = [...randomCards].sort(
+      () => Math.random() - Math.random()
+    );
+    console.log(list2Random);
     list1.value.list = randomCards;
     list2.value.list = list2Random;
-
-    console.log(cards.value, list1.value.list, list2.value.list);
   }
 );
 
@@ -47,7 +47,10 @@ const loadCards = () => {
   const randomCards = newCards
     .sort(() => Math.random() - Math.random())
     .slice(0, 6);
-  const list2Random = randomCards.sort(() => Math.random() - Math.random());
+
+  const list2Random = [...randomCards].sort(
+    () => Math.random() - Math.random()
+  );
 
   list1.value.list = randomCards;
 
@@ -63,11 +66,9 @@ const loadCards = () => {
         class="cardGrid__left dragArea list-group"
         removeCloneOnHide="true"
         :sort="false"
-        @clone="cloneCard"
         :list="list1.list"
         item-key="id"
         :group="{ name: 'animals', pull: 'clone', put: false }"
-        @change="log"
       >
         <template #item="{ element }">
           <Card :card="element" class="card--active" />
