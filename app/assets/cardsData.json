@@ -36,10 +36,15 @@
     "matched": false
   },
   {
-    "image": "_nuxt/assets/images/gorila.png",
+    "image": "_nuxt/assets/images/gorila2.png",
     "name": "Gorila",
     "genre": "Selva",
     "matched": false
+  },
+  {
+    "image": "_nuxt/assets/images/chimp.png",
+    "name": "Chimpanzé",
+    "genre": "Selva"
   },
   {
     "image": "_nuxt/assets/images/bear.png",
