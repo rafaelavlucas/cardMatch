@@ -80,6 +80,20 @@ const props = defineProps({
     }
   }
 
+  &.matchedFrom {
+    opacity: 0.3;
+    pointer-events: none;
+  }
+  &.matchedTo {
+    opacity: 1;
+    filter: none;
+    background-color: white;
+
+    .card__image {
+      opacity: 1;
+    }
+  }
+
   &:active {
     box-shadow: inset 0px 0px 0px 2px rgb(var(--neu-08));
     transform: scale(1.1);

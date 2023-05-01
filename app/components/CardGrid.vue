@@ -56,6 +56,19 @@ const loadCards = () => {
 
   list2.value.list = list2Random;
 };
+
+function onEnd(evt: any) {
+  if (
+    evt.item.__draggable_context.element.name ===
+    evt.originalEvent.toElement.__draggable_context.element.name
+  ) {
+    evt.item.classList.add("matchedFrom");
+    evt.originalEvent.toElement.classList.add("matchedTo");
+  } else {
+    console.log("false");
+  }
+  return false;
+}
 </script>
 
 <template>
@@ -68,16 +81,18 @@ const loadCards = () => {
         :sort="false"
         :list="list1.list"
         item-key="id"
-        :group="{ name: 'animals', pull: 'clone', put: false }"
+        @clone="() => false"
+        :group="{ name: 'animals', pull: '', put: false }"
+        @end="onEnd"
       >
-        <template #item="{ element }">
+        <template #item="{ element, index }">
           <Card :card="element" class="card--active" />
         </template>
       </draggable>
 
       <draggable
         class="cardGrid__right dragArea list-group"
-        :draggable="false"
+        draggable="false"
         @clone="() => false"
         :sort="false"
         :list="list2.list"
