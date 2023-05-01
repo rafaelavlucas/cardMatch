@@ -59,6 +59,21 @@
     "name": "Rinoceronte",
     "genre": "Selva"
   },
+  {
+    "image": "_nuxt/assets/images/panda.png",
+    "name": "Panda",
+    "genre": "Selva"
+  },
+  {
+    "image": "_nuxt/assets/images/frog.png",
+    "name": "Sapo",
+    "genre": "Selva"
+  },
+  {
+    "image": "_nuxt/assets/images/crocodile.png",
+    "name": "Crocodilo",
+    "genre": "Selva"
+  },
 
   {
     "image": "_nuxt/assets/images/sheep.png",
@@ -80,21 +95,13 @@
     "name": "Vaca",
     "genre": "Quinta"
   },
-  {
-    "image": "_nuxt/assets/images/duck.png",
-    "name": "Pato",
-    "genre": "Quinta"
-  },
+
   {
     "image": "_nuxt/assets/images/horse.png",
     "name": "Cavalo",
     "genre": "Quinta"
   },
-  {
-    "image": "_nuxt/assets/images/chicken.png",
-    "name": "Galinha",
-    "genre": ["Quinta", "Aves"]
-  },
+
   {
     "image": "_nuxt/assets/images/goat.png",
     "name": "Cabra",
@@ -117,9 +124,83 @@
     "genre": "Quinta"
   },
   {
+    "image": "_nuxt/assets/images/duck.png",
+    "name": "Pato",
+    "genre": ["Quinta", "Aves"]
+  },
+  {
     "image": "_nuxt/assets/images/turkey.png",
     "name": "Perú",
-    "genre": "Quinta"
+    "genre": ["Quinta", "Aves"]
+  },
+  {
+    "image": "_nuxt/assets/images/chicken.png",
+    "name": "Galinha",
+    "genre": ["Quinta", "Aves"]
+  },
+  {
+    "image": "_nuxt/assets/images/rooster.png",
+    "name": "Galo",
+    "genre": ["Quinta", "Aves"]
+  },
+
+  {
+    "image": "_nuxt/assets/images/babychicken.png",
+    "name": "Pintainho",
+    "genre": ["Quinta", "Aves"]
+  },
+
+  {
+    "image": "_nuxt/assets/images/pelican.png",
+    "name": "Pelicano",
+    "genre": "Aves"
+  },
+
+  {
+    "image": "_nuxt/assets/images/swan.png",
+    "name": "Cisne",
+    "genre": "Aves"
+  },
+  {
+    "image": "_nuxt/assets/images/crow.png",
+    "name": "Corvo",
+    "genre": "Aves"
+  },
+  {
+    "image": "_nuxt/assets/images/goose.png",
+    "name": "Ganso",
+    "genre": "Aves"
+  },
+  {
+    "image": "_nuxt/assets/images/peacock.png",
+    "name": "Pavão",
+    "genre": "Aves"
+  },
+  {
+    "image": "_nuxt/assets/images/parrot.png",
+    "name": "Papagaio",
+    "genre": "Aves"
+  },
+
+  {
+    "image": "_nuxt/assets/images/flamingo.png",
+    "name": "Flamingo",
+    "genre": "Aves"
+  },
+  {
+    "image": "_nuxt/assets/images/tucan.png",
+    "name": "Tucano",
+    "genre": "Aves"
+  },
+  {
+    "image": "_nuxt/assets/images/pigeon.png",
+    "name": "Pomba",
+    "genre": "Aves"
+  },
+  {
+    "image": "_nuxt/assets/images/seagull.png",
+    "name": "Gaivota",
+    "genre": "Aves"
   },
 
   {
