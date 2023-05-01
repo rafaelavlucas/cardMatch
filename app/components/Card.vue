@@ -33,7 +33,20 @@ const props = defineProps({
   grid-template-rows: 1fr clamp(0.5rem, 3.5vw, 3.5rem);
   padding: min(1.2vw, 4rem);
   border-radius: clamp(0.5rem, 1.5vw, 1.5rem);
+  isolation: isolate;
+  position: relative;
   user-select: none;
+
+  &:before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: red;
+    position: absolute;
+    border-radius: inherit;
+    z-index: -1;
+    opacity: 0;
+  }
 
   &__image {
     pointer-events: none;
@@ -61,6 +74,21 @@ const props = defineProps({
       transform: scale(1.05);
       box-shadow: 0px 1rem 2.5rem -1rem rgb(var(--neu-05));
     }
+
+    &.matched {
+      opacity: 0;
+      pointer-events: none;
+
+      #{$this} {
+        &__image {
+          opacity: 0;
+        }
+
+        &__name {
+          opacity: 0;
+        }
+      }
+    }
   }
 
   &--disabled {
@@ -79,24 +107,44 @@ const props = defineProps({
         opacity: 0.4;
       }
     }
+
+    &.matched {
+      opacity: 1;
+      filter: none;
+      background-color: rgb(var(--neu-01));
+      border: 2px solid green;
+      pointer-events: none;
+      animation: test 0.3s 0s ease backwards;
+      z-index: 2;
+
+      #{$this} {
+        &__image {
+          opacity: 1;
+        }
+
+        &__name {
+          opacity: 1;
+        }
+      }
+
+      @keyframes test {
+        80% {
+          transform: scale(1.2);
+          border: 8px solid green;
+          box-shadow: 0px 0.5rem 2rem -1rem green;
+        }
+        100% {
+          transform: scale(1);
+          border: 2px solid green;
+          box-shadow: none;
+        }
+      }
+    }
   }
 
   //faz no css para teres list1 e mete este matched la dentro
-  &.matched {
-    opacity: 0.3;
-    pointer-events: none;
-  }
 
   //faz no css para teres list2 e mete este matched la dentro
-  &.matched {
-    opacity: 1;
-    filter: none;
-    background-color: white;
-
-    .card__image {
-      opacity: 1;
-    }
-  }
 
   &:active {
     box-shadow: inset 0px 0px 0px 2px rgb(var(--neu-08));
