@@ -34,6 +34,8 @@ watch(
     console.log(list2Random);
     list1.value.list = randomCards;
     list2.value.list = list2Random;
+
+    resetCards();
   }
 );
 
@@ -58,17 +60,33 @@ const loadCards = () => {
 };
 
 function onEnd(evt: any) {
-  if (
-    evt.item.__draggable_context.element.name ===
-    evt.originalEvent.toElement.__draggable_context.element.name
-  ) {
-    evt.item.classList.add("matchedFrom");
-    evt.originalEvent.toElement.classList.add("matchedTo");
-  } else {
-    console.log("false");
-  }
+  const draggedElement = evt.item.__draggable_context.element;
+  const toElement = evt.originalEvent.toElement.__draggable_context.element;
+
+  const findMatchFromList1 = list1.value.list.find(
+    (card) => card.name === draggedElement.name
+  );
+
+  const findMatchFromList2 = list2.value.list.find(
+    (card) => card.name === toElement.name
+  );
+
+  if (findMatchFromList1?.name !== findMatchFromList2?.name) return;
+
+  findMatchFromList1!.matched = true;
+  findMatchFromList2!.matched = true;
+
   return false;
 }
+
+const resetCards = () => {
+  [...list1.value.list].forEach((element) => {
+    element.matched = false;
+  });
+  [...list2.value.list].forEach((element) => {
+    element.matched = false;
+  });
+};
 </script>
 
 <template>
@@ -86,7 +104,11 @@ function onEnd(evt: any) {
         @end="onEnd"
       >
         <template #item="{ element, index }">
-          <Card :card="element" class="card--active" />
+          <Card
+            :matched="element.matched"
+            :card="element"
+            class="card--active"
+          />
         </template>
       </draggable>
 
@@ -100,7 +122,11 @@ function onEnd(evt: any) {
         group="animals"
       >
         <template #item="{ element }">
-          <Card :card="element" class="card--disabled" />
+          <Card
+            :matched="element.matched"
+            :card="element"
+            class="card--disabled"
+          />
         </template>
       </draggable>
     </div>

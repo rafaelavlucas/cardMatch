@@ -2,266 +2,317 @@
   {
     "image": "_nuxt/assets/images/lion.png",
     "name": "Leão",
-    "genre": "Selva"
+    "genre": "Selva",
+    "matched": false
   },
   {
     "image": "_nuxt/assets/images/elephant.png",
     "name": "Elefante",
-    "genre": "Selva"
+    "genre": "Selva",
+    "matched": false
   },
   {
     "image": "_nuxt/assets/images/giraffe.png",
     "name": "Girafa",
-    "genre": "Selva"
+    "genre": "Selva",
+    "matched": false
   },
   {
     "image": "_nuxt/assets/images/hippo.png",
     "name": "Hipópotamo",
-    "genre": "Selva"
+    "genre": "Selva",
+    "matched": false
   },
   {
     "image": "_nuxt/assets/images/tiger.png",
     "name": "Tigre",
-    "genre": "Selva"
+    "genre": "Selva",
+    "matched": false
   },
   {
     "image": "_nuxt/assets/images/zebra.png",
     "name": "Zebra",
-    "genre": "Selva"
+    "genre": "Selva",
+    "matched": false
   },
   {
     "image": "_nuxt/assets/images/gorila.png",
     "name": "Gorila",
-    "genre": "Selva"
+    "genre": "Selva",
+    "matched": false
   },
   {
     "image": "_nuxt/assets/images/bear.png",
     "name": "Urso",
-    "genre": "Selva"
+    "genre": "Selva",
+    "matched": false
   },
   {
     "image": "_nuxt/assets/images/leopard.png",
     "name": "Leopardo",
-    "genre": "Selva"
+    "genre": "Selva",
+    "matched": false
   },
   {
     "image": "_nuxt/assets/images/deer.png",
     "name": "Veado",
-    "genre": "Selva"
+    "genre": "Selva",
+    "matched": false
   },
   {
     "image": "_nuxt/assets/images/panther.png",
     "name": "Pantera",
-    "genre": "Selva"
+    "genre": "Selva",
+    "matched": false
   },
   {
     "image": "_nuxt/assets/images/rhino.png",
     "name": "Rinoceronte",
-    "genre": "Selva"
+    "genre": "Selva",
+    "matched": false
   },
   {
     "image": "_nuxt/assets/images/panda.png",
     "name": "Panda",
-    "genre": "Selva"
+    "genre": "Selva",
+    "matched": false
   },
   {
     "image": "_nuxt/assets/images/frog.png",
     "name": "Sapo",
-    "genre": "Selva"
+    "genre": "Selva",
+    "matched": false
   },
   {
     "image": "_nuxt/assets/images/crocodile.png",
     "name": "Crocodilo",
-    "genre": "Selva"
+    "genre": "Selva",
+    "matched": false
   },
 
   {
     "image": "_nuxt/assets/images/sheep.png",
     "name": "Ovelha",
-    "genre": "Quinta"
+    "genre": "Quinta",
+    "matched": false
   },
   {
     "image": "_nuxt/assets/images/pig.png",
     "name": "Porco",
-    "genre": "Quinta"
+    "genre": "Quinta",
+    "matched": false
   },
   {
     "image": "_nuxt/assets/images/donkey.png",
     "name": "Burro",
-    "genre": "Quinta"
+    "genre": "Quinta",
+    "matched": false
   },
   {
     "image": "_nuxt/assets/images/cow.png",
     "name": "Vaca",
-    "genre": "Quinta"
+    "genre": "Quinta",
+    "matched": false
   },
 
   {
     "image": "_nuxt/assets/images/horse.png",
     "name": "Cavalo",
-    "genre": "Quinta"
+    "genre": "Quinta",
+    "matched": false
   },
 
   {
     "image": "_nuxt/assets/images/goat.png",
     "name": "Cabra",
-    "genre": "Quinta"
+    "genre": "Quinta",
+    "matched": false
   },
   {
     "image": "_nuxt/assets/images/rabbit.png",
     "name": "Coelho",
-    "genre": "Quinta"
+    "genre": "Quinta",
+    "matched": false
   },
   {
     "image": "_nuxt/assets/images/cat.png",
     "name": "Gato",
-    "genre": "Quinta"
+    "genre": "Quinta",
+    "matched": false
   },
 
   {
     "image": "_nuxt/assets/images/dog.png",
     "name": "Cão",
-    "genre": "Quinta"
+    "genre": "Quinta",
+    "matched": false
   },
   {
     "image": "_nuxt/assets/images/duck.png",
     "name": "Pato",
-    "genre": ["Quinta", "Aves"]
+    "genre": ["Quinta", "Aves"],
+    "matched": false
   },
   {
     "image": "_nuxt/assets/images/turkey.png",
     "name": "Perú",
-    "genre": ["Quinta", "Aves"]
+    "genre": ["Quinta", "Aves"],
+    "matched": false
   },
   {
     "image": "_nuxt/assets/images/chicken.png",
     "name": "Galinha",
-    "genre": ["Quinta", "Aves"]
+    "genre": ["Quinta", "Aves"],
+    "matched": false
   },
   {
     "image": "_nuxt/assets/images/rooster.png",
     "name": "Galo",
-    "genre": ["Quinta", "Aves"]
+    "genre": ["Quinta", "Aves"],
+    "matched": false
   },
 
   {
     "image": "_nuxt/assets/images/babychicken.png",
     "name": "Pintainho",
-    "genre": ["Quinta", "Aves"]
+    "genre": ["Quinta", "Aves"],
+    "matched": false
   },
 
   {
     "image": "_nuxt/assets/images/pelican.png",
     "name": "Pelicano",
-    "genre": "Aves"
+    "genre": "Aves",
+    "matched": false
   },
 
   {
     "image": "_nuxt/assets/images/swan.png",
     "name": "Cisne",
-    "genre": "Aves"
+    "genre": "Aves",
+    "matched": false
   },
   {
     "image": "_nuxt/assets/images/crow.png",
     "name": "Corvo",
-    "genre": "Aves"
+    "genre": "Aves",
+    "matched": false
   },
   {
     "image": "_nuxt/assets/images/goose.png",
     "name": "Ganso",
-    "genre": "Aves"
+    "genre": "Aves",
+    "matched": false
   },
   {
     "image": "_nuxt/assets/images/peacock.png",
     "name": "Pavão",
-    "genre": "Aves"
+    "genre": "Aves",
+    "matched": false
   },
   {
     "image": "_nuxt/assets/images/parrot.png",
     "name": "Papagaio",
-    "genre": "Aves"
+    "genre": "Aves",
+    "matched": false
   },
 
   {
     "image": "_nuxt/assets/images/flamingo.png",
     "name": "Flamingo",
-    "genre": "Aves"
+    "genre": "Aves",
+    "matched": false
   },
   {
     "image": "_nuxt/assets/images/tucan.png",
     "name": "Tucano",
-    "genre": "Aves"
+    "genre": "Aves",
+    "matched": false
   },
   {
     "image": "_nuxt/assets/images/pigeon.png",
     "name": "Pomba",
-    "genre": "Aves"
+    "genre": "Aves",
+    "matched": false
   },
   {
     "image": "_nuxt/assets/images/seagull.png",
     "name": "Gaivota",
-    "genre": "Aves"
+    "genre": "Aves",
+    "matched": false
   },
 
   {
     "image": "_nuxt/assets/images/orca.png",
     "name": "Orca",
-    "genre": "Oceano"
+    "genre": "Oceano",
+    "matched": false
   },
   {
     "image": "_nuxt/assets/images/whale.png",
     "name": "Baleia",
-    "genre": "Oceano"
+    "genre": "Oceano",
+    "matched": false
   },
   {
     "image": "_nuxt/assets/images/dolphin.png",
     "name": "Golfinho",
-    "genre": "Oceano"
+    "genre": "Oceano",
+    "matched": false
   },
   {
     "image": "_nuxt/assets/images/octopus.png",
     "name": "Polvo",
-    "genre": "Oceano"
+    "genre": "Oceano",
+    "matched": false
   },
 
   {
     "image": "_nuxt/assets/images/seal.png",
     "name": "Foca",
-    "genre": "Oceano"
+    "genre": "Oceano",
+    "matched": false
   },
   {
     "image": "_nuxt/assets/images/sealion.png",
     "name": "Leão Marinho",
-    "genre": "Oceano"
+    "genre": "Oceano",
+    "matched": false
   },
   {
     "image": "_nuxt/assets/images/turtle.png",
     "name": "Tartaruga",
-    "genre": "Oceano"
+    "genre": "Oceano",
+    "matched": false
   },
   {
     "image": "_nuxt/assets/images/goldfish.png",
     "name": "Peixe",
-    "genre": "Oceano"
+    "genre": "Oceano",
+    "matched": false
   },
   {
     "image": "_nuxt/assets/images/seahorse.png",
     "name": "Cavalo Marinho",
-    "genre": "Oceano"
+    "genre": "Oceano",
+    "matched": false
   },
   {
     "image": "_nuxt/assets/images/jellyfish.png",
     "name": "Alforreca",
-    "genre": "Oceano"
+    "genre": "Oceano",
+    "matched": false
   },
   {
     "image": "_nuxt/assets/images/shark.png",
     "name": "Tubarão",
-    "genre": "Oceano"
+    "genre": "Oceano",
+    "matched": false
   },
   {
     "image": "_nuxt/assets/images/ray.png",
     "name": "Raia",
-    "genre": "Oceano"
+    "genre": "Oceano",
+    "matched": false
   }
 ]

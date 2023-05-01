@@ -5,6 +5,7 @@ interface CardProps {
   image: string;
   name: string;
   genre: Genre[];
+  matched: boolean;
 }
 
 const props = defineProps({
@@ -16,7 +17,7 @@ const props = defineProps({
 </script>
 
 <template>
-  <div class="card color-neu-10 bg-neu-01">
+  <div class="card color-neu-10 bg-neu-01" :class="{ matched: card.matched }">
     <figure class="card__image">
       <img class="ratio-1-1" :src="card.image" :alt="card.name" />
     </figure>
@@ -80,11 +81,14 @@ const props = defineProps({
     }
   }
 
-  &.matchedFrom {
+  //faz no css para teres list1 e mete este matched la dentro
+  &.matched {
     opacity: 0.3;
     pointer-events: none;
   }
-  &.matchedTo {
+
+  //faz no css para teres list2 e mete este matched la dentro
+  &.matched {
     opacity: 1;
     filter: none;
     background-color: white;
