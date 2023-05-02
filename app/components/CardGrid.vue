@@ -155,11 +155,14 @@ const resetCards = () => {
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5vw;
     align-items: stretch;
+    padding: 5%;
+    border-radius: clamp(0.5rem, 2.5vw, 2.5rem);
   }
 
   &__left {
     grid-column: 1/7;
     margin-right: 0.5vw;
+    background: rgb(var(--neu-03));
     .sortable-ghost {
       opacity: 0;
     }
