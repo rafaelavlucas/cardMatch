@@ -62,7 +62,6 @@ const loadCards = () => {
 function onEnd(evt: any) {
   const draggedElement = evt.item.__draggable_context.element;
   const toElement = evt.originalEvent.toElement.__draggable_context.element;
-
   const findMatchFromList1 = list1.value.list.find(
     (card) => card.name === draggedElement.name
   );
@@ -71,12 +70,14 @@ function onEnd(evt: any) {
     (card) => card.name === toElement.name
   );
 
-  if (findMatchFromList1?.name !== findMatchFromList2?.name) return;
+  if (
+    findMatchFromList1?.name !== findMatchFromList2?.name ||
+    evt.originalEvent.toElement.classList.contains("card--active")
+  )
+    return;
 
   findMatchFromList1!.matched = true;
   findMatchFromList2!.matched = true;
-
-  return false;
 }
 
 const resetCards = () => {
@@ -99,7 +100,6 @@ const resetCards = () => {
         :sort="false"
         :list="list1.list"
         item-key="id"
-        @clone="() => false"
         :group="{ name: 'animals', pull: '', put: false }"
         @end="onEnd"
       >
