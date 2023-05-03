@@ -153,28 +153,36 @@ const resetCards = () => {
   &__right {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1.5vw;
+    gap: 2%;
     align-items: stretch;
-    padding: 5%;
+    padding: clamp(0.5rem, 2.5vw, 2.5rem);
     border-radius: clamp(0.5rem, 2.5vw, 2.5rem);
+
+    @include mobile {
+      gap: 2vw;
+      padding: 4vw;
+    }
   }
 
   &__left {
-    grid-column: 1/7;
-    margin-right: 0.5vw;
+    grid-column: 1/4;
     background: rgb(var(--neu-03));
+
     .sortable-ghost {
       opacity: 0;
     }
 
-    // .sortable-chosen {
-    //   opacity: 0;
-    // }
+    @include mobile {
+      grid-column: 1/7;
+    }
   }
 
   &__right {
-    grid-column: 7/13;
-    margin-left: 0.5vw;
+    grid-column: 4/7;
+
+    @include mobile {
+      grid-column: 1/7;
+    }
   }
 }
 </style>

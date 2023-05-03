@@ -17,16 +17,16 @@ $spc-120: 7.5rem;
 
 @mixin wrapper {
   width: 100%;
-  max-width: 1732px;
+  max-width: 1440px;
   margin: 0 auto;
-  padding: 0 6vw;
+  padding: 0 3vw;
 }
 
 @mixin grid {
   @include wrapper;
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-column-gap: 2vw;
+  grid-template-columns: repeat(6, 1fr);
+  // grid-column-gap: 2vw;
 }
 
 @mixin justGrid {

@@ -60,13 +60,17 @@ const handleClick = (e: Event) => {
     padding: clamp(0.4rem, 0.8vw, 0.8rem) clamp(0.8rem, 1.5vw, 2rem);
     cursor: pointer;
 
+    @include mobile {
+      font-size: 0.8rem;
+    }
+
     &:hover {
       opacity: 0.6;
     }
     &.active {
       background-color: rgb(var(--neu-08));
       color: rgb(var(--neu-01));
-      pointer-events: none;
+      // pointer-events: none;
     }
   }
 }

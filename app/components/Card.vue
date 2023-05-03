@@ -31,11 +31,16 @@ const props = defineProps({
   $this: &;
   display: grid;
   grid-template-rows: 1fr clamp(0.5rem, 3.5vw, 3.5rem);
-  padding: min(1.2vw, 4rem);
+  padding: clamp(0.5rem, 1vw, 1rem);
   border-radius: clamp(0.5rem, 1.5vw, 1.5rem);
   isolation: isolate;
   position: relative;
   user-select: none;
+
+  @include mobile {
+    // padding: min(2vw, 4rem);
+    grid-template-rows: 1fr clamp(1rem, 3.5vw, 3.5rem);
+  }
 
   &:before {
     content: "";
@@ -60,8 +65,13 @@ const props = defineProps({
     // padding-top: max(0.5rem, 1.5vw);
     font-family: $font;
     font-weight: bold;
-    font-size: clamp(0.5rem, 1.5vw, 1.5rem);
+    font-size: clamp(0.5rem, 1.2vw, 1.2rem);
     align-self: end;
+    word-break: break-all;
+
+    @include mobile {
+      font-size: clamp(0.5rem, 2.5vw, 2.5rem);
+    }
   }
 
   &--active {
@@ -73,6 +83,11 @@ const props = defineProps({
     &:hover {
       transform: scale(1.05);
       box-shadow: 0px 1rem 2.5rem -1rem rgb(var(--neu-05));
+    }
+
+    &:active {
+      border: 4px solid rgb(var(--neu-08));
+      transform: scale(1.1);
     }
 
     &.matched {
@@ -112,10 +127,40 @@ const props = defineProps({
       opacity: 1;
       filter: none;
       background-color: rgb(var(--neu-01));
-      border: 2px solid green;
+      border: 2px solid #5dc6a1;
       pointer-events: none;
       animation: test 0.3s 0s ease backwards;
       z-index: 2;
+
+      &:after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background: #5dc6a1;
+        opacity: 0.1;
+        left: 0;
+        top: 0;
+        border-radius: inherit;
+      }
+
+      &:before {
+        content: "✓";
+        width: clamp(1rem, 2.5vw, 2.5rem);
+        height: clamp(1rem, 2.5vw, 2.5rem);
+        font-size: clamp(1rem, 2.5vw, 2.5rem);
+        position: absolute;
+        background: #5dc6a1;
+        color: white;
+        opacity: 1;
+        left: 3%;
+        top: 3%;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1;
+      }
 
       #{$this} {
         &__image {
@@ -130,12 +175,12 @@ const props = defineProps({
       @keyframes test {
         80% {
           transform: scale(1.2);
-          border: 8px solid green;
-          box-shadow: 0px 0.5rem 2rem -1rem green;
+          border: 8px solid #5dc6a1;
+          box-shadow: 0px 0.5rem 2rem -1rem #5dc6a1;
         }
         100% {
           transform: scale(1);
-          border: 2px solid green;
+          border: 2px solid #5dc6a1;
           box-shadow: none;
         }
       }
@@ -145,10 +190,5 @@ const props = defineProps({
   //faz no css para teres list1 e mete este matched la dentro
 
   //faz no css para teres list2 e mete este matched la dentro
-
-  &:active {
-    box-shadow: inset 0px 0px 0px 2px rgb(var(--neu-08));
-    transform: scale(1.1);
-  }
 }
 </style>
