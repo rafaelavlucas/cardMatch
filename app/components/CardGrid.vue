@@ -153,7 +153,7 @@ const resetCards = () => {
   &__right {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2%;
+    gap: 4%;
     align-items: stretch;
     padding: clamp(0.5rem, 2.5vw, 2.5rem);
     border-radius: clamp(0.5rem, 2.5vw, 2.5rem);

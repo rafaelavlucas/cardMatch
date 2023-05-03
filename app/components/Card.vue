@@ -67,7 +67,8 @@ const props = defineProps({
     font-weight: bold;
     font-size: clamp(0.5rem, 1.2vw, 1.2rem);
     align-self: end;
-    word-break: break-all;
+    word-break: break-word;
+    hyphens: auto;
 
     @include mobile {
       font-size: clamp(0.5rem, 2.5vw, 2.5rem);
@@ -86,8 +87,10 @@ const props = defineProps({
     }
 
     &:active {
+      transition: none;
       border: 4px solid rgb(var(--neu-08));
       transform: scale(1.1);
+      cursor: grab;
     }
 
     &.matched {
@@ -126,31 +129,19 @@ const props = defineProps({
     &.matched {
       opacity: 1;
       filter: none;
-      background-color: rgb(var(--neu-01));
-      border: 2px solid #3ba986;
+      background: rgb(var(--add-01), 0.15);
+      border: 2px solid rgb(var(--add-01));
       pointer-events: none;
       animation: test 0.3s 0s ease backwards;
       z-index: 2;
 
-      &:after {
-        content: "";
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        background: #3ba986;
-        opacity: 0.1;
-        left: 0;
-        top: 0;
-        border-radius: inherit;
-      }
-
       &:before {
         content: "✓";
-        width: clamp(1rem, 2vw, 2.5rem);
-        height: clamp(1rem, 2vw, 2.5rem);
+        width: clamp(1rem, 2vw, 2rem);
+        height: clamp(1rem, 2vw, 2rem);
         font-size: clamp(1rem, 1.8vw, 2rem);
         position: absolute;
-        background: #3ba986;
+        background: rgb(var(--add-01));
         color: white;
         opacity: 1;
         left: 3%;
@@ -169,20 +160,22 @@ const props = defineProps({
 
         &__name {
           opacity: 1;
-          color: #3ba986;
+          color: rgb(var(--add-01));
         }
       }
 
       @keyframes test {
         80% {
           transform: scale(1.2);
-          border: 8px solid #3ba986;
-          box-shadow: 0px 0.5rem 2rem -1rem #3ba986;
+          border: 8px solid rgb(var(--add-01));
+          box-shadow: 0px 0.5rem 2rem -1rem rgb(var(--add-01));
+          z-index: 3;
         }
         100% {
           transform: scale(1);
-          border: 2px solid #3ba986;
+          border: 2px solid rgb(var(--add-01));
           box-shadow: none;
+          z-index: 3;
         }
       }
     }
