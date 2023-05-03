@@ -127,7 +127,7 @@ const props = defineProps({
       opacity: 1;
       filter: none;
       background-color: rgb(var(--neu-01));
-      border: 2px solid #5dc6a1;
+      border: 2px solid #3ba986;
       pointer-events: none;
       animation: test 0.3s 0s ease backwards;
       z-index: 2;
@@ -137,7 +137,7 @@ const props = defineProps({
         width: 100%;
         height: 100%;
         position: absolute;
-        background: #5dc6a1;
+        background: #3ba986;
         opacity: 0.1;
         left: 0;
         top: 0;
@@ -146,11 +146,11 @@ const props = defineProps({
 
       &:before {
         content: "✓";
-        width: clamp(1rem, 2.5vw, 2.5rem);
-        height: clamp(1rem, 2.5vw, 2.5rem);
-        font-size: clamp(1rem, 2.5vw, 2.5rem);
+        width: clamp(1rem, 2vw, 2.5rem);
+        height: clamp(1rem, 2vw, 2.5rem);
+        font-size: clamp(1rem, 1.8vw, 2rem);
         position: absolute;
-        background: #5dc6a1;
+        background: #3ba986;
         color: white;
         opacity: 1;
         left: 3%;
@@ -169,18 +169,19 @@ const props = defineProps({
 
         &__name {
           opacity: 1;
+          color: #3ba986;
         }
       }
 
       @keyframes test {
         80% {
           transform: scale(1.2);
-          border: 8px solid #5dc6a1;
-          box-shadow: 0px 0.5rem 2rem -1rem #5dc6a1;
+          border: 8px solid #3ba986;
+          box-shadow: 0px 0.5rem 2rem -1rem #3ba986;
         }
         100% {
           transform: scale(1);
-          border: 2px solid #5dc6a1;
+          border: 2px solid #3ba986;
           box-shadow: none;
         }
       }
