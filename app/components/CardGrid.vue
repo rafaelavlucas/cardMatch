@@ -2,8 +2,9 @@
 import draggable from "vuedraggable";
 import useEventsBus from "@/utils/eventBus";
 import cardsData from "@/assets/cardsData.json";
+import { reactive, watchEffect, ref } from "vue";
 
-console.log(cardsData);
+const refReload = ref<HTMLInputElement | null>(null);
 const cards = ref(cardsData);
 const list1 = ref({
   list: [...cards.value],
@@ -15,6 +16,8 @@ const list2 = ref({
 });
 
 const { bus } = useEventsBus();
+
+let isAllMatched = ref(false);
 
 watch(
   () => bus.value.get("filter"),
@@ -31,7 +34,7 @@ watch(
     const list2Random = [...randomCards].sort(
       () => Math.random() - Math.random()
     );
-    console.log(list2Random);
+
     list1.value.list = randomCards;
     list2.value.list = list2Random;
 
@@ -41,9 +44,11 @@ watch(
 
 onMounted(() => {
   loadCards();
+  console.log(refReload.value);
 });
 
 const loadCards = () => {
+  isAllMatched.value = false;
   const newCards = [...cards.value];
 
   const randomCards = newCards
@@ -77,7 +82,16 @@ function onEnd(evt: any) {
     return;
 
   findMatchFromList1!.matched = true;
-  findMatchFromList2!.matched = true;
+
+  const areAllCardsMatched = (list: any[]) => {
+    return list.every((card) => card.matched);
+  };
+  const allCardsInList1Matched = areAllCardsMatched(list1.value.list);
+
+  if (allCardsInList1Matched) {
+    console.log("YAY");
+    isAllMatched.value = true;
+  }
 }
 
 const resetCards = () => {
@@ -91,9 +105,15 @@ const resetCards = () => {
 </script>
 
 <template>
-  <div class="cardGrid">
+  <div :ref="'refReload'" class="cardGrid">
     <Filters class="cardGrid__filters" />
     <div class="cardGrid__wrapper grid">
+      <Reload
+        v-if="isAllMatched"
+        class="cardGrid__reload"
+        @reload-game="loadCards"
+      />
+
       <draggable
         class="cardGrid__left dragArea list-group"
         removeCloneOnHide="true"
@@ -143,17 +163,28 @@ const resetCards = () => {
   justify-content: center;
 
   &__wrapper {
-    margin-bottom: auto;
+    // margin-bottom: auto;
   }
 
   &__filters {
-    margin-top: auto;
+    // margin-top: auto;
   }
+
+  &__reload {
+    grid-row: 1;
+    grid-column: 1/4;
+    z-index: 1;
+    @include mobile {
+      grid-column: 1/7;
+    }
+  }
+
   &__left,
   &__right {
     display: grid;
+    grid-row: 1;
     grid-template-columns: repeat(3, 1fr);
-    gap: 4%;
+    gap: 1.5vw;
     align-items: stretch;
     padding: clamp(0.5rem, 2.5vw, 2.5rem);
     border-radius: clamp(0.5rem, 2.5vw, 2.5rem);
@@ -166,7 +197,7 @@ const resetCards = () => {
 
   &__left {
     grid-column: 1/4;
-    background: rgb(var(--neu-03));
+    background: rgb(var(--neu-02));
 
     .sortable-ghost {
       opacity: 0;
@@ -182,6 +213,7 @@ const resetCards = () => {
 
     @include mobile {
       grid-column: 1/7;
+      grid-row: 2;
     }
   }
 }

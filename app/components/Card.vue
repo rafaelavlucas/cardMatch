@@ -111,7 +111,7 @@ const props = defineProps({
 
   &--disabled {
     // pointer-events: none;
-    background: rgb(var(--neu-02));
+    background: rgb(var(--neu-01));
     opacity: 0.8;
     filter: grayscale(100%);
     cursor: default;
