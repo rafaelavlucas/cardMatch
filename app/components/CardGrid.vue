@@ -4,7 +4,6 @@ import useEventsBus from "@/utils/eventBus";
 import cardsData from "@/assets/cardsData.json";
 import { reactive, watchEffect, ref } from "vue";
 
-const refReload = ref<HTMLInputElement | null>(null);
 const cards = ref(cardsData);
 const list1 = ref({
   list: [...cards.value],
@@ -22,29 +21,33 @@ let isAllMatched = ref(false);
 watch(
   () => bus.value.get("filter"),
   ([clickedFilter]) => {
-    const newCards = [...cards.value];
-    const filteredCards = computed(() =>
-      newCards.filter((card) => card.genre.includes(clickedFilter))
-    );
+    if (clickedFilter === "Todos") {
+      loadCards();
+      resetCards();
+    } else {
+      const newCards = [...cards.value];
+      const filteredCards = computed(() =>
+        newCards.filter((card) => card.genre.includes(clickedFilter))
+      );
 
-    const randomCards = filteredCards.value
-      .sort(() => Math.random() - Math.random())
-      .slice(0, 6);
+      const randomCards = filteredCards.value
+        .sort(() => Math.random() - Math.random())
+        .slice(0, 6);
 
-    const list2Random = [...randomCards].sort(
-      () => Math.random() - Math.random()
-    );
+      const list2Random = [...randomCards].sort(
+        () => Math.random() - Math.random()
+      );
 
-    list1.value.list = randomCards;
-    list2.value.list = list2Random;
+      list1.value.list = randomCards;
+      list2.value.list = list2Random;
 
-    resetCards();
+      resetCards();
+    }
   }
 );
 
 onMounted(() => {
   loadCards();
-  console.log(refReload.value);
 });
 
 const loadCards = () => {
@@ -102,6 +105,11 @@ const resetCards = () => {
     element.matched = false;
   });
 };
+
+const reloadGame = () => {
+  loadCards();
+  resetCards();
+};
 </script>
 
 <template>
@@ -111,7 +119,7 @@ const resetCards = () => {
       <Reload
         v-if="isAllMatched"
         class="cardGrid__reload"
-        @reload-game="loadCards"
+        @reload-game="reloadGame"
       />
 
       <draggable

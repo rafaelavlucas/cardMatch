@@ -7,6 +7,7 @@ interface FiltersProps {
 }
 
 const { emit } = useEventsBus();
+const cenas = defineEmits(["showAll"]);
 
 const filters = ref<FiltersProps[]>([
   { title: "Selva" },
@@ -17,10 +18,8 @@ const filters = ref<FiltersProps[]>([
 
 const handleClick = (e: Event) => {
   const target = e.currentTarget as HTMLButtonElement;
-  const allFilters = document.querySelectorAll(".filters__item");
-
   emit("filter", target.innerText);
-
+  const allFilters = document.querySelectorAll(".filters__item");
   allFilters.forEach((filter) => {
     filter.classList.remove("active");
   });
@@ -31,6 +30,9 @@ const handleClick = (e: Event) => {
 <template>
   <div class="wrapper">
     <ul class="filters">
+      <li>
+        <button class="filters__item active" @click="handleClick">Todos</button>
+      </li>
       <li v-for="(item, index) in filters" :key="index">
         <button class="filters__item" @click="handleClick">
           {{ item.title }}
