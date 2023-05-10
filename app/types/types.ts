@@ -1,1 +1,1 @@
-export type Genre = "Selva" | "Quinta" | "Oceano" | "Aves";
+export type Genre = "Floresta" | "Quinta" | "Oceano" | "Aves";

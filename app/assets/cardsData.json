@@ -1,322 +1,412 @@
 [
   {
-    "image": "_nuxt/assets/images/lion.png",
+    "image": "/images/lion.png",
     "name": "Leão",
-    "genre": "Selva",
+    "genre": "Floresta",
     "matched": false
   },
   {
-    "image": "_nuxt/assets/images/elephant.png",
+    "image": "/images/elephant.png",
     "name": "Elefante",
-    "genre": "Selva",
+    "genre": "Floresta",
     "matched": false
   },
   {
-    "image": "_nuxt/assets/images/giraffe.png",
+    "image": "/images/giraffe.png",
     "name": "Girafa",
-    "genre": "Selva",
+    "genre": "Floresta",
     "matched": false
   },
   {
-    "image": "_nuxt/assets/images/hippo.png",
+    "image": "/images/hippo.png",
     "name": "Hipópotamo",
-    "genre": "Selva",
+    "genre": "Floresta",
     "matched": false
   },
   {
-    "image": "_nuxt/assets/images/tiger.png",
+    "image": "/images/tiger.png",
     "name": "Tigre",
-    "genre": "Selva",
+    "genre": "Floresta",
     "matched": false
   },
   {
-    "image": "_nuxt/assets/images/zebra.png",
+    "image": "/images/zebra.png",
     "name": "Zebra",
-    "genre": "Selva",
+    "genre": "Floresta",
     "matched": false
   },
   {
-    "image": "_nuxt/assets/images/gorila2.png",
+    "image": "/images/gorila2.png",
     "name": "Gorila",
-    "genre": "Selva",
+    "genre": "Floresta",
     "matched": false
   },
   {
-    "image": "_nuxt/assets/images/chimp.png",
+    "image": "/images/chimp.png",
     "name": "Chimpanzé",
-    "genre": "Selva"
+    "genre": "Floresta"
   },
   {
-    "image": "_nuxt/assets/images/bear.png",
+    "image": "/images/bear.png",
     "name": "Urso",
-    "genre": "Selva",
+    "genre": "Floresta",
     "matched": false
   },
   {
-    "image": "_nuxt/assets/images/leopard.png",
+    "image": "/images/leopard.png",
     "name": "Leopardo",
-    "genre": "Selva",
+    "genre": "Floresta",
     "matched": false
   },
   {
-    "image": "_nuxt/assets/images/deer.png",
+    "image": "/images/deer.png",
     "name": "Veado",
-    "genre": "Selva",
+    "genre": "Floresta",
     "matched": false
   },
   {
-    "image": "_nuxt/assets/images/panther.png",
+    "image": "/images/panther.png",
     "name": "Pantera",
-    "genre": "Selva",
+    "genre": "Floresta",
     "matched": false
   },
   {
-    "image": "_nuxt/assets/images/rhino.png",
+    "image": "/images/rhino.png",
     "name": "Rinoceronte",
-    "genre": "Selva",
+    "genre": "Floresta",
     "matched": false
   },
   {
-    "image": "_nuxt/assets/images/panda.png",
+    "image": "/images/panda.png",
     "name": "Panda",
-    "genre": "Selva",
+    "genre": "Floresta",
     "matched": false
   },
   {
-    "image": "_nuxt/assets/images/frog.png",
+    "image": "/images/frog.png",
     "name": "Sapo",
-    "genre": "Selva",
+    "genre": "Floresta",
     "matched": false
   },
   {
-    "image": "_nuxt/assets/images/crocodile.png",
+    "image": "/images/lizzard.png",
+    "name": "Lagarto",
+    "genre": "Floresta",
+    "matched": false
+  },
+  {
+    "image": "/images/chameleon.png",
+    "name": "Camaleão",
+    "genre": "Floresta",
+    "matched": false
+  },
+  {
+    "image": "/images/crocodile.png",
     "name": "Crocodilo",
-    "genre": "Selva",
+    "genre": "Floresta",
+    "matched": false
+  },
+  {
+    "image": "/images/squirrel.png",
+    "name": "Esquilo",
+    "genre": "Floresta",
+    "matched": false
+  },
+  {
+    "image": "/images/sloth.png",
+    "name": "Preguiça",
+    "genre": "Floresta",
+    "matched": false
+  },
+  {
+    "image": "/images/crocodile.png",
+    "name": "Crocodilo",
+    "genre": "Floresta",
+    "matched": false
+  },
+  {
+    "image": "/images/koala.png",
+    "name": "Coala",
+    "genre": "Floresta",
+    "matched": false
+  },
+  {
+    "image": "/images/kangaroo.png",
+    "name": "Canguru",
+    "genre": "Floresta",
+    "matched": false
+  },
+  {
+    "image": "/images/crocodile.png",
+    "name": "Crocodilo",
+    "genre": "Floresta",
+    "matched": false
+  },
+  {
+    "image": "/images/racoon.png",
+    "name": "Texugo",
+    "genre": "Floresta",
+    "matched": false
+  },
+  {
+    "image": "/images/fox.png",
+    "name": "Raposa",
+    "genre": "Floresta",
+    "matched": false
+  },
+  {
+    "image": "/images/hedgehog.png",
+    "name": "Porco espinho",
+    "genre": "Floresta",
+    "matched": false
+  },
+  {
+    "image": "/images/owl.png",
+    "name": "Mocho",
+    "genre": ["Floresta", "Aves"],
+    "matched": false
+  },
+  {
+    "image": "/images/owl2.png",
+    "name": "Coruja",
+    "genre": ["Floresta", "Aves"],
     "matched": false
   },
 
   {
-    "image": "_nuxt/assets/images/sheep.png",
+    "image": "/images/sheep.png",
     "name": "Ovelha",
     "genre": "Quinta",
     "matched": false
   },
   {
-    "image": "_nuxt/assets/images/pig.png",
+    "image": "/images/pig.png",
     "name": "Porco",
     "genre": "Quinta",
     "matched": false
   },
   {
-    "image": "_nuxt/assets/images/donkey.png",
+    "image": "/images/donkey.png",
     "name": "Burro",
     "genre": "Quinta",
     "matched": false
   },
   {
-    "image": "_nuxt/assets/images/cow.png",
+    "image": "/images/cow.png",
     "name": "Vaca",
     "genre": "Quinta",
     "matched": false
   },
 
   {
-    "image": "_nuxt/assets/images/horse.png",
+    "image": "/images/horse.png",
     "name": "Cavalo",
     "genre": "Quinta",
     "matched": false
   },
 
   {
-    "image": "_nuxt/assets/images/goat.png",
+    "image": "/images/goat.png",
     "name": "Cabra",
     "genre": "Quinta",
     "matched": false
   },
   {
-    "image": "_nuxt/assets/images/rabbit.png",
+    "image": "/images/rabbit.png",
     "name": "Coelho",
     "genre": "Quinta",
     "matched": false
   },
   {
-    "image": "_nuxt/assets/images/cat.png",
+    "image": "/images/cat.png",
     "name": "Gato",
     "genre": "Quinta",
     "matched": false
   },
 
   {
-    "image": "_nuxt/assets/images/dog.png",
+    "image": "/images/dog.png",
     "name": "Cão",
     "genre": "Quinta",
     "matched": false
   },
   {
-    "image": "_nuxt/assets/images/duck.png",
+    "image": "/images/duck.png",
     "name": "Pato",
     "genre": ["Quinta", "Aves"],
     "matched": false
   },
   {
-    "image": "_nuxt/assets/images/turkey.png",
+    "image": "/images/turkey.png",
     "name": "Perú",
     "genre": ["Quinta", "Aves"],
     "matched": false
   },
   {
-    "image": "_nuxt/assets/images/chicken.png",
+    "image": "/images/chicken.png",
     "name": "Galinha",
     "genre": ["Quinta", "Aves"],
     "matched": false
   },
   {
-    "image": "_nuxt/assets/images/rooster.png",
+    "image": "/images/rooster.png",
     "name": "Galo",
     "genre": ["Quinta", "Aves"],
     "matched": false
   },
 
   {
-    "image": "_nuxt/assets/images/babychicken.png",
+    "image": "/images/babychicken.png",
     "name": "Pintainho",
     "genre": ["Quinta", "Aves"],
     "matched": false
   },
 
   {
-    "image": "_nuxt/assets/images/pelican.png",
+    "image": "/images/pelican.png",
     "name": "Pelicano",
     "genre": "Aves",
     "matched": false
   },
 
   {
-    "image": "_nuxt/assets/images/swan.png",
+    "image": "/images/swan.png",
     "name": "Cisne",
     "genre": "Aves",
     "matched": false
   },
   {
-    "image": "_nuxt/assets/images/crow.png",
+    "image": "/images/crow.png",
     "name": "Corvo",
     "genre": "Aves",
     "matched": false
   },
   {
-    "image": "_nuxt/assets/images/goose.png",
+    "image": "/images/goose.png",
     "name": "Ganso",
     "genre": "Aves",
     "matched": false
   },
   {
-    "image": "_nuxt/assets/images/peacock.png",
+    "image": "/images/peacock.png",
     "name": "Pavão",
     "genre": "Aves",
     "matched": false
   },
   {
-    "image": "_nuxt/assets/images/parrot.png",
+    "image": "/images/parrot.png",
     "name": "Papagaio",
     "genre": "Aves",
     "matched": false
   },
 
   {
-    "image": "_nuxt/assets/images/flamingo.png",
+    "image": "/images/flamingo.png",
     "name": "Flamingo",
     "genre": "Aves",
     "matched": false
   },
   {
-    "image": "_nuxt/assets/images/tucan.png",
+    "image": "/images/tucan.png",
     "name": "Tucano",
     "genre": "Aves",
     "matched": false
   },
   {
-    "image": "_nuxt/assets/images/pigeon.png",
+    "image": "/images/pigeon.png",
     "name": "Pomba",
     "genre": "Aves",
     "matched": false
   },
   {
-    "image": "_nuxt/assets/images/seagull.png",
+    "image": "/images/seagull.png",
     "name": "Gaivota",
     "genre": "Aves",
     "matched": false
   },
 
   {
-    "image": "_nuxt/assets/images/orca.png",
+    "image": "/images/orca2.png",
     "name": "Orca",
     "genre": "Oceano",
     "matched": false
   },
   {
-    "image": "_nuxt/assets/images/whale.png",
+    "image": "/images/whale.png",
     "name": "Baleia",
     "genre": "Oceano",
     "matched": false
   },
   {
-    "image": "_nuxt/assets/images/dolphin.png",
+    "image": "/images/dolphin.png",
     "name": "Golfinho",
     "genre": "Oceano",
     "matched": false
   },
   {
-    "image": "_nuxt/assets/images/octopus.png",
+    "image": "/images/octopus.png",
     "name": "Polvo",
     "genre": "Oceano",
     "matched": false
   },
 
   {
-    "image": "_nuxt/assets/images/seal.png",
+    "image": "/images/seal.png",
     "name": "Foca",
     "genre": "Oceano",
     "matched": false
   },
   {
-    "image": "_nuxt/assets/images/sealion.png",
+    "image": "/images/sealion.png",
     "name": "Leão Marinho",
     "genre": "Oceano",
     "matched": false
   },
   {
-    "image": "_nuxt/assets/images/turtle.png",
+    "image": "/images/turtle.png",
     "name": "Tartaruga",
     "genre": "Oceano",
     "matched": false
   },
   {
-    "image": "_nuxt/assets/images/goldfish.png",
+    "image": "/images/goldfish.png",
     "name": "Peixe",
     "genre": "Oceano",
     "matched": false
   },
   {
-    "image": "_nuxt/assets/images/seahorse.png",
+    "image": "/images/seahorse.png",
     "name": "Cavalo Marinho",
     "genre": "Oceano",
     "matched": false
   },
   {
-    "image": "_nuxt/assets/images/jellyfish.png",
+    "image": "/images/jellyfish.png",
     "name": "Alforreca",
     "genre": "Oceano",
     "matched": false
   },
   {
-    "image": "_nuxt/assets/images/shark.png",
+    "image": "/images/shark.png",
     "name": "Tubarão",
     "genre": "Oceano",
     "matched": false
   },
   {
-    "image": "_nuxt/assets/images/ray.png",
+    "image": "/images/ray.png",
     "name": "Raia",
+    "genre": "Oceano",
+    "matched": false
+  },
+  {
+    "image": "/images/otter.png",
+    "name": "Lontra",
+    "genre": "Oceano",
+    "matched": false
+  },
+  {
+    "image": "/images/penguin.png",
+    "name": "Pinguim",
     "genre": "Oceano",
     "matched": false
   }

@@ -10,7 +10,7 @@ const { emit } = useEventsBus();
 const cenas = defineEmits(["showAll"]);
 
 const filters = ref<FiltersProps[]>([
-  { title: "Selva" },
+  { title: "Floresta" },
   { title: "Quinta" },
   { title: "Oceano" },
   { title: "Aves" },
