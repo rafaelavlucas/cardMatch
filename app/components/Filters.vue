@@ -1,20 +1,21 @@
 <script setup lang="ts">
 import useEventsBus from "@/utils/eventBus";
-import { Genre } from "~/types/types";
+import { FiltersProps } from "~/types/types";
 
-interface FiltersProps {
-  title: Genre;
-}
+// interface FiltersProps {
+//   title: Genre;
+// }
+const props = defineProps({
+  filters: {
+    type: Array as PropType<FiltersProps[]>,
+    required: false,
+  },
+});
+
+const filters = ref(props.filters);
 
 const { emit } = useEventsBus();
 const cenas = defineEmits(["showAll"]);
-
-const filters = ref<FiltersProps[]>([
-  { title: "Floresta" },
-  { title: "Quinta" },
-  { title: "Oceano" },
-  { title: "Aves" },
-]);
 
 const handleClick = (e: Event) => {
   const target = e.currentTarget as HTMLButtonElement;
@@ -35,7 +36,7 @@ const handleClick = (e: Event) => {
       </li>
       <li v-for="(item, index) in filters" :key="index">
         <button class="filters__item" @click="handleClick">
-          {{ item.title }}
+          {{ item }}
         </button>
       </li>
     </ul>

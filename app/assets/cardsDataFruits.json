@@ -1,0 +1,97 @@
+[
+  {
+    "image": "/images/fruits/apple.png",
+    "name": "Maçã",
+    "genre": ["Frutas"]
+  },
+  {
+    "image": "/images/fruits/apricot3.png",
+    "name": "Alperce",
+    "genre": ["Frutas"]
+  },
+  {
+    "image": "/images/fruits/aspargus.png",
+    "name": "Espargos",
+    "genre": ["Vegetais"]
+  },
+  {
+    "image": "/images/fruits/avocado.png",
+    "name": "Abacate",
+    "genre": ["Frutas"]
+  },
+  {
+    "image": "/images/fruits/banana.png",
+    "name": "Banana",
+    "genre": ["Frutas"]
+  },
+  {
+    "image": "/images/fruits/beetroot.png",
+    "name": "Beterraba",
+    "genre": ["Vegetais"]
+  },
+  {
+    "image": "/images/fruits/blackberries.png",
+    "name": "Amoras",
+    "genre": ["Frutas"]
+  },
+  {
+    "image": "/images/fruits/blueberries.png",
+    "name": "Mirtilos",
+    "genre": ["Frutas"]
+  },
+  {
+    "image": "/images/fruits/broccoli.png",
+    "name": "Bróculos",
+    "genre": ["Vegetais"]
+  },
+  {
+    "image": "/images/fruits/cabage.png",
+    "name": "Couve",
+    "genre": ["Vegetais"]
+  },
+  {
+    "image": "/images/fruits/carrot.png",
+    "name": "Cenoura",
+    "genre": ["Vegetais"]
+  },
+  {
+    "image": "/images/fruits/cherries.png",
+    "name": "Cerejas",
+    "genre": ["Frutas"]
+  },
+  {
+    "image": "/images/fruits/chilli.png",
+    "name": "Malagueta",
+    "genre": ["Vegetais"]
+  },
+  {
+    "image": "/images/fruits/cilantro.png",
+    "name": "Coentros",
+    "genre": ["Vegetais"]
+  },
+  {
+    "image": "/images/fruits/coconut.png",
+    "name": "Côco",
+    "genre": ["Frutas"]
+  },
+  {
+    "image": "/images/fruits/colliflower.png",
+    "name": "Couve-flor",
+    "genre": ["Vegetais"]
+  },
+  {
+    "image": "/images/fruits/corn.png",
+    "name": "Milho",
+    "genre": ["Vegetais"]
+  },
+  {
+    "image": "/images/fruits/cucumber.png",
+    "name": "Pepino",
+    "genre": ["Vegetais"]
+  },
+  {
+    "image": "/images/fruits/eggplant.png",
+    "name": "Beringela",
+    "genre": ["Vegetais"]
+  }
+]

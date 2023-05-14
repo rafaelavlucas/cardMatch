@@ -1,10 +1,21 @@
 <script setup lang="ts">
 import draggable from "vuedraggable";
 import useEventsBus from "@/utils/eventBus";
-import cardsData from "@/assets/cardsData.json";
 import { reactive, watchEffect, ref } from "vue";
+import { DataProps, FiltersProps } from "~/types/types";
 
-const cards = ref(cardsData);
+const props = defineProps({
+  data: {
+    type: Array as PropType<DataProps[]>,
+    required: true,
+  },
+  filters: {
+    type: Array as PropType<FiltersProps[]>,
+    required: false,
+  },
+});
+const cards = ref(props.data);
+
 const list1 = ref({
   list: [...cards.value],
   dragging: true,
@@ -114,7 +125,7 @@ const reloadGame = () => {
 
 <template>
   <div :ref="'refReload'" class="cardGrid">
-    <Filters class="cardGrid__filters" />
+    <Filters class="cardGrid__filters" :filters="filters" v-if="filters" />
     <div class="cardGrid__wrapper grid">
       <Reload
         v-if="isAllMatched"
@@ -128,7 +139,7 @@ const reloadGame = () => {
         :sort="false"
         :list="list1.list"
         item-key="id"
-        :group="{ name: 'animals', pull: '', put: false }"
+        :group="{ name: 'cards', pull: '', put: false }"
         @end="onEnd"
       >
         <template #item="{ element, index }">
@@ -147,7 +158,7 @@ const reloadGame = () => {
         :sort="false"
         :list="list2.list"
         item-key="id"
-        group="animals"
+        group="cards"
       >
         <template #item="{ element }">
           <Card

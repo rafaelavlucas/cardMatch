@@ -1,16 +1,9 @@
 <script setup lang="ts">
-import { Genre } from "~/types/types";
-
-interface CardProps {
-  image: string;
-  name: string;
-  genre: Genre[];
-  matched: boolean;
-}
+import { DataProps } from "~/types/types";
 
 const props = defineProps({
   card: {
-    type: Object as PropType<CardProps>,
+    type: Object as PropType<DataProps>,
     required: true,
   },
 });
@@ -28,11 +21,11 @@ const props = defineProps({
 <style lang="scss" scoped>
 @use "assets/style/index" as *;
 .card {
+  @include cardRadius;
   $this: &;
   display: grid;
   grid-template-rows: 1fr clamp(0.5rem, 3.5vw, 3.5rem);
   padding: clamp(0.5rem, 1vw, 1rem);
-  border-radius: clamp(0.5rem, 1.5vw, 1.5rem);
   isolation: isolate;
   position: relative;
   user-select: none;
