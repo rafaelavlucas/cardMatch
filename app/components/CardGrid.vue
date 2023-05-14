@@ -80,6 +80,8 @@ const loadCards = () => {
 
 function onEnd(evt: any) {
   const draggedElement = evt.item.__draggable_context.element;
+  console.log(evt.originalEvent.toElement.__draggable_context);
+  if (!evt.originalEvent.toElement.__draggable_context) return;
   const toElement = evt.originalEvent.toElement.__draggable_context.element;
   const findMatchFromList1 = list1.value.list.find(
     (card) => card.name === draggedElement.name
@@ -109,10 +111,10 @@ function onEnd(evt: any) {
 }
 
 const resetCards = () => {
-  [...list1.value.list].forEach((element) => {
+  list1.value.list.forEach((element) => {
     element.matched = false;
   });
-  [...list2.value.list].forEach((element) => {
+  list2.value.list.forEach((element) => {
     element.matched = false;
   });
 };
