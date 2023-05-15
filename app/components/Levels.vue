@@ -1,6 +1,9 @@
 <script setup lang="ts">
+import { ref } from "vue";
 import useEventsBus from "@/utils/eventBus";
 import { LevelsProps } from "~/types/types";
+
+const { emit } = useEventsBus();
 
 const levels: LevelsProps[] = ["1", "2", "3"];
 
@@ -11,14 +14,13 @@ const props = defineProps({
   },
 });
 
-const handleClick = (e: Event) => {
-  const target = e.currentTarget as HTMLButtonElement;
+const selectedLevel = ref("1");
 
-  const levelsButton = document.querySelectorAll(".levels__item");
-  levelsButton.forEach((level) => {
-    level.classList.remove("active");
-  });
-  target.classList.add("active");
+const handleClick = (item: string) => {
+  selectedLevel.value = item;
+  emit("level", selectedLevel.value);
+
+  console.log(selectedLevel.value);
 };
 </script>
 
@@ -28,7 +30,11 @@ const handleClick = (e: Event) => {
       <p>Nível</p>
       <ul class="levels__items">
         <li v-for="(item, index) in levels" :key="index">
-          <button class="levels__button" @click="handleClick">
+          <button
+            class="levels__button"
+            :class="{ active: item === selectedLevel }"
+            @click="handleClick(item)"
+          >
             {{ item }}
           </button>
         </li>

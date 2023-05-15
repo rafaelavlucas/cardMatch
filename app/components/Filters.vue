@@ -15,16 +15,13 @@ const props = defineProps({
 const filters = ref(props.filters);
 
 const { emit } = useEventsBus();
-const cenas = defineEmits(["showAll"]);
 
-const handleClick = (e: Event) => {
+const selectedFilter = ref("Todos");
+
+const handleClick = (e: Event, item: string) => {
   const target = e.currentTarget as HTMLButtonElement;
   emit("filter", target.innerText);
-  const allFilters = document.querySelectorAll(".filters__item");
-  allFilters.forEach((filter) => {
-    filter.classList.remove("active");
-  });
-  target.classList.add("active");
+  selectedFilter.value = item;
 };
 </script>
 
@@ -32,10 +29,20 @@ const handleClick = (e: Event) => {
   <div class="wrapper">
     <ul class="filters">
       <li>
-        <button class="filters__item active" @click="handleClick">Todos</button>
+        <button
+          class="filters__item"
+          @click="(e) => handleClick(e, 'Todos')"
+          :class="{ active: 'Todos' === selectedFilter }"
+        >
+          Todos
+        </button>
       </li>
       <li v-for="(item, index) in filters" :key="index">
-        <button class="filters__item" @click="handleClick">
+        <button
+          class="filters__item"
+          @click="(e) => handleClick(e, item)"
+          :class="{ active: item === selectedFilter }"
+        >
           {{ item }}
         </button>
       </li>

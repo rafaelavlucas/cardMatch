@@ -119,12 +119,7 @@
     "genre": ["Floresta"],
     "letter": "P"
   },
-  {
-    "image": "/images/animals/crocodile.png",
-    "name": "Crocodilo",
-    "genre": ["Floresta"],
-    "letter": "C"
-  },
+
   {
     "image": "/images/animals/koala.png",
     "name": "Coala",
