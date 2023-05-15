@@ -32,6 +32,7 @@ const list2 = ref({
 const { bus } = useEventsBus();
 
 let isAllMatched = ref(false);
+const selectedLevelValue = ref("");
 
 watch(
   () => bus.value.get("filter"),
@@ -58,6 +59,14 @@ watch(
 
       resetCards();
     }
+  }
+);
+watch(
+  () => bus.value.get("level"),
+  ([clickedLevel]) => {
+    selectedLevelValue.value = clickedLevel;
+    console.log(selectedLevelValue);
+    reloadGame();
   }
 );
 
@@ -131,7 +140,7 @@ const reloadGame = () => {
 </script>
 
 <template>
-  <div :ref="'refReload'" class="cardGrid">
+  <div :ref="'refReload'" class="cardGrid" :level="selectedLevelValue">
     <Filters class="cardGrid__filters" :filters="filters" v-if="filters" />
     <div class="cardGrid__wrapper grid">
       <Reload
@@ -171,7 +180,7 @@ const reloadGame = () => {
           <Card
             :matched="element.matched"
             :card="element"
-            :data-level="level"
+            :data-level="selectedLevelValue"
             class="card--disabled"
           />
         </template>

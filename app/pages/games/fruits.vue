@@ -6,6 +6,6 @@ const filters: FiltersProps[] = ["Frutas", "Vegetais"];
 </script>
 
 <template>
-  <CardGrid :data="cardsDataFruits" :filters="filters" :level="'3'" />
+  <CardGrid :data="cardsDataFruits" :filters="filters" />
   <!-- <Test /> -->
 </template>

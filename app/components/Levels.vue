@@ -19,8 +19,6 @@ const selectedLevel = ref("1");
 const handleClick = (item: string) => {
   selectedLevel.value = item;
   emit("level", selectedLevel.value);
-
-  console.log(selectedLevel.value);
 };
 </script>
 
