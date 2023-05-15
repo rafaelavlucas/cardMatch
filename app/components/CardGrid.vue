@@ -13,6 +13,10 @@ const props = defineProps({
     type: Array as PropType<FiltersProps[]>,
     required: false,
   },
+  level: {
+    type: String,
+    required: false,
+  },
 });
 const cards = ref(props.data);
 
@@ -89,7 +93,7 @@ function onEnd(evt: any) {
   const findMatchFromList2 = list2.value.list.find(
     (card) => card.name === toElement
   );
-
+  console.log(toElement);
   if (
     findMatchFromList1?.name !== findMatchFromList2?.name ||
     evt.originalEvent.toElement.classList.contains("card--active")
@@ -165,11 +169,13 @@ const reloadGame = () => {
           <Card
             :matched="element.matched"
             :card="element"
+            :data-level="level"
             class="card--disabled"
           />
         </template>
       </draggable>
     </div>
+    <Levels class="cardGrid__levels" />
   </div>
 </template>
 
@@ -181,6 +187,10 @@ const reloadGame = () => {
   align-items: center;
   flex-direction: column;
   justify-content: center;
+
+  &[data-level="2"] {
+    background-color: red;
+  }
 
   &__wrapper {
     // margin-bottom: auto;

@@ -11,9 +11,11 @@ const props = defineProps({
 
 <template>
   <div class="card color-neu-10 bg-neu-01" :class="{ matched: card.matched }">
+    <span class="card__letter">{{ card.letter }}</span>
     <figure class="card__image">
-      <img class="ratio-1-1" :src="card.image" :alt="card.name" />
+      <img :src="card.image" :alt="card.name" />
     </figure>
+
     <p class="card__name">{{ card.name }}</p>
   </div>
 </template>
@@ -50,6 +52,8 @@ const props = defineProps({
     pointer-events: none;
     border-radius: clamp(0.1rem, 0.8vw, 0.5rem);
     overflow: hidden;
+    grid-row: 1;
+    grid-column: 1;
   }
 
   &__name {
@@ -62,10 +66,19 @@ const props = defineProps({
     align-self: end;
     word-break: break-word;
     hyphens: auto;
+    grid-row: 2;
+    grid-column: 1;
 
     @include mobile {
       font-size: clamp(0.5rem, 2.5vw, 2.5rem);
     }
+  }
+
+  &__letter {
+    display: none;
+    pointer-events: none;
+    grid-column: 1;
+    grid-row: 1;
   }
 
   &--active {
@@ -119,6 +132,30 @@ const props = defineProps({
       }
     }
 
+    &[data-level="2"] {
+      #{$this} {
+        &__image {
+          filter: contrast(0%);
+        }
+      }
+    }
+
+    &[data-level="3"] {
+      #{$this} {
+        &__image {
+          visibility: hidden;
+        }
+        &__letter {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          font-weight: bold;
+          font-size: 4vw;
+        }
+      }
+    }
+
     &.matched {
       opacity: 1;
       filter: none;
@@ -149,6 +186,7 @@ const props = defineProps({
       #{$this} {
         &__image {
           opacity: 1;
+          filter: contrast(100%);
         }
 
         &__name {
@@ -173,9 +211,5 @@ const props = defineProps({
       }
     }
   }
-
-  //faz no css para teres list1 e mete este matched la dentro
-
-  //faz no css para teres list2 e mete este matched la dentro
 }
 </style>

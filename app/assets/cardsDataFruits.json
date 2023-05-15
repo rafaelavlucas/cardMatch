@@ -2,96 +2,319 @@
   {
     "image": "/images/fruits/apple.png",
     "name": "Maçã",
-    "genre": ["Frutas"]
+    "genre": ["Frutas"],
+    "letter": "M"
   },
   {
     "image": "/images/fruits/apricot3.png",
     "name": "Alperce",
-    "genre": ["Frutas"]
+    "genre": ["Frutas"],
+    "letter": "A"
   },
   {
     "image": "/images/fruits/aspargus.png",
     "name": "Espargos",
-    "genre": ["Vegetais"]
+    "genre": ["Vegetais"],
+    "letter": "E"
   },
   {
     "image": "/images/fruits/avocado.png",
     "name": "Abacate",
-    "genre": ["Frutas"]
+    "genre": ["Frutas"],
+    "letter": "A"
   },
   {
     "image": "/images/fruits/banana.png",
     "name": "Banana",
-    "genre": ["Frutas"]
+    "genre": ["Frutas"],
+    "letter": "B"
   },
   {
     "image": "/images/fruits/beetroot.png",
     "name": "Beterraba",
-    "genre": ["Vegetais"]
+    "genre": ["Vegetais"],
+    "letter": "B"
   },
   {
     "image": "/images/fruits/blackberries.png",
     "name": "Amoras",
-    "genre": ["Frutas"]
+    "genre": ["Frutas"],
+    "letter": "A"
   },
   {
     "image": "/images/fruits/blueberries.png",
     "name": "Mirtilos",
-    "genre": ["Frutas"]
+    "genre": ["Frutas"],
+    "letter": "M"
   },
   {
     "image": "/images/fruits/broccoli.png",
     "name": "Bróculos",
-    "genre": ["Vegetais"]
+    "genre": ["Vegetais"],
+    "letter": "B"
   },
   {
     "image": "/images/fruits/cabage.png",
     "name": "Couve",
-    "genre": ["Vegetais"]
+    "genre": ["Vegetais"],
+    "letter": "C"
   },
   {
     "image": "/images/fruits/carrot.png",
     "name": "Cenoura",
-    "genre": ["Vegetais"]
+    "genre": ["Vegetais"],
+    "letter": "C"
   },
   {
     "image": "/images/fruits/cherries.png",
     "name": "Cerejas",
-    "genre": ["Frutas"]
+    "genre": ["Frutas"],
+    "letter": "C"
   },
   {
     "image": "/images/fruits/chilli.png",
     "name": "Malagueta",
-    "genre": ["Vegetais"]
+    "genre": ["Vegetais"],
+    "letter": "M"
   },
   {
     "image": "/images/fruits/cilantro.png",
     "name": "Coentros",
-    "genre": ["Vegetais"]
+    "genre": ["Vegetais"],
+    "letter": "C"
   },
   {
     "image": "/images/fruits/coconut.png",
     "name": "Côco",
-    "genre": ["Frutas"]
+    "genre": ["Frutas"],
+    "letter": "C"
   },
   {
     "image": "/images/fruits/colliflower.png",
     "name": "Couve-flor",
-    "genre": ["Vegetais"]
+    "genre": ["Vegetais"],
+    "letter": "C"
   },
   {
     "image": "/images/fruits/corn.png",
     "name": "Milho",
-    "genre": ["Vegetais"]
+    "genre": ["Vegetais"],
+    "letter": "M"
   },
   {
     "image": "/images/fruits/cucumber.png",
     "name": "Pepino",
-    "genre": ["Vegetais"]
+    "genre": ["Vegetais"],
+    "letter": "P"
   },
   {
     "image": "/images/fruits/eggplant.png",
     "name": "Beringela",
-    "genre": ["Vegetais"]
+    "genre": ["Vegetais"],
+    "letter": "B"
+  },
+  {
+    "image": "/images/fruits/fig3.png",
+    "name": "Figo",
+    "genre": ["Frutas"],
+    "letter": "F"
+  },
+  {
+    "image": "/images/fruits/garlic.png",
+    "name": "Alho",
+    "genre": ["Vegetais"],
+    "letter": "A"
+  },
+  {
+    "image": "/images/fruits/grapefruit.png",
+    "name": "Toranja",
+    "genre": ["Frutas"],
+    "letter": "T"
+  },
+  {
+    "image": "/images/fruits/grapes.png",
+    "name": "Uvas",
+    "genre": ["Frutas"],
+    "letter": "U"
+  },
+  {
+    "image": "/images/fruits/greenbeans.png",
+    "name": "Feijão Verde",
+    "genre": ["Vegetais"],
+    "letter": "F"
+  },
+  {
+    "image": "/images/fruits/kiwi3.png",
+    "name": "Kiwi",
+    "genre": ["Frutas"],
+    "letter": "K"
+  },
+  {
+    "image": "/images/fruits/lemon.png",
+    "name": "Limão",
+    "genre": ["Frutas"],
+    "letter": "L"
+  },
+  {
+    "image": "/images/fruits/Lettuce.png",
+    "name": "Alface",
+    "genre": ["Vegetais"],
+    "letter": "A"
+  },
+  {
+    "image": "/images/fruits/lime.png",
+    "name": "Lima",
+    "genre": ["Frutas"],
+    "letter": "L"
+  },
+  {
+    "image": "/images/fruits/lychee.png",
+    "name": "Lichia",
+    "genre": ["Frutas"],
+    "letter": "L"
+  },
+  {
+    "image": "/images/fruits/mango.png",
+    "name": "Manga",
+    "genre": ["Frutas"],
+    "letter": "M"
+  },
+  {
+    "image": "/images/fruits/melon.png",
+    "name": "Melão",
+    "genre": ["Frutas"],
+    "letter": "M"
+  },
+  {
+    "image": "/images/fruits/mushroom.png",
+    "name": "Cogumelo",
+    "genre": ["Vegetais"],
+    "letter": "C"
+  },
+  {
+    "image": "/images/fruits/nectarine.png",
+    "name": "Nectarina",
+    "genre": ["Frutas"],
+    "letter": "N"
+  },
+  {
+    "image": "/images/fruits/onion.png",
+    "name": "Cebola",
+    "genre": ["Vegetais"],
+    "letter": "M"
+  },
+  {
+    "image": "/images/fruits/orange3.png",
+    "name": "Laranja",
+    "genre": ["Frutas"],
+    "letter": "C"
+  },
+  {
+    "image": "/images/fruits/papaya.png",
+    "name": "Papaia",
+    "genre": ["Frutas"],
+    "letter": "P"
+  },
+  {
+    "image": "/images/fruits/passionfruit3.png",
+    "name": "Maracujá",
+    "genre": ["Frutas"],
+    "letter": "M"
+  },
+  {
+    "image": "/images/fruits/peach.png",
+    "name": "Pêssego",
+    "genre": ["Frutas"],
+    "letter": "P"
+  },
+  {
+    "image": "/images/fruits/pear.png",
+    "name": "Pêra",
+    "genre": ["Frutas"],
+    "letter": "P"
+  },
+  {
+    "image": "/images/fruits/peas.png",
+    "name": "Ervilhas",
+    "genre": ["Vegetais"],
+    "letter": "E"
+  },
+  {
+    "image": "/images/fruits/pepper.png",
+    "name": "Pimento",
+    "genre": ["Vegetais"],
+    "letter": "P"
+  },
+  {
+    "image": "/images/fruits/pineapple.png",
+    "name": "Ananás",
+    "genre": ["Frutas"],
+    "letter": "A"
+  },
+  {
+    "image": "/images/fruits/plum3.png",
+    "name": "Ameixa",
+    "genre": ["Frutas"],
+    "letter": "A"
+  },
+  {
+    "image": "/images/fruits/pommegranate3.png",
+    "name": "Romã",
+    "genre": ["Frutas"],
+    "letter": "R"
+  },
+  {
+    "image": "/images/fruits/potato.png",
+    "name": "Batata",
+    "genre": ["Vegetais"],
+    "letter": "B"
+  },
+  {
+    "image": "/images/fruits/pumpkin.png",
+    "name": "Abóbora",
+    "genre": ["Vegetais"],
+    "letter": "A"
+  },
+  {
+    "image": "/images/fruits/radish.png",
+    "name": "Nabo",
+    "genre": ["Vegetais"],
+    "letter": "N"
+  },
+  {
+    "image": "/images/fruits/raspberries.png",
+    "name": "Framboesas",
+    "genre": ["Frutas"],
+    "letter": "F"
+  },
+  {
+    "image": "/images/fruits/coconut.png",
+    "name": "Morango",
+    "genre": ["Frutas"],
+    "letter": "M"
+  },
+  {
+    "image": "/images/fruits/sweetpotato.png",
+    "name": "Batata doce",
+    "genre": ["Vegetais"],
+    "letter": "B"
+  },
+  {
+    "image": "/images/fruits/tomato.png",
+    "name": "Tomate",
+    "genre": ["Vegetais"],
+    "letter": "T"
+  },
+  {
+    "image": "/images/fruits/watermelon.png",
+    "name": "Melância",
+    "genre": ["Frutas"],
+    "letter": "M"
+  },
+  {
+    "image": "/images/fruits/zuchini.png",
+    "name": "Courgete",
+    "genre": ["Vegetais"],
+    "letter": "C"
   }
 ]

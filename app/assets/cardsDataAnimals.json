@@ -2,346 +2,413 @@
   {
     "image": "/images/animals/lion.png",
     "name": "Leão",
-    "genre": ["Floresta"]
+    "genre": ["Floresta"],
+    "letter": "L"
   },
   {
     "image": "/images/animals/elephant.png",
     "name": "Elefante",
-    "genre": ["Floresta"]
+    "genre": ["Floresta"],
+    "letter": "E"
   },
   {
     "image": "/images/animals/giraffe.png",
     "name": "Girafa",
-    "genre": ["Floresta"]
+    "genre": ["Floresta"],
+    "letter": "G"
   },
   {
     "image": "/images/animals/hippo.png",
     "name": "Hipópotamo",
-    "genre": ["Floresta"]
+    "genre": ["Floresta"],
+    "letter": "H"
   },
   {
     "image": "/images/animals/tiger.png",
     "name": "Tigre",
-    "genre": ["Floresta"]
+    "genre": ["Floresta"],
+    "letter": "T"
   },
   {
     "image": "/images/animals/zebra.png",
     "name": "Zebra",
-    "genre": ["Floresta"]
+    "genre": ["Floresta"],
+    "letter": "Z"
   },
   {
     "image": "/images/animals/gorila2.png",
     "name": "Gorila",
-    "genre": ["Floresta"]
+    "genre": ["Floresta"],
+    "letter": "G"
   },
   {
     "image": "/images/animals/chimp.png",
     "name": "Chimpanzé",
-    "genre": ["Floresta"]
+    "genre": ["Floresta"],
+    "letter": "C"
   },
   {
     "image": "/images/animals/bear.png",
     "name": "Urso",
-    "genre": ["Floresta"]
+    "genre": ["Floresta"],
+    "letter": "U"
   },
   {
     "image": "/images/animals/leopard.png",
     "name": "Leopardo",
-    "genre": ["Floresta"]
+    "genre": ["Floresta"],
+    "letter": "L"
   },
   {
     "image": "/images/animals/deer.png",
     "name": "Veado",
-    "genre": ["Floresta"]
+    "genre": ["Floresta"],
+    "letter": "V"
   },
   {
     "image": "/images/animals/panther.png",
     "name": "Pantera",
-    "genre": ["Floresta"]
+    "genre": ["Floresta"],
+    "letter": "P"
   },
   {
     "image": "/images/animals/rhino.png",
     "name": "Rinoceronte",
-    "genre": ["Floresta"]
+    "genre": ["Floresta"],
+    "letter": "R"
   },
   {
     "image": "/images/animals/panda.png",
     "name": "Panda",
-    "genre": ["Floresta"]
+    "genre": ["Floresta"],
+    "letter": "P"
   },
   {
     "image": "/images/animals/frog.png",
     "name": "Sapo",
-    "genre": ["Floresta"]
+    "genre": ["Floresta"],
+    "letter": "S"
   },
   {
     "image": "/images/animals/lizzard.png",
     "name": "Lagarto",
-    "genre": ["Floresta"]
+    "genre": ["Floresta"],
+    "letter": "L"
   },
   {
     "image": "/images/animals/chameleon.png",
     "name": "Camaleão",
-    "genre": ["Floresta"]
+    "genre": ["Floresta"],
+    "letter": "C"
   },
   {
     "image": "/images/animals/crocodile.png",
     "name": "Crocodilo",
-    "genre": ["Floresta"]
+    "genre": ["Floresta"],
+    "letter": "C"
   },
   {
     "image": "/images/animals/squirrel.png",
     "name": "Esquilo",
-    "genre": ["Floresta"]
+    "genre": ["Floresta"],
+    "letter": "E"
   },
   {
     "image": "/images/animals/sloth.png",
     "name": "Preguiça",
-    "genre": ["Floresta"]
+    "genre": ["Floresta"],
+    "letter": "P"
   },
   {
     "image": "/images/animals/crocodile.png",
     "name": "Crocodilo",
-    "genre": ["Floresta"]
+    "genre": ["Floresta"],
+    "letter": "C"
   },
   {
     "image": "/images/animals/koala.png",
     "name": "Coala",
-    "genre": ["Floresta"]
+    "genre": ["Floresta"],
+    "letter": "C"
   },
   {
     "image": "/images/animals/kangaroo.png",
     "name": "Canguru",
-    "genre": ["Floresta"]
+    "genre": ["Floresta"],
+    "letter": "C"
   },
   {
     "image": "/images/animals/crocodile.png",
     "name": "Crocodilo",
-    "genre": ["Floresta"]
+    "genre": ["Floresta"],
+    "letter": "C"
   },
   {
     "image": "/images/animals/racoon.png",
     "name": "Texugo",
-    "genre": ["Floresta"]
+    "genre": ["Floresta"],
+    "letter": "T"
   },
   {
     "image": "/images/animals/fox.png",
     "name": "Raposa",
-    "genre": ["Floresta"]
+    "genre": ["Floresta"],
+    "letter": "R"
   },
   {
     "image": "/images/animals/hedgehog.png",
     "name": "Porco espinho",
-    "genre": ["Floresta"]
+    "genre": ["Floresta"],
+    "letter": "P"
   },
   {
     "image": "/images/animals/owl.png",
     "name": "Mocho",
-    "genre": ["Floresta", "Aves"]
+    "genre": ["Floresta", "Aves"],
+    "letter": "M"
   },
   {
     "image": "/images/animals/owl2.png",
     "name": "Coruja",
-    "genre": ["Floresta", "Aves"]
+    "genre": ["Floresta", "Aves"],
+    "letter": "C"
   },
 
   {
     "image": "/images/animals/sheep.png",
     "name": "Ovelha",
-    "genre": ["Quinta"]
+    "genre": ["Quinta"],
+    "letter": "O"
   },
   {
     "image": "/images/animals/pig.png",
     "name": "Porco",
-    "genre": ["Quinta"]
+    "genre": ["Quinta"],
+    "letter": "P"
   },
   {
     "image": "/images/animals/donkey.png",
     "name": "Burro",
-    "genre": ["Quinta"]
+    "genre": ["Quinta"],
+    "letter": "B"
   },
   {
     "image": "/images/animals/cow.png",
     "name": "Vaca",
-    "genre": ["Quinta"]
+    "genre": ["Quinta"],
+    "letter": "V"
   },
 
   {
     "image": "/images/animals/horse.png",
     "name": "Cavalo",
-    "genre": ["Quinta"]
+    "genre": ["Quinta"],
+    "letter": "C"
   },
 
   {
     "image": "/images/animals/goat.png",
     "name": "Cabra",
-    "genre": ["Quinta"]
+    "genre": ["Quinta"],
+    "letter": "C"
   },
   {
     "image": "/images/animals/rabbit.png",
     "name": "Coelho",
-    "genre": ["Quinta"]
+    "genre": ["Quinta"],
+    "letter": "C"
   },
   {
     "image": "/images/animals/cat.png",
     "name": "Gato",
-    "genre": ["Quinta"]
+    "genre": ["Quinta"],
+    "letter": "G"
   },
 
   {
     "image": "/images/animals/dog.png",
     "name": "Cão",
-    "genre": ["Quinta"]
+    "genre": ["Quinta"],
+    "letter": "C"
   },
   {
     "image": "/images/animals/duck.png",
     "name": "Pato",
-    "genre": ["Quinta", "Aves"]
+    "genre": ["Quinta", "Aves"],
+    "letter": "P"
   },
   {
     "image": "/images/animals/turkey.png",
     "name": "Perú",
-    "genre": ["Quinta", "Aves"]
+    "genre": ["Quinta", "Aves"],
+    "letter": "P"
   },
   {
     "image": "/images/animals/chicken.png",
     "name": "Galinha",
-    "genre": ["Quinta", "Aves"]
+    "genre": ["Quinta", "Aves"],
+    "letter": "G"
   },
   {
     "image": "/images/animals/rooster.png",
     "name": "Galo",
-    "genre": ["Quinta", "Aves"]
+    "genre": ["Quinta", "Aves"],
+    "letter": "G"
   },
 
   {
     "image": "/images/animals/babychicken.png",
     "name": "Pintainho",
-    "genre": ["Quinta", "Aves"]
+    "genre": ["Quinta", "Aves"],
+    "letter": "P"
   },
 
   {
     "image": "/images/animals/pelican.png",
     "name": "Pelicano",
-    "genre": ["Aves"]
+    "genre": ["Aves"],
+    "letter": "P"
   },
 
   {
     "image": "/images/animals/swan.png",
     "name": "Cisne",
-    "genre": ["Aves"]
+    "genre": ["Aves"],
+    "letter": "C"
   },
   {
     "image": "/images/animals/crow.png",
     "name": "Corvo",
-    "genre": ["Aves"]
+    "genre": ["Aves"],
+    "letter": "C"
   },
   {
     "image": "/images/animals/goose.png",
     "name": "Ganso",
-    "genre": ["Aves"]
+    "genre": ["Aves"],
+    "letter": "G"
   },
   {
     "image": "/images/animals/peacock.png",
     "name": "Pavão",
-    "genre": ["Aves"]
+    "genre": ["Aves"],
+    "letter": "P"
   },
   {
     "image": "/images/animals/parrot.png",
     "name": "Papagaio",
-    "genre": ["Aves"]
+    "genre": ["Aves"],
+    "letter": "P"
   },
 
   {
     "image": "/images/animals/flamingo.png",
     "name": "Flamingo",
-    "genre": ["Aves"]
+    "genre": ["Aves"],
+    "letter": "F"
   },
   {
     "image": "/images/animals/tucan.png",
     "name": "Tucano",
-    "genre": ["Aves"]
+    "genre": ["Aves"],
+    "letter": "T"
   },
   {
     "image": "/images/animals/pigeon.png",
     "name": "Pomba",
-    "genre": ["Aves"]
+    "genre": ["Aves"],
+    "letter": "P"
   },
   {
     "image": "/images/animals/seagull.png",
     "name": "Gaivota",
-    "genre": ["Aves"]
+    "genre": ["Aves"],
+    "letter": "G"
   },
 
   {
     "image": "/images/animals/orca2.png",
     "name": "Orca",
-    "genre": ["Oceano"]
+    "genre": ["Oceano"],
+    "letter": "O"
   },
   {
     "image": "/images/animals/whale.png",
     "name": "Baleia",
-    "genre": ["Oceano"]
+    "genre": ["Oceano"],
+    "letter": "B"
   },
   {
     "image": "/images/animals/dolphin.png",
     "name": "Golfinho",
-    "genre": ["Oceano"]
+    "genre": ["Oceano"],
+    "letter": "G"
   },
   {
     "image": "/images/animals/octopus.png",
     "name": "Polvo",
-    "genre": ["Oceano"]
+    "genre": ["Oceano"],
+    "letter": "P"
   },
 
   {
     "image": "/images/animals/seal.png",
     "name": "Foca",
-    "genre": ["Oceano"]
+    "genre": ["Oceano"],
+    "letter": "F"
   },
   {
     "image": "/images/animals/sealion.png",
     "name": "Leão Marinho",
-    "genre": ["Oceano"]
+    "genre": ["Oceano"],
+    "letter": "L"
   },
   {
     "image": "/images/animals/turtle.png",
     "name": "Tartaruga",
-    "genre": ["Oceano"]
+    "genre": ["Oceano"],
+    "letter": "T"
   },
   {
     "image": "/images/animals/goldfish.png",
     "name": "Peixe",
-    "genre": ["Oceano"]
+    "genre": ["Oceano"],
+    "letter": "P"
   },
   {
     "image": "/images/animals/seahorse.png",
     "name": "Cavalo Marinho",
-    "genre": ["Oceano"]
+    "genre": ["Oceano"],
+    "letter": "C"
   },
   {
     "image": "/images/animals/jellyfish.png",
     "name": "Alforreca",
-    "genre": ["Oceano"]
+    "genre": ["Oceano"],
+    "letter": "A"
   },
   {
     "image": "/images/animals/shark.png",
     "name": "Tubarão",
-    "genre": ["Oceano"]
+    "genre": ["Oceano"],
+    "letter": "T"
   },
   {
     "image": "/images/animals/ray.png",
     "name": "Raia",
-    "genre": ["Oceano"]
+    "genre": ["Oceano"],
+    "letter": "R"
   },
   {
     "image": "/images/animals/otter.png",
     "name": "Lontra",
-    "genre": ["Oceano"]
+    "genre": ["Oceano"],
+    "letter": "L"
   },
   {
     "image": "/images/animals/penguin.png",
     "name": "Pinguim",
-    "genre": ["Oceano"]
+    "genre": ["Oceano"],
+    "letter": "P"
   }
 ]
