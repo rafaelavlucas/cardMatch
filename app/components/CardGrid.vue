@@ -85,8 +85,8 @@ const loadCards = () => {
 function onEnd(evt: any) {
   const draggedElement = evt.item.__draggable_context.element;
 
-  const toElement = evt.originalEvent.toElement.__draggable_context.element;
-
+  const toElement = evt.originalEvent.toElement.__draggable_context?.element;
+  console.log(toElement);
   if (!toElement) return;
   const findMatchFromList1 = list1.value.list.find(
     (card) => card.name === draggedElement.name
