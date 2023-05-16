@@ -27,7 +27,9 @@ const props = defineProps({
   $this: &;
   display: grid;
   grid-template-rows: 1fr clamp(0.5rem, 3.5vw, 3.5rem);
-  padding: clamp(0.5rem, 1vw, 1rem);
+
+  // padding: clamp(0.5rem, 1vw, 1rem);
+  padding: 10%;
   isolation: isolate;
   position: relative;
   user-select: none;
@@ -37,18 +39,19 @@ const props = defineProps({
     grid-template-rows: 1fr clamp(1rem, 3.5vw, 3.5rem);
   }
 
-  &:before {
-    content: "";
-    width: 100%;
-    height: 100%;
-    background-color: red;
-    position: absolute;
-    border-radius: inherit;
-    z-index: -1;
-    opacity: 0;
-  }
+  // &:before {
+  //   content: "";
+  //   width: 100%;
+  //   height: 100%;
+  //   background-color: red;
+  //   position: absolute;
+  //   border-radius: inherit;
+  //   z-index: -1;
+  //   opacity: 0;
+  // }
 
   &__image {
+    transition: transform 0.3s ease;
     pointer-events: none;
     border-radius: clamp(0.1rem, 0.8vw, 0.5rem);
     overflow: hidden;
@@ -57,6 +60,7 @@ const props = defineProps({
   }
 
   &__name {
+    transition: all 0.3s ease;
     pointer-events: none;
     text-align: center;
     // padding-top: max(0.5rem, 1.5vw);
@@ -75,10 +79,12 @@ const props = defineProps({
   }
 
   &__letter {
+    transition: all 0.3s ease;
     display: none;
     pointer-events: none;
     grid-column: 1;
     grid-row: 1;
+    z-index: 1;
   }
 
   &--active {
@@ -131,31 +137,6 @@ const props = defineProps({
         opacity: 0.4;
       }
     }
-
-    &[data-level="2"] {
-      #{$this} {
-        &__image {
-          filter: contrast(0%);
-        }
-      }
-    }
-
-    &[data-level="3"] {
-      #{$this} {
-        &__image {
-          visibility: hidden;
-        }
-        &__letter {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-
-          font-weight: bold;
-          font-size: 4vw;
-        }
-      }
-    }
-
     &.matched {
       opacity: 1;
       filter: none;
@@ -186,7 +167,6 @@ const props = defineProps({
       #{$this} {
         &__image {
           opacity: 1;
-          filter: contrast(100%);
         }
 
         &__name {
@@ -207,6 +187,68 @@ const props = defineProps({
           border: 2px solid rgb(var(--add-01));
           box-shadow: none;
           z-index: 3;
+        }
+      }
+    }
+
+    &[data-level="2"] {
+      #{$this} {
+        &__image {
+          filter: contrast(0%);
+        }
+      }
+      &.matched {
+        #{$this} {
+          &__image {
+            filter: contrast(100%);
+          }
+        }
+      }
+    }
+
+    &[data-level="3"] {
+      #{$this} {
+        &__image {
+          visibility: hidden;
+        }
+        &__letter {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          font-weight: bold;
+          font-size: 5vw;
+          @include mobile {
+            font-size: 10vw;
+          }
+        }
+      }
+
+      &.matched {
+        #{$this} {
+          &__image {
+            visibility: visible;
+            transform: scale(0.7);
+            top: -16%;
+            @include mobile {
+              transform: scale(0.6);
+              top: -20%;
+            }
+          }
+
+          &__letter {
+            // color: white;
+            // background-color: rgba(var(--neu-01), 0.5);
+            // border-radius: 50%;
+            // transform: scale(0.5);
+            font-size: 3vw;
+            bottom: -8%;
+            align-self: end;
+            @include mobile {
+              font-size: 6vw;
+              bottom: 0%;
+            }
+          }
         }
       }
     }
