@@ -23,19 +23,16 @@ const categories = ref<CategoriesProps[]>([
 ]);
 
 const selectedCategory = ref<CategoriesProps | null>(null);
-const selectedLevel = ref(1);
+const selectedLevel = ref("1");
 
 const selectCategory = (category: CategoriesProps) => {
   selectedCategory.value = category;
-  console.log(category);
 };
 
 watch(
   () => bus.value.get("level"),
   ([clickedLevel]) => {
     selectedLevel.value = clickedLevel;
-
-    console.log();
   }
 );
 </script>

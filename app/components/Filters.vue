@@ -12,14 +12,13 @@ const props = defineProps({
   },
 });
 
-const filters = ref(props.filters);
-
 const { emit } = useEventsBus();
 
+const filters = ref(props.filters);
 const selectedFilter = ref("Todos");
 
-const handleClick = (e: Event, item: string) => {
-  const target = e.currentTarget as HTMLButtonElement;
+const handleClick = ({ currentTarget }: Event, item: string) => {
+  const target = currentTarget as HTMLButtonElement;
   emit("filter", target.innerText);
   selectedFilter.value = item;
 };

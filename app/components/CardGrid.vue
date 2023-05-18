@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import draggable from "vuedraggable";
 import useEventsBus from "@/utils/eventBus";
-import { reactive, watchEffect, ref } from "vue";
+import { ref } from "vue";
 import { DataProps, FiltersProps } from "~/types/types";
 
 const props = defineProps({
@@ -19,10 +19,10 @@ const props = defineProps({
   },
 });
 
-const route = useRoute();
-const selectedLevel = ref(route.query.level || "1");
-
+const { query } = useRoute();
 const { bus } = useEventsBus();
+
+const selectedLevel = ref(query.level || "1");
 
 const cards = ref(props.data);
 
@@ -34,48 +34,7 @@ const list2 = ref({
   list: [...cards.value],
   dragging: false,
 });
-
-let isAllMatched = ref(false);
-
-watch(
-  () => bus.value.get("filter"),
-  ([clickedFilter]) => {
-    if (clickedFilter === "Todos") {
-      loadCards();
-      resetCards();
-    } else {
-      const newCards = [...cards.value];
-      const filteredCards = computed(() =>
-        newCards.filter((card) => card.genre.includes(clickedFilter))
-      );
-
-      const randomCards = filteredCards.value
-        .sort(() => Math.random() - Math.random())
-        .slice(0, 6);
-
-      const list2Random = [...randomCards].sort(
-        () => Math.random() - Math.random()
-      );
-
-      list1.value.list = randomCards;
-      list2.value.list = list2Random;
-
-      resetCards();
-    }
-  }
-);
-watch(
-  () => bus.value.get("level"),
-  ([clickedLevel]) => {
-    selectedLevel.value = clickedLevel;
-
-    reloadGame();
-  }
-);
-
-onMounted(() => {
-  loadCards();
-});
+const isAllMatched = ref(false);
 
 const loadCards = () => {
   isAllMatched.value = false;
@@ -94,20 +53,20 @@ const loadCards = () => {
   list2.value.list = list2Random;
 };
 
-function onEnd(evt: any) {
+const onEnd = (evt: any) => {
   const draggedElement = evt.item.__draggable_context.element;
 
   const toElement = evt.originalEvent.toElement.__draggable_context?.element;
-  console.log(toElement);
+
   if (!toElement) return;
+
   const findMatchFromList1 = list1.value.list.find(
     (card) => card.name === draggedElement.name
   );
-
   const findMatchFromList2 = list2.value.list.find(
     (card) => card.name === toElement.name
   );
-  console.log(toElement);
+
   if (
     findMatchFromList1?.name !== findMatchFromList2?.name ||
     evt.originalEvent.toElement.classList.contains("card--active")
@@ -119,13 +78,14 @@ function onEnd(evt: any) {
   const areAllCardsMatched = (list: any[]) => {
     return list.every((card) => card.matched);
   };
+
   const allCardsInList1Matched = areAllCardsMatched(list1.value.list);
 
   if (allCardsInList1Matched) {
     console.log("YAY");
     isAllMatched.value = true;
   }
-}
+};
 
 const resetCards = () => {
   list1.value.list.forEach((element) => {
@@ -140,6 +100,50 @@ const reloadGame = () => {
   loadCards();
   resetCards();
 };
+
+const handleFilters = (clickedFilter: FiltersProps) => {
+  if (clickedFilter === "Todos") {
+    loadCards();
+    resetCards();
+  } else {
+    const newCards = [...cards.value];
+    const filteredCards = computed(() =>
+      newCards.filter((card) => card.genre.includes(clickedFilter))
+    );
+
+    const randomCards = filteredCards.value
+      .sort(() => Math.random() - Math.random())
+      .slice(0, 6);
+
+    const list2Random = [...randomCards].sort(
+      () => Math.random() - Math.random()
+    );
+
+    list1.value.list = randomCards;
+    list2.value.list = list2Random;
+
+    resetCards();
+  }
+};
+
+watch(
+  () => bus.value.get("filter"),
+  ([clickedFilter]: [clickedFilter: FiltersProps]) => {
+    handleFilters(clickedFilter);
+  }
+);
+watch(
+  () => bus.value.get("level"),
+  ([clickedLevel]) => {
+    selectedLevel.value = clickedLevel;
+
+    reloadGame();
+  }
+);
+
+onMounted(() => {
+  loadCards();
+});
 </script>
 
 <template>

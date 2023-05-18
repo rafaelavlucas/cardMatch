@@ -4,10 +4,6 @@ import useEventsBus from "@/utils/eventBus";
 import { LevelsProps } from "~/types/types";
 import { useRouter } from "vue-router";
 
-const { emit } = useEventsBus();
-
-const levels: LevelsProps[] = ["1", "2", "3"];
-
 const props = defineProps({
   levels: {
     type: String,
@@ -17,21 +13,24 @@ const props = defineProps({
 
 const route = useRoute();
 const router = useRouter();
+const { emit } = useEventsBus();
+
 const selectedLevel = ref(route.query.level || "1");
+const levels: LevelsProps[] = ["1", "2", "3"];
 
-console.log(router);
+const handleClick = (level: LevelsProps) => {
+  selectedLevel.value = level;
 
-const handleClick = (item: string) => {
-  selectedLevel.value = item;
   emit("level", selectedLevel.value);
-  if (route.query.level) {
-    router.push({
-      path: route.path,
-      query: {
-        level: selectedLevel.value,
-      },
-    });
-  }
+
+  if (!route.query.level) return;
+
+  router.push({
+    path: route.path,
+    query: {
+      level: selectedLevel.value,
+    },
+  });
 };
 </script>
 
