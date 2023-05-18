@@ -1,9 +1,13 @@
 <script setup lang="ts">
+import useEventsBus from "@/utils/eventBus";
+
 interface CategoriesProps {
   title: string;
   img: string;
   link: string;
 }
+
+const { bus } = useEventsBus();
 
 const categories = ref<CategoriesProps[]>([
   {
@@ -16,31 +20,48 @@ const categories = ref<CategoriesProps[]>([
     img: "/images/categories/fruits3.png",
     link: "/games/fruits",
   },
-  // {
-  //   title: "Objectos",
-  //   img: "/images/categories/animals4.jpg",
-  //   link: "",
-  // },
-  // {
-  //   title: "Veículos",
-  //   img: "/images/categories/animals4.jpg",
-  //   link: "",
-  // },
 ]);
+
+const selectedCategory = ref<CategoriesProps | null>(null);
+const selectedLevel = ref(1);
+
+const selectCategory = (category: CategoriesProps) => {
+  selectedCategory.value = category;
+  console.log(category);
+};
+
+watch(
+  () => bus.value.get("level"),
+  ([clickedLevel]) => {
+    selectedLevel.value = clickedLevel;
+
+    console.log();
+  }
+);
 </script>
 
 <template>
   <div class="wrapper">
     <ul class="categories">
-      <li v-for="(item, index) in categories" :key="index">
-        <NuxtLink :to="item.link" class="categories__item">
+      <li v-for="(category, index) in categories" :key="index">
+        <div
+          class="categories__item"
+          @click="selectCategory(category)"
+          :class="{ active: category === selectedCategory }"
+        >
           <figure class="categories__img">
-            <img :src="item.img" :alt="item.title" />
+            <img :src="category.img" :alt="category.title" />
           </figure>
-          <h4 class="categories__title">{{ item.title }}</h4>
-        </NuxtLink>
+          <h4 class="categories__title">{{ category.title }}</h4>
+        </div>
       </li>
     </ul>
+    <Levels class="cardGrid__levels" />
+    <NuxtLink
+      v-if="selectedCategory"
+      :to="{ path: selectedCategory.link, query: { level: selectedLevel } }"
+      >Jogar</NuxtLink
+    >
   </div>
 </template>
 
@@ -78,6 +99,10 @@ const categories = ref<CategoriesProps[]>([
     &:hover {
       transform: scale(1.05);
       box-shadow: 0px 1rem 2.5rem -1rem rgb(var(--neu-05));
+    }
+
+    &.active {
+      border: 2px solid red;
     }
   }
 

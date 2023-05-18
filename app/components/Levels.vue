@@ -2,6 +2,7 @@
 import { ref } from "vue";
 import useEventsBus from "@/utils/eventBus";
 import { LevelsProps } from "~/types/types";
+import { useRouter } from "vue-router";
 
 const { emit } = useEventsBus();
 
@@ -14,11 +15,23 @@ const props = defineProps({
   },
 });
 
-const selectedLevel = ref("1");
+const route = useRoute();
+const router = useRouter();
+const selectedLevel = ref(route.query.level || "1");
+
+console.log(router);
 
 const handleClick = (item: string) => {
   selectedLevel.value = item;
   emit("level", selectedLevel.value);
+  if (route.query.level) {
+    router.push({
+      path: route.path,
+      query: {
+        level: selectedLevel.value,
+      },
+    });
+  }
 };
 </script>
 
@@ -27,13 +40,13 @@ const handleClick = (item: string) => {
     <div class="levels">
       <h6 class="levels__text">Nível</h6>
       <ul class="levels__items">
-        <li v-for="(item, index) in levels" :key="index">
+        <li v-for="(level, index) in levels" :key="index">
           <button
             class="levels__button"
-            :class="{ active: item === selectedLevel }"
-            @click="handleClick(item)"
+            :class="{ active: level === selectedLevel }"
+            @click="handleClick(level)"
           >
-            {{ item }}
+            {{ level }}
           </button>
         </li>
       </ul>

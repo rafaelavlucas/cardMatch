@@ -18,6 +18,12 @@ const props = defineProps({
     required: false,
   },
 });
+
+const route = useRoute();
+const selectedLevel = ref(route.query.level || "1");
+
+const { bus } = useEventsBus();
+
 const cards = ref(props.data);
 
 const list1 = ref({
@@ -29,10 +35,7 @@ const list2 = ref({
   dragging: false,
 });
 
-const { bus } = useEventsBus();
-
 let isAllMatched = ref(false);
-const selectedLevelValue = ref("");
 
 watch(
   () => bus.value.get("filter"),
@@ -64,8 +67,8 @@ watch(
 watch(
   () => bus.value.get("level"),
   ([clickedLevel]) => {
-    selectedLevelValue.value = clickedLevel;
-    console.log(selectedLevelValue);
+    selectedLevel.value = clickedLevel;
+
     reloadGame();
   }
 );
@@ -140,7 +143,7 @@ const reloadGame = () => {
 </script>
 
 <template>
-  <div :ref="'refReload'" class="cardGrid" :level="selectedLevelValue">
+  <div :ref="'refReload'" class="cardGrid" :level="selectedLevel">
     <Filters class="cardGrid__filters" :filters="filters" v-if="filters" />
     <div class="cardGrid__wrapper grid">
       <Reload
@@ -180,7 +183,7 @@ const reloadGame = () => {
           <Card
             :matched="element.matched"
             :card="element"
-            :data-level="selectedLevelValue"
+            :data-level="selectedLevel"
             class="card--disabled"
           />
         </template>
@@ -194,6 +197,7 @@ const reloadGame = () => {
 @use "assets/style/index" as *;
 .cardGrid {
   min-height: 90vh;
+  padding: $spc-40 0;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -227,7 +231,7 @@ const reloadGame = () => {
     border-radius: clamp(0.5rem, 2.5vw, 2.5rem);
 
     @include mobile {
-      gap: 2vw;
+      // gap: 2vw;
       padding: 4vw;
     }
   }

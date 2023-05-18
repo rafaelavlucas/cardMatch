@@ -65,6 +65,12 @@ const props = defineProps({
     overflow: hidden;
     grid-row: 1;
     grid-column: 1;
+    @include mobile {
+      img {
+        max-height: 60px;
+        object-fit: contain;
+      }
+    }
   }
 
   &__name {
