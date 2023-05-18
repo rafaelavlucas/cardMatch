@@ -8,12 +8,12 @@ interface CategoriesProps {
 const categories = ref<CategoriesProps[]>([
   {
     title: "Animais",
-    img: "/images/categories/animals4.jpg",
+    img: "/images/categories/animals6.png",
     link: "/games/animals",
   },
   {
     title: "Frutas e Vegetais",
-    img: "/images/categories/animals4.jpg",
+    img: "/images/categories/fruits3.png",
     link: "/games/fruits",
   },
   // {
@@ -53,6 +53,7 @@ const categories = ref<CategoriesProps[]>([
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 24px;
+  cursor: pointer;
   @include phablet {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -61,14 +62,15 @@ const categories = ref<CategoriesProps[]>([
   }
   &__item {
     @include cardRadius;
+    cursor: pointer;
     transition: all 0.2s ease;
     border: 1px solid rgb(var(--neu-03));
-    font-size: clamp(1.5rem, 2vw, 2rem);
+    // font-size: clamp(1.5rem, 2vw, 2rem);
     text-align: center;
     font-weight: bold;
     min-height: 200px;
     display: grid;
-    grid-template-rows: 1fr clamp(3rem, 5vw, 5rem);
+    grid-template-rows: 3fr 0.8fr;
     background-color: rgb(var(--neu-01));
     overflow: hidden;
     box-shadow: 0px 0.5rem 2rem -1rem rgb(var(--neu-05));
@@ -81,8 +83,9 @@ const categories = ref<CategoriesProps[]>([
 
   &__img {
     transition: all 0.3s ease;
-    border-bottom: 2px solid red;
+    // border-bottom: 2px solid red;
     overflow: hidden;
+    background-color: rgb(var(--neu-02));
     // position: absolute;
     // width: 100%;
     // height: 100%;
@@ -93,7 +96,7 @@ const categories = ref<CategoriesProps[]>([
       width: 100%;
       // height: 100%;
       // object-fit: cover;
-      transform: scale(1.1);
+      // transform: scale(1.1);
     }
     &:before {
       transition: inherit;
@@ -115,8 +118,8 @@ const categories = ref<CategoriesProps[]>([
     justify-content: center;
     z-index: 2;
     color: black;
-    padding: clamp(1rem, 2vw, 2rem);
-    font-size: clamp(1rem, 1.5vw, 1.5rem);
+    padding: 0 1rem;
+    font-size: clamp(1.2rem, 1.2vw, 1.3rem);
   }
 }
 </style>

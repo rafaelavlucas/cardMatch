@@ -193,15 +193,11 @@ const reloadGame = () => {
 <style lang="scss" scoped>
 @use "assets/style/index" as *;
 .cardGrid {
-  min-height: 100vh;
+  min-height: 90vh;
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: center;
-
-  &[data-level="2"] {
-    background-color: red;
-  }
 
   &__wrapper {
     // margin-bottom: auto;
@@ -225,7 +221,7 @@ const reloadGame = () => {
     display: grid;
     grid-row: 1;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1.5vw;
+    // gap: 1.5vw;
     align-items: stretch;
     padding: clamp(0.5rem, 2.5vw, 2.5rem);
     border-radius: clamp(0.5rem, 2.5vw, 2.5rem);
@@ -240,9 +236,9 @@ const reloadGame = () => {
     grid-column: 1/4;
     background: rgb(var(--neu-02));
 
-    .sortable-ghost {
-      opacity: 0;
-    }
+    // .sortable-ghost {
+    //   opacity: 0;
+    // }
 
     @include mobile {
       grid-column: 1/7;

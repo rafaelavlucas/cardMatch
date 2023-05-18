@@ -25,7 +25,7 @@ const handleClick = (item: string) => {
 <template>
   <div class="wrapper">
     <div class="levels">
-      <p>Nível</p>
+      <h6 class="levels__text">Nível</h6>
       <ul class="levels__items">
         <li v-for="(item, index) in levels" :key="index">
           <button
@@ -47,33 +47,39 @@ const handleClick = (item: string) => {
   $this: &;
   margin-top: 4vh;
   text-align: center;
-
+  &__text {
+    margin-bottom: $spc-16;
+    color: rgb(var(--neu-06));
+    font-size: 1rem;
+  }
   &__items {
     display: flex;
-    gap: clamp(0.4rem, 1vw, 1rem);
+    gap: $spc-16;
     align-items: center;
     justify-content: center;
   }
   &__button {
-    font-family: $font;
+    @include MS-02;
+    transition: all 0.2s ease;
     font-weight: bold;
-    font-size: clamp(1rem, 1.5vw, 1.2rem);
-    border-radius: 32px;
-    background-color: rgb(var(--neu-03));
-    color: rgb(var(--neu-10));
-    padding: clamp(0.4rem, 0.8vw, 0.8rem) clamp(0.8rem, 1.5vw, 2rem);
+    font-size: 1rem;
+    border-radius: 50%;
+    background-color: rgb(var(--neu-01));
+    color: rgb(var(--neu-08));
+    height: $spc-40;
+    width: $spc-40;
     cursor: pointer;
+    border: 2px solid transparent;
 
     @include mobile {
-      font-size: 0.8rem;
     }
 
     &:hover {
-      opacity: 0.6;
+      border-color: rgb(var(--neu-04));
     }
     &.active {
-      background-color: rgb(var(--neu-08));
-      color: rgb(var(--neu-01));
+      border-color: rgb(var(--m-01));
+      color: rgb(var(--m-01));
       // pointer-events: none;
     }
   }

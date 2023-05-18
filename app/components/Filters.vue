@@ -58,6 +58,7 @@ const handleClick = (e: Event, item: string) => {
   gap: clamp(0.4rem, 1vw, 1rem);
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
   margin-bottom: 4vh;
 
   &__item {
@@ -78,7 +79,8 @@ const handleClick = (e: Event, item: string) => {
       opacity: 0.6;
     }
     &.active {
-      background-color: rgb(var(--neu-08));
+      background-color: rgb(var(--m-01));
+      // box-shadow: 0px 0px 0px 2px rgb(var(--m-01));
       color: rgb(var(--neu-01));
       // pointer-events: none;
     }

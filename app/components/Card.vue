@@ -10,33 +10,41 @@ const props = defineProps({
 </script>
 
 <template>
-  <div class="card color-neu-10 bg-neu-01" :class="{ matched: card.matched }">
-    <span class="card__letter">{{ card.letter }}</span>
-    <figure class="card__image">
-      <img :src="card.image" :alt="card.name" />
-    </figure>
+  <div class="card" :class="{ matched: card.matched }">
+    <div class="card__wrapper color-neu-10 bg-neu-01">
+      <span class="card__letter">{{ card.letter }}</span>
+      <figure class="card__image">
+        <img :src="card.image" :alt="card.name" />
+      </figure>
 
-    <p class="card__name">{{ card.name }}</p>
+      <p class="card__name">{{ card.name }}</p>
+    </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
 @use "assets/style/index" as *;
+
 .card {
-  @include cardRadius;
   $this: &;
-  display: grid;
-  grid-template-rows: 1fr clamp(0.5rem, 3.5vw, 3.5rem);
+  padding: clamp(0.2rem, 0.7vw, 2rem);
 
-  // padding: clamp(0.5rem, 1vw, 1rem);
-  padding: 10%;
-  isolation: isolate;
-  position: relative;
-  user-select: none;
+  &__wrapper {
+    pointer-events: none;
+    @include cardRadius;
+    display: grid;
+    grid-template-rows: 1fr clamp(0.5rem, 3.5vw, 3.5rem);
 
-  @include mobile {
-    // padding: min(2vw, 4rem);
-    grid-template-rows: 1fr clamp(1rem, 3.5vw, 3.5rem);
+    // padding: clamp(0.5rem, 1vw, 1rem);
+    padding: 10%;
+    isolation: isolate;
+    position: relative;
+    user-select: none;
+
+    @include mobile {
+      // padding: min(2vw, 4rem);
+      grid-template-rows: 1fr clamp(1rem, 3.5vw, 3.5rem);
+    }
   }
 
   // &:before {
@@ -79,32 +87,36 @@ const props = defineProps({
   }
 
   &__letter {
-    transition: all 0.3s ease;
     display: none;
+    transition: all 0.3s ease;
+
     pointer-events: none;
     grid-column: 1;
     grid-row: 1;
     z-index: 1;
+    font-size: clamp(2rem, 5vw, 5rem);
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+
+    @include mobile {
+      // font-size: 10vw;
+    }
   }
 
   &--active {
-    cursor: pointer;
-    transition: all 0.2s ease;
-    border: 1px solid rgb(var(--neu-03));
-    box-shadow: 0px 0.5rem 2rem -1rem rgb(var(--neu-05));
-
-    &:hover {
-      transform: scale(1.05);
-      box-shadow: 0px 1rem 2.5rem -1rem rgb(var(--neu-05));
+    #{$this} {
+      &__wrapper {
+        cursor: pointer;
+        transition: all 0.2s ease;
+        border: 1px solid rgb(var(--neu-03));
+        box-shadow: 0px 0.5rem 2rem -1rem rgb(var(--neu-05));
+        &:hover {
+          transform: scale(1.05);
+          box-shadow: 0px 1rem 2.5rem -1rem rgb(var(--neu-05));
+        }
+      }
     }
-
-    &:active {
-      transition: none;
-      border: 4px solid rgb(var(--neu-08));
-      transform: scale(1.1);
-      cursor: grab;
-    }
-
     &.matched {
       opacity: 0;
       pointer-events: none;
@@ -119,16 +131,27 @@ const props = defineProps({
         }
       }
     }
+
+    &:active {
+      cursor: grab;
+    }
+    &:hover {
+      cursor: pointer;
+      #{$this}__wrapper {
+        transform: scale(1.05);
+        box-shadow: 0px 1rem 2.5rem -1rem rgb(var(--neu-05));
+      }
+    }
   }
 
   &--disabled {
-    // pointer-events: none;
-    background: rgb(var(--neu-01));
-    opacity: 0.8;
-    filter: grayscale(100%);
-    cursor: default;
-    border: 1px dashed rgb(var(--neu-05));
     #{$this} {
+      &__wrapper {
+        opacity: 0.8;
+        filter: grayscale(100%);
+        cursor: default;
+        border: 1px dashed rgb(var(--neu-05));
+      }
       &__image {
         opacity: 0.4;
       }
@@ -138,33 +161,34 @@ const props = defineProps({
       }
     }
     &.matched {
-      opacity: 1;
-      filter: none;
-      background: rgb(var(--add-01), 0.15);
-      border: 2px solid rgb(var(--add-01));
-      pointer-events: none;
-      animation: test 0.3s 0s ease backwards;
-      z-index: 2;
-
-      &:before {
-        content: "✓";
-        width: clamp(1rem, 2vw, 2rem);
-        height: clamp(1rem, 2vw, 2rem);
-        font-size: clamp(1rem, 1.8vw, 2rem);
-        position: absolute;
-        background: rgb(var(--add-01));
-        color: white;
-        opacity: 1;
-        left: 3%;
-        top: 3%;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 1;
-      }
-
       #{$this} {
+        &__wrapper {
+          opacity: 1;
+          filter: none;
+          background: rgb(var(--add-01), 0.15);
+          border: 2px solid rgb(var(--add-01));
+          pointer-events: none;
+          animation: test 0.3s 0s ease backwards;
+          z-index: 2;
+
+          &:before {
+            content: "✓";
+            width: clamp(1rem, 2vw, 2rem);
+            height: clamp(1rem, 2vw, 2rem);
+            font-size: clamp(1rem, 1.8vw, 2rem);
+            position: absolute;
+            background: rgb(var(--add-01));
+            color: white;
+            opacity: 1;
+            left: 3%;
+            top: 3%;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1;
+          }
+        }
         &__image {
           opacity: 1;
         }
@@ -213,14 +237,6 @@ const props = defineProps({
         }
         &__letter {
           display: flex;
-          justify-content: center;
-          align-items: center;
-
-          font-weight: bold;
-          font-size: 5vw;
-          @include mobile {
-            font-size: 10vw;
-          }
         }
       }
 
@@ -252,6 +268,23 @@ const props = defineProps({
         }
       }
     }
+  }
+
+  &.sortable-chosen,
+  &.sortable-ghost {
+    cursor: grab;
+
+    #{$this}__wrapper {
+      transition: none;
+      box-shadow: inset 0px 0px 0px 4px rgb(var(--m-01));
+      transform: scale(1.05);
+      cursor: grab;
+      border: none;
+    }
+  }
+
+  &.sortable-ghost {
+    opacity: 0;
   }
 }
 </style>
