@@ -60,6 +60,9 @@ $color: (
 
 //////fonts//////
 
+.font-s {
+  @include font-s;
+}
 .font-m {
   @include font-m;
 }

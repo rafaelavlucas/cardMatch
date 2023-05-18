@@ -27,7 +27,7 @@ const props = defineProps({
 
 .card {
   $this: &;
-  padding: clamp(0.2rem, 0.7vw, 2rem);
+  padding: clamp(0.2rem, 0.7vw, 0.7rem);
 
   &__wrapper {
     pointer-events: none;
@@ -80,7 +80,7 @@ const props = defineProps({
     // padding-top: max(0.5rem, 1.5vw);
     font-family: $font;
     font-weight: bold;
-    font-size: clamp(0.5rem, 1.2vw, 1.2rem);
+    font-size: clamp(0.5rem, 1.2vw, 1rem);
     align-self: end;
     word-break: break-word;
     hyphens: auto;
@@ -113,13 +113,13 @@ const props = defineProps({
   &--active {
     #{$this} {
       &__wrapper {
+        @include MS-02;
         cursor: pointer;
         transition: all 0.2s ease;
         border: 1px solid rgb(var(--neu-03));
-        box-shadow: 0px 0.5rem 2rem -1rem rgb(var(--neu-05));
         &:hover {
+          @include MS-03;
           transform: scale(1.05);
-          box-shadow: 0px 1rem 2.5rem -1rem rgb(var(--neu-05));
         }
       }
     }

@@ -17,7 +17,7 @@ $spc-120: 7.5rem;
 
 @mixin wrapper {
   width: 100%;
-  max-width: 1440px;
+  max-width: 1280px;
   margin: 0 auto;
   padding: 0 3vw;
   @include mobile {
@@ -34,6 +34,6 @@ $spc-120: 7.5rem;
 
 @mixin justGrid {
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   grid-column-gap: $spc-16;
 }

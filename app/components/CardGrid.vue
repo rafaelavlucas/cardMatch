@@ -148,71 +148,69 @@ onMounted(() => {
 
 <template>
   <div :ref="'refReload'" class="cardGrid" :level="selectedLevel">
-    <Filters class="cardGrid__filters" :filters="filters" v-if="filters" />
-    <div class="cardGrid__wrapper grid">
-      <Reload
-        v-if="isAllMatched"
-        class="cardGrid__reload"
-        @reload-game="reloadGame"
-      />
+    <div class="wrapper">
+      <Filters class="cardGrid__filters" :filters="filters" v-if="filters" />
+      <div class="justGrid">
+        <Reload
+          v-if="isAllMatched"
+          class="cardGrid__reload"
+          @reload-game="reloadGame"
+        />
 
-      <draggable
-        class="cardGrid__left dragArea list-group"
-        removeCloneOnHide="true"
-        :sort="false"
-        :list="list1.list"
-        item-key="id"
-        :group="{ name: 'cards', pull: '', put: false }"
-        @end="onEnd"
-      >
-        <template #item="{ element, index }">
-          <Card
-            :matched="element.matched"
-            :card="element"
-            class="card--active"
-          />
-        </template>
-      </draggable>
+        <draggable
+          class="cardGrid__left dragArea list-group"
+          removeCloneOnHide="true"
+          :sort="false"
+          :list="list1.list"
+          item-key="id"
+          :group="{ name: 'cards', pull: '', put: false }"
+          @end="onEnd"
+        >
+          <template #item="{ element, index }">
+            <Card
+              :matched="element.matched"
+              :card="element"
+              class="card--active"
+            />
+          </template>
+        </draggable>
 
-      <draggable
-        class="cardGrid__right dragArea list-group"
-        draggable="false"
-        @clone="() => false"
-        :sort="false"
-        :list="list2.list"
-        item-key="id"
-        group="cards"
-      >
-        <template #item="{ element }">
-          <Card
-            :matched="element.matched"
-            :card="element"
-            :data-level="selectedLevel"
-            class="card--disabled"
-          />
-        </template>
-      </draggable>
+        <draggable
+          class="cardGrid__right dragArea list-group"
+          draggable="false"
+          @clone="() => false"
+          :sort="false"
+          :list="list2.list"
+          item-key="id"
+          group="cards"
+        >
+          <template #item="{ element }">
+            <Card
+              :matched="element.matched"
+              :card="element"
+              :data-level="selectedLevel"
+              class="card--disabled"
+            />
+          </template>
+        </draggable>
+      </div>
+      <Levels class="cardGrid__levels" :title="'Nível'" />
     </div>
-    <Levels class="cardGrid__levels" />
   </div>
 </template>
 
 <style lang="scss" scoped>
 @use "assets/style/index" as *;
 .cardGrid {
-  min-height: 90vh;
+  min-height: calc(100vh - $spc-72);
   padding: $spc-40 0;
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: center;
 
-  &__wrapper {
-    // margin-bottom: auto;
-  }
-
-  &__filters {
-    // margin-top: auto;
+  @include mobile {
+    min-height: calc(100vh - $spc-56);
   }
 
   &__reload {
@@ -231,7 +229,7 @@ onMounted(() => {
     grid-template-columns: repeat(3, 1fr);
     // gap: 1.5vw;
     align-items: stretch;
-    padding: clamp(0.5rem, 2.5vw, 2.5rem);
+    padding: clamp(0.5rem, 2vw, 1rem);
     border-radius: clamp(0.5rem, 2.5vw, 2.5rem);
 
     @include mobile {

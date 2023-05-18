@@ -25,28 +25,26 @@ const handleClick = ({ currentTarget }: Event, item: string) => {
 </script>
 
 <template>
-  <div class="wrapper">
-    <ul class="filters">
-      <li>
-        <button
-          class="filters__item"
-          @click="(e) => handleClick(e, 'Todos')"
-          :class="{ active: 'Todos' === selectedFilter }"
-        >
-          Todos
-        </button>
-      </li>
-      <li v-for="(item, index) in filters" :key="index">
-        <button
-          class="filters__item"
-          @click="(e) => handleClick(e, item)"
-          :class="{ active: item === selectedFilter }"
-        >
-          {{ item }}
-        </button>
-      </li>
-    </ul>
-  </div>
+  <ul class="filters">
+    <li>
+      <button
+        class="filters__item"
+        @click="(e) => handleClick(e, 'Todos')"
+        :class="{ active: 'Todos' === selectedFilter }"
+      >
+        Todos
+      </button>
+    </li>
+    <li v-for="(item, index) in filters" :key="index">
+      <button
+        class="filters__item"
+        @click="(e) => handleClick(e, item)"
+        :class="{ active: item === selectedFilter }"
+      >
+        {{ item }}
+      </button>
+    </li>
+  </ul>
 </template>
 
 <style lang="scss" scoped>
@@ -64,7 +62,7 @@ const handleClick = ({ currentTarget }: Event, item: string) => {
     font-family: $font;
     font-weight: bold;
     font-size: clamp(1rem, 1.5vw, 1.2rem);
-    border-radius: 32px;
+    border-radius: $spc-32;
     background-color: rgb(var(--neu-03));
     color: rgb(var(--neu-10));
     padding: clamp(0.4rem, 0.8vw, 0.8rem) clamp(0.8rem, 1.5vw, 2rem);

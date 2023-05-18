@@ -17,6 +17,11 @@
 
 .mainNav {
   padding: $spc-08 0;
+  height: $spc-72;
+
+  @include mobile {
+    height: $spc-56;
+  }
   &__wrapper {
     display: flex;
     align-items: center;

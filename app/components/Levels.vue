@@ -5,6 +5,7 @@ import { LevelsProps } from "~/types/types";
 import { useRouter } from "vue-router";
 
 const props = defineProps({
+  title: String,
   levels: {
     type: String,
     required: false,
@@ -35,21 +36,19 @@ const handleClick = (level: LevelsProps) => {
 </script>
 
 <template>
-  <div class="wrapper">
-    <div class="levels">
-      <h6 class="levels__text">Nível</h6>
-      <ul class="levels__items">
-        <li v-for="(level, index) in levels" :key="index">
-          <button
-            class="levels__button"
-            :class="{ active: level === selectedLevel }"
-            @click="handleClick(level)"
-          >
-            {{ level }}
-          </button>
-        </li>
-      </ul>
-    </div>
+  <div class="levels">
+    <h6 class="levels__title font-s color-neu-07">{{ props.title }}</h6>
+    <ul class="levels__items">
+      <li v-for="(level, index) in levels" :key="index">
+        <button
+          class="levels__button"
+          :class="{ active: level === selectedLevel }"
+          @click="handleClick(level)"
+        >
+          {{ level }}
+        </button>
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -59,10 +58,8 @@ const handleClick = (level: LevelsProps) => {
   $this: &;
   margin-top: 4vh;
   text-align: center;
-  &__text {
+  &__title {
     margin-bottom: $spc-16;
-    color: rgb(var(--neu-06));
-    font-size: 1rem;
   }
   &__items {
     display: flex;
@@ -71,7 +68,7 @@ const handleClick = (level: LevelsProps) => {
     justify-content: center;
   }
   &__button {
-    @include MS-02;
+    // @include MS-01;
     transition: all 0.2s ease;
     font-weight: bold;
     font-size: 1rem;
@@ -82,12 +79,13 @@ const handleClick = (level: LevelsProps) => {
     width: $spc-40;
     cursor: pointer;
     border: 2px solid transparent;
+    border-color: rgb(var(--neu-03));
 
     @include mobile {
     }
 
     &:hover {
-      border-color: rgb(var(--neu-04));
+      border-color: rgb(var(--neu-05));
     }
     &.active {
       border-color: rgb(var(--m-01));
