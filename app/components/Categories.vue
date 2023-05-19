@@ -79,7 +79,7 @@ watch(
 
   margin: 0 auto;
   min-height: calc(100vh - $spc-72);
-  padding: 0 24vw;
+  padding: $spc-40 24vw;
   display: flex;
   align-items: center;
   @include laptop {
@@ -95,10 +95,12 @@ watch(
   }
 
   &__content {
+    max-width: 800px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 24px;
     cursor: pointer;
+    margin: 0 auto;
     margin-bottom: 4vw;
     @include phablet {
       grid-template-columns: repeat(2, 1fr);
@@ -110,7 +112,7 @@ watch(
 
   &__title {
     text-align: center;
-    margin-bottom: $spc-24;
+    margin-bottom: 4vh;
   }
   &__item {
     @include cardRadius;
@@ -123,7 +125,7 @@ watch(
     font-weight: bold;
     min-height: 200px;
     display: grid;
-    grid-template-rows: 3fr 0.8fr;
+    grid-template-rows: 3fr clamp(4rem, 8vh, 6rem);
     background-color: rgb(var(--neu-01));
     overflow: hidden;
 
@@ -141,11 +143,16 @@ watch(
       overflow: hidden;
       background-color: rgb(var(--neu-02));
       top: 0;
+      display: flex;
+      align-items: center;
       img {
         width: 100%;
+        height: 30vh;
+        object-fit: contain;
+        max-height: 280px;
+        min-height: 150px;
         @include mobile {
           max-height: 180px;
-          object-fit: contain;
         }
       }
     }
