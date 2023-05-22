@@ -55,9 +55,10 @@ const loadCards = () => {
 
 const onEnd = (evt: any) => {
   const draggedElement = evt.item.__draggable_context.element;
-  console.log(evt);
+
   const toElement = evt.originalEvent.srcElement.__draggable_context?.element;
 
+  console.log(evt);
   if (!toElement) return;
 
   const findMatchFromList1 = list1.value.list.find(
@@ -66,8 +67,12 @@ const onEnd = (evt: any) => {
   const findMatchFromList2 = list2.value.list.find(
     (card) => card.name === toElement.name
   );
-  console.log(findMatchFromList1, findMatchFromList2);
-  if (findMatchFromList1?.name !== findMatchFromList2?.name) return;
+
+  if (
+    findMatchFromList1?.name !== findMatchFromList2?.name ||
+    evt.originalEvent.srcElement.classList.contains("card--active")
+  )
+    return;
 
   findMatchFromList1!.matched = true;
 
