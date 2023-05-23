@@ -7,6 +7,4 @@ const filters: FiltersProps[] = ["Floresta", "Quinta", "Oceano", "Aves"];
 
 <template>
   <CardGrid :data="cardsDataAnimals" :filters="filters"></CardGrid>
-
-  <!-- <Test /> -->
 </template>

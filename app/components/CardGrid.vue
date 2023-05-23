@@ -2,19 +2,15 @@
 import draggable from "vuedraggable";
 import useEventsBus from "@/utils/eventBus";
 import { ref } from "vue";
-import { DataProps, FiltersProps } from "~/types/types";
+import { DataProps, Content, FiltersProps } from "~/types/types";
 
 const props = defineProps({
   data: {
-    type: Array as PropType<DataProps[]>,
+    type: Array as PropType<Content[]>,
     required: true,
   },
   filters: {
     type: Array as PropType<FiltersProps[]>,
-    required: false,
-  },
-  level: {
-    type: String,
     required: false,
   },
 });

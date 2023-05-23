@@ -1,75 +1,55 @@
 <script setup lang="ts">
 import useEventsBus from "@/utils/eventBus";
-import { CategoryTitle } from "~/types/types";
 
-interface CategoriesProps {
-  title: CategoryTitle;
+interface GamesProps {
+  title: string;
   img: string;
   link: string;
 }
 
-const { bus, emit } = useEventsBus();
+const { bus } = useEventsBus();
 
-const categories = ref<CategoriesProps[]>([
+const games = ref<GamesProps[]>([
   {
-    title: "Animais",
-    img: "/images/categories/animals6.png",
-    link: "/games/animals",
+    title: "Images",
+    img: "/images/games/animals6.png",
+    link: "/games/images",
   },
   {
-    title: "Frutas e Vegetais",
-    img: "/images/categories/fruits3.png",
-    link: "/games/fruits",
+    title: "Letters",
+    img: "/images/games/fruits3.png",
+    link: "/games/letters",
   },
 ]);
 
-const selectedCategory = ref<CategoriesProps | null>(null);
-const selectedLevel = ref("1");
+const selectedGame = ref<GamesProps | null>(null);
 
-const selectCategory = (category: CategoriesProps) => {
-  selectedCategory.value = category;
-  emit("category", selectedCategory.value);
+const selectGame = (game: GamesProps) => {
+  selectedGame.value = game;
 };
 </script>
 
 <template>
-  <div class="categories">
+  <div class="games">
     <div class="wrapper">
-      <p class="categories__title font-s color-neu-07">Escolhe uma categoria</p>
-      <ul class="categories__content">
-        <li v-for="(category, index) in categories" :key="index">
-          <div
-            class="categories__item"
-            @click="selectCategory(category)"
-            :class="{ active: category === selectedCategory }"
-          >
-            <figure class="categories__item-img">
-              <img :src="category.img" :alt="category.title" />
+      <p class="games__title font-s color-neu-07">Escolhe uma categoria</p>
+      <ul class="games__content">
+        <li v-for="(game, index) in games" :key="index">
+          <NuxtLink :to="game.link" class="games__item">
+            <figure class="games__item-img">
+              <img :src="game.img" :alt="game.title" />
             </figure>
-            <h4 class="categories__item-title">{{ category.title }}</h4>
-          </div>
+            <h4 class="games__item-title">{{ game.title }}</h4>
+          </NuxtLink>
         </li>
       </ul>
-
-      <Levels
-        v-if="selectedCategory"
-        class="cardGrid__levels"
-        :title="'Define um nível'"
-      />
-
-      <div class="categories__btnContainer" v-if="selectedCategory">
-        <MainButton
-          :to="{ path: selectedCategory.link, query: { level: selectedLevel } }"
-          :title="'Jogar'"
-        ></MainButton>
-      </div>
     </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
 @use "assets/style/index" as *;
-.categories {
+.games {
   $this: &;
 
   margin: 0 auto;

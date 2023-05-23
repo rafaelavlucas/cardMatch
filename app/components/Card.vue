@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { DataProps } from "~/types/types";
+import { Content } from "~/types/types";
 
 const props = defineProps({
   card: {
-    type: Object as PropType<DataProps>,
+    type: Object as PropType<Content>,
     required: true,
   },
 });
