@@ -3,6 +3,12 @@ import draggable from "vuedraggable";
 import useEventsBus from "@/utils/eventBus";
 import { ref } from "vue";
 import { DataProps, Content, FiltersProps } from "~/types/types";
+import { useRouter } from "vue-router";
+
+const route = useRoute();
+const router = useRouter();
+
+const selectedGame = route.path.split("/")[2];
 
 const props = defineProps({
   data: {
@@ -17,8 +23,6 @@ const props = defineProps({
 
 const { query } = useRoute();
 const { bus } = useEventsBus();
-
-const selectedLevel = ref(query.level || "1");
 
 const cards = ref(props.data);
 
@@ -129,14 +133,6 @@ watch(
     handleFilters(clickedFilter);
   }
 );
-watch(
-  () => bus.value.get("level"),
-  ([clickedLevel]) => {
-    selectedLevel.value = clickedLevel;
-
-    reloadGame();
-  }
-);
 
 onMounted(() => {
   loadCards();
@@ -144,7 +140,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div :ref="'refReload'" class="cardGrid" :level="selectedLevel">
+  <div :ref="'refReload'" class="cardGrid">
     <div class="wrapper">
       <Filters class="cardGrid__filters" :filters="filters" v-if="filters" />
       <div class="justGrid">
@@ -185,13 +181,12 @@ onMounted(() => {
             <Card
               :matched="element.matched"
               :card="element"
-              :data-level="selectedLevel"
+              :data-game="selectedGame"
               class="card--disabled"
             />
           </template>
         </draggable>
       </div>
-      <Levels class="cardGrid__levels" :title="'Nível'" />
     </div>
   </div>
 </template>

@@ -2,7 +2,7 @@ export interface DataProps {
   filters: FiltersProps[];
   content: Content[];
 }
-export interface MainButtonProps {
+export interface ButtonProps {
   text: string;
   link: string;
 }
@@ -12,6 +12,12 @@ export interface Content {
   genre: string[];
   letter?: string;
   matched?: boolean;
+}
+
+export interface CategoriesProps {
+  title: string;
+  img: string;
+  link: string;
 }
 
 export type FiltersProps = string;

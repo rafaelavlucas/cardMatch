@@ -1,5 +1,5 @@
 {
-  "filters": ["Fruitas", "Vegetais"],
+  "filters": ["Frutas", "Vegetais"],
   "content": [
     {
       "image": "/images/fruits/apple.png",

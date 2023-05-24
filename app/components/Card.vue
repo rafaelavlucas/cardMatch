@@ -221,7 +221,7 @@ const props = defineProps({
       }
     }
 
-    &[data-level="2"] {
+    &[data-game="shapes"] {
       #{$this} {
         &__image {
           filter: contrast(0%);
@@ -236,7 +236,7 @@ const props = defineProps({
       }
     }
 
-    &[data-level="3"] {
+    &[data-game="letters"] {
       #{$this} {
         &__image {
           visibility: hidden;

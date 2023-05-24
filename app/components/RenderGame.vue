@@ -29,6 +29,6 @@ watch(
 </script>
 
 <template>
-  <Categories v-if="!selectedCategory" />
-  <Category v-if="selectedCategory" :data="renderData" />
+  <GameCategories v-if="!selectedCategory" />
+  <GameLayout v-if="selectedCategory" :data="renderData" />
 </template>
