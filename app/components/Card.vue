@@ -10,7 +10,10 @@ const props = defineProps({
 </script>
 
 <template>
-  <div class="card" :class="{ matched: card.matched }">
+  <div
+    class="card"
+    :class="{ matched: card.matched, unmatched: card.matched === false }"
+  >
     <div class="card__wrapper color-neu-10 bg-neu-01">
       <span class="card__letter">{{ card.letter }}</span>
       <figure class="card__image">
@@ -30,7 +33,7 @@ const props = defineProps({
   padding: clamp(0.2rem, 0.7vw, 0.7rem);
 
   &__wrapper {
-    pointer-events: none;
+    // pointer-events: none;
     @include cardRadius;
     display: grid;
     grid-template-rows: 1fr clamp(0.5rem, 3.5vw, 3.5rem);
@@ -46,17 +49,6 @@ const props = defineProps({
       grid-template-rows: 1fr clamp(1rem, 3.5vw, 3.5rem);
     }
   }
-
-  // &:before {
-  //   content: "";
-  //   width: 100%;
-  //   height: 100%;
-  //   background-color: red;
-  //   position: absolute;
-  //   border-radius: inherit;
-  //   z-index: -1;
-  //   opacity: 0;
-  // }
 
   &__image {
     transition: transform 0.3s ease;
@@ -114,13 +106,10 @@ const props = defineProps({
     #{$this} {
       &__wrapper {
         @include MS-02;
+
         cursor: pointer;
         transition: all 0.2s ease;
         border: 1px solid rgb(var(--neu-03));
-        &:hover {
-          @include MS-03;
-          transform: scale(1.05);
-        }
       }
     }
     &.matched {
@@ -137,15 +126,29 @@ const props = defineProps({
         }
       }
     }
+    &.selected,
+    &.selected:hover {
+      pointer-events: none;
+      #{$this} {
+        &__wrapper {
+          transition: all 0.3s ease;
+          background: rgb(var(--m-01), 0.15);
+
+          border-color: transparent;
+          box-shadow: 0 0 0 2px rgb(var(--m-01));
+        }
+      }
+    }
 
     &:active {
       cursor: grab;
     }
+
     &:hover {
       cursor: pointer;
       #{$this}__wrapper {
         transform: scale(1.05);
-        box-shadow: 0px 1rem 2.5rem -1rem rgb(var(--neu-05));
+        @include shadowHover;
       }
     }
   }
@@ -156,17 +159,18 @@ const props = defineProps({
         opacity: 0.8;
         filter: grayscale(100%);
         cursor: default;
-        border: 1px dashed rgb(var(--neu-05));
+        border: 1px dashed rgb(var(--neu-07));
       }
       &__image {
-        opacity: 0.4;
+        opacity: 0.6;
       }
 
       &__name {
-        opacity: 0.4;
+        opacity: 0.5;
       }
     }
     &.matched {
+      pointer-events: none;
       #{$this} {
         &__wrapper {
           opacity: 1;
@@ -174,7 +178,7 @@ const props = defineProps({
           background: rgb(var(--add-01), 0.15);
           border: 2px solid rgb(var(--add-01));
           pointer-events: none;
-          animation: test 0.3s 0s ease backwards;
+          animation: success 0.3s 0s ease backwards;
           z-index: 2;
 
           &:before {
@@ -205,18 +209,45 @@ const props = defineProps({
         }
       }
 
-      @keyframes test {
+      @keyframes success {
         80% {
-          transform: scale(1.2);
-          border: 8px solid rgb(var(--add-01));
-          box-shadow: 0px 0.5rem 2rem -1rem rgb(var(--add-01));
+          transform: scale(1.1);
+          border-color: transparent;
+          box-shadow: 0 0 0 4px rgb(var(--add-01));
           z-index: 3;
         }
         100% {
           transform: scale(1);
-          border: 2px solid rgb(var(--add-01));
-          box-shadow: none;
+
+          box-shadow: 0 0 0 2px rgb(var(--add-01));
           z-index: 3;
+        }
+      }
+    }
+    &.unmatched {
+      #{$this} {
+        &__wrapper {
+          transition: all 0.3s ease;
+          background: rgb(var(--add-02), 0.15);
+          border-color: transparent;
+          box-shadow: 0px 0px 0px 2px rgb(var(--add-02));
+          filter: grayscale(0);
+          animation: error 0.3s 0s ease backwards;
+        }
+      }
+      @keyframes error {
+        40% {
+          transform: translateX(4px);
+        }
+        60% {
+          transform: translateX(-4px);
+        }
+        80% {
+          transform: translateX(4px);
+        }
+
+        100% {
+          transform: translateX(0px);
         }
       }
     }
@@ -274,23 +305,6 @@ const props = defineProps({
         }
       }
     }
-  }
-
-  &.sortable-chosen,
-  &.sortable-ghost {
-    cursor: grab;
-
-    #{$this}__wrapper {
-      transition: none;
-      box-shadow: inset 0px 0px 0px 4px rgb(var(--m-01));
-      transform: scale(1.05);
-      cursor: grab;
-      border: none;
-    }
-  }
-
-  &.sortable-ghost {
-    opacity: 0;
   }
 }
 </style>

@@ -53,6 +53,48 @@ const loadCards = () => {
   list2.value.list = list2Random;
 };
 
+const selectedCardFromList1 = ref<Content | null>(null);
+const selectedCardFromList2 = ref<Content | null>(null);
+
+const selectCard = (card: Content) => {
+  selectedCardFromList1.value = card;
+  console.log(selectedCardFromList1);
+};
+
+const matchCard = (card: Content) => {
+  selectedCardFromList2.value = card;
+
+  if (
+    (!selectedCardFromList1.value && !selectedCardFromList2.value) ||
+    !selectedCardFromList1.value
+  )
+    return;
+
+  if (selectedCardFromList1.value?.name === selectedCardFromList2.value?.name) {
+    selectedCardFromList1.value.matched = true;
+    card.matched = true;
+  } else {
+    // selectedCardFromList1.value!.matched = false;
+    card.matched = false;
+
+    setTimeout(() => {
+      card.matched = null;
+    }, 500);
+  }
+
+  const areAllCardsMatched = (list: any[]) => {
+    return list.every((card) => card.matched);
+  };
+
+  const allCardsInList1Matched = areAllCardsMatched(list1.value.list);
+
+  if (allCardsInList1Matched) {
+    console.log("YAY");
+    isAllMatched.value = true;
+    console.log(isAllMatched.value);
+  }
+};
+
 const onEnd = (evt: any) => {
   const draggedElement = evt.item.__draggable_context.element;
 
@@ -93,7 +135,7 @@ const resetCards = () => {
     element.matched = false;
   });
   list2.value.list.forEach((element) => {
-    element.matched = false;
+    element.matched = null;
   });
 };
 
@@ -150,42 +192,30 @@ onMounted(() => {
           @reload-game="reloadGame"
         />
 
-        <draggable
-          class="cardGrid__left dragArea list-group"
-          removeCloneOnHide="true"
-          :sort="false"
-          :list="list1.list"
-          item-key="id"
-          :group="{ name: 'cards', pull: '', put: false }"
-          @end="onEnd"
-        >
-          <template #item="{ element, index }">
+        <ul class="cardGrid__left">
+          <li v-for="(card, index) in list1.list" :key="index">
             <Card
-              :matched="element.matched"
-              :card="element"
+              :matched="card.matched"
+              :card="card"
+              :data-game="selectedGame"
               class="card--active"
+              :class="{ selected: card.name === selectedCardFromList1?.name }"
+              @click="selectCard(card)"
             />
-          </template>
-        </draggable>
+          </li>
+        </ul>
 
-        <draggable
-          class="cardGrid__right dragArea list-group"
-          draggable="false"
-          @clone="() => false"
-          :sort="false"
-          :list="list2.list"
-          item-key="id"
-          group="cards"
-        >
-          <template #item="{ element }">
+        <ul class="cardGrid__right">
+          <li v-for="(card, index) in list2.list" :key="index">
             <Card
-              :matched="element.matched"
-              :card="element"
+              :matched="card.matched"
+              :card="card"
               :data-game="selectedGame"
               class="card--disabled"
+              @click="matchCard(card)"
             />
-          </template>
-        </draggable>
+          </li>
+        </ul>
       </div>
     </div>
   </div>

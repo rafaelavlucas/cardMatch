@@ -31,7 +31,6 @@ const props = defineProps({
   @include cardRadius;
   @include MS-02;
   cursor: pointer;
-  transition: transform 0.2s ease;
   border: 1px solid rgb(var(--neu-03));
   // font-size: clamp(1.5rem, 2vw, 2rem);
   text-align: center;
@@ -41,14 +40,12 @@ const props = defineProps({
   grid-template-rows: 3fr clamp(4rem, 8vh, 6rem);
   background-color: rgb(var(--neu-01));
   overflow: hidden;
+  transition: all 0.3s ease;
 
   &:hover {
     transform: scale(1.05);
-    @include MS-03;
-  }
 
-  &.active {
-    box-shadow: 0px 0px 0px 4px rgb(var(--m-01));
+    @include shadowHover;
   }
 
   &__img {

@@ -23,9 +23,8 @@ const selectedCategory = ref<CategoriesProps | null>(null);
 
 const selectCategory = (category: CategoriesProps) => {
   selectedCategory.value = category;
-  setTimeout(() => {
-    emit("category", selectedCategory.value);
-  }, 200);
+
+  emit("category", selectedCategory.value);
 };
 </script>
 
@@ -43,7 +42,6 @@ const selectCategory = (category: CategoriesProps) => {
             :title="category.title"
             :img="category.img"
             @click="selectCategory(category)"
-            :class="{ active: category === selectedCategory }"
           />
         </li>
       </ul>

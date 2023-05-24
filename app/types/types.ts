@@ -11,7 +11,7 @@ export interface Content {
   name: string;
   genre: string[];
   letter?: string;
-  matched?: boolean;
+  matched?: boolean | null;
 }
 
 export interface CategoriesProps {
