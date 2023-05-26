@@ -15,7 +15,7 @@ const props = defineProps({
     :class="{ matched: card.matched, unmatched: card.matched === false }"
   >
     <div class="card__wrapper color-neu-10 bg-neu-01">
-      <span class="card__letter">{{ card.letter }}</span>
+      <span class="card__letter color-neu-09">{{ card.letter }}</span>
       <figure class="card__image">
         <img :src="card.image" :alt="card.name" />
       </figure>
@@ -96,7 +96,6 @@ const props = defineProps({
     font-weight: bold;
     justify-content: center;
     align-items: center;
-
     @include mobile {
       // font-size: 10vw;
     }

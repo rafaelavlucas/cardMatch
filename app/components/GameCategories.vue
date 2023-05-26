@@ -17,8 +17,6 @@ const categories = ref<CategoriesProps[]>([
   },
 ]);
 
-console.log(categories);
-
 const selectedCategory = ref<CategoriesProps | null>(null);
 
 const selectCategory = (category: CategoriesProps) => {

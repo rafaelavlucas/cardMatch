@@ -58,21 +58,25 @@ const selectedCardFromList2 = ref<Content | null>(null);
 
 const selectCard = (card: Content) => {
   selectedCardFromList1.value = card;
-  console.log(selectedCardFromList1);
 };
 
 const matchCard = (card: Content) => {
-  selectedCardFromList2.value = card;
+  console.log(selectedCardFromList1);
 
   if (
     (!selectedCardFromList1.value && !selectedCardFromList2.value) ||
-    !selectedCardFromList1.value
+    !selectedCardFromList1 ||
+    !selectedCardFromList2
   )
     return;
+
+  selectedCardFromList2.value = card;
 
   if (selectedCardFromList1.value?.name === selectedCardFromList2.value?.name) {
     selectedCardFromList1.value.matched = true;
     card.matched = true;
+    selectedCardFromList1.value = null;
+    selectedCardFromList2.value = null;
   } else {
     // selectedCardFromList1.value!.matched = false;
     card.matched = false;
@@ -91,7 +95,6 @@ const matchCard = (card: Content) => {
   if (allCardsInList1Matched) {
     console.log("YAY");
     isAllMatched.value = true;
-    console.log(isAllMatched.value);
   }
 };
 
@@ -100,7 +103,6 @@ const onEnd = (evt: any) => {
 
   const toElement = evt.originalEvent.srcElement.__draggable_context?.element;
 
-  console.log(evt);
   if (!toElement) return;
 
   const findMatchFromList1 = list1.value.list.find(
@@ -137,6 +139,9 @@ const resetCards = () => {
   list2.value.list.forEach((element) => {
     element.matched = null;
   });
+
+  selectedCardFromList1.value = null;
+  selectedCardFromList2.value = null;
 };
 
 const reloadGame = () => {
