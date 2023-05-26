@@ -1,15 +1,11 @@
 <script setup lang="ts">
-import useEventsBus from "@/utils/eventBus";
-
-interface gameTypesProps {
+interface GameTypesProps {
   title: string;
   img: string;
   link: string;
 }
 
-const { bus } = useEventsBus();
-
-const gameTypes = ref<gameTypesProps[]>([
+const gameTypes = ref<GameTypesProps[]>([
   {
     title: "Silhuetas",
     img: "/images/categories/game1.png",
@@ -21,12 +17,6 @@ const gameTypes = ref<gameTypesProps[]>([
     link: "/games/letters",
   },
 ]);
-
-const selectedGame = ref<gameTypesProps | null>(null);
-
-const selectGame = (game: gameTypesProps) => {
-  selectedGame.value = game;
-};
 </script>
 
 <template>

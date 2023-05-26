@@ -7,7 +7,7 @@ import useEventsBus from "~/utils/eventBus";
 const selectedCategory = ref<CategoryTitle | null>(null);
 const renderData = ref<DataProps | null>(null);
 
-const { bus, emit } = useEventsBus();
+const { bus } = useEventsBus();
 
 watch(
   () => bus.value.get("category"),

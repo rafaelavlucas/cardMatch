@@ -1,14 +1,15 @@
 <script setup lang="ts">
-import draggable from "vuedraggable";
 import useEventsBus from "@/utils/eventBus";
 import { ref } from "vue";
-import { DataProps, Content, FiltersProps } from "~/types/types";
+import { Content } from "~/types/types";
 import { useRouter } from "vue-router";
+import { FiltersProps } from "./Filters.vue";
 
 const route = useRoute();
 const router = useRouter();
 
 const selectedGame = route.path.split("/")[2];
+const selectedFilter = ref("");
 
 const props = defineProps({
   data: {
@@ -63,12 +64,7 @@ const selectCard = (card: Content) => {
 const matchCard = (card: Content) => {
   console.log(selectedCardFromList1);
 
-  if (
-    (!selectedCardFromList1.value && !selectedCardFromList2.value) ||
-    !selectedCardFromList1 ||
-    !selectedCardFromList2
-  )
-    return;
+  if (!selectedCardFromList1.value && !selectedCardFromList2.value) return;
 
   selectedCardFromList2.value = card;
 
@@ -98,43 +94,9 @@ const matchCard = (card: Content) => {
   }
 };
 
-const onEnd = (evt: any) => {
-  const draggedElement = evt.item.__draggable_context.element;
-
-  const toElement = evt.originalEvent.srcElement.__draggable_context?.element;
-
-  if (!toElement) return;
-
-  const findMatchFromList1 = list1.value.list.find(
-    (card) => card.name === draggedElement.name
-  );
-  const findMatchFromList2 = list2.value.list.find(
-    (card) => card.name === toElement.name
-  );
-
-  if (
-    findMatchFromList1?.name !== findMatchFromList2?.name ||
-    evt.originalEvent.srcElement.classList.contains("card--active")
-  )
-    return;
-
-  findMatchFromList1!.matched = true;
-
-  const areAllCardsMatched = (list: any[]) => {
-    return list.every((card) => card.matched);
-  };
-
-  const allCardsInList1Matched = areAllCardsMatched(list1.value.list);
-
-  if (allCardsInList1Matched) {
-    console.log("YAY");
-    isAllMatched.value = true;
-  }
-};
-
 const resetCards = () => {
   list1.value.list.forEach((element) => {
-    element.matched = false;
+    element.matched = null;
   });
   list2.value.list.forEach((element) => {
     element.matched = null;
@@ -142,10 +104,29 @@ const resetCards = () => {
 
   selectedCardFromList1.value = null;
   selectedCardFromList2.value = null;
+  isAllMatched.value = false;
 };
 
 const reloadGame = () => {
-  loadCards();
+  if (selectedFilter.value) {
+    const newCards = [...cards.value];
+    const filteredCards = computed(() =>
+      newCards.filter((card) => card.genre.includes(selectedFilter.value))
+    );
+
+    const randomCards = filteredCards.value
+      .sort(() => Math.random() - Math.random())
+      .slice(0, 6);
+
+    const list2Random = [...randomCards].sort(
+      () => Math.random() - Math.random()
+    );
+
+    list1.value.list = randomCards;
+    list2.value.list = list2Random;
+  } else {
+    loadCards();
+  }
   resetCards();
 };
 
@@ -178,6 +159,7 @@ watch(
   () => bus.value.get("filter"),
   ([clickedFilter]: [clickedFilter: FiltersProps]) => {
     handleFilters(clickedFilter);
+    selectedFilter.value = clickedFilter;
   }
 );
 

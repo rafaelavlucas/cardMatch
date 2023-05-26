@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const emit = defineEmits(["reloadGame"]);
+defineEmits(["reloadGame"]);
 </script>
 
 <template>

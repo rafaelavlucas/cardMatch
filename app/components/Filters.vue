@@ -1,10 +1,7 @@
 <script setup lang="ts">
 import useEventsBus from "@/utils/eventBus";
-import { FiltersProps } from "~/types/types";
 
-// interface FiltersProps {
-//   title: Genre;
-// }
+export type FiltersProps = string;
 const props = defineProps({
   filters: {
     type: Array as PropType<FiltersProps[]>,

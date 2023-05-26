@@ -28,7 +28,7 @@ const selectCategory = (category: CategoriesProps) => {
 
 <template>
   <div class="wrapper">
-    <AltButton :title="'Voltar'" :link="'../'" />
+    <Button :title="'Voltar'" :link="'../'" :variant="'cta-02'" />
   </div>
 
   <div class="categories">
