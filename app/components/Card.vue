@@ -44,7 +44,7 @@ const props = defineProps({
     position: relative;
     user-select: none;
 
-    @include mobile {
+    @include phablet {
       // padding: min(2vw, 4rem);
       grid-template-rows: 1fr clamp(1rem, 3.5vw, 3.5rem);
     }
@@ -57,7 +57,7 @@ const props = defineProps({
     overflow: hidden;
     grid-row: 1;
     grid-column: 1;
-    @include mobile {
+    @include phablet {
       img {
         max-height: 60px;
         object-fit: contain;
@@ -79,7 +79,7 @@ const props = defineProps({
     grid-row: 2;
     grid-column: 1;
 
-    @include mobile {
+    @include phablet {
       font-size: clamp(0.5rem, 2.5vw, 2.5rem);
     }
   }
@@ -96,7 +96,7 @@ const props = defineProps({
     font-weight: bold;
     justify-content: center;
     align-items: center;
-    @include mobile {
+    @include phablet {
       // font-size: 10vw;
     }
   }
@@ -282,7 +282,7 @@ const props = defineProps({
             visibility: visible;
             transform: scale(0.7);
             top: -16%;
-            @include mobile {
+            @include phablet {
               transform: scale(0.6);
               top: -20%;
             }
@@ -296,7 +296,7 @@ const props = defineProps({
             font-size: 3vw;
             bottom: -8%;
             align-self: end;
-            @include mobile {
+            @include phablet {
               font-size: 6vw;
               bottom: 0%;
             }

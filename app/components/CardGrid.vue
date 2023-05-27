@@ -187,7 +187,7 @@ onMounted(() => {
   flex-direction: column;
   justify-content: center;
 
-  @include mobile {
+  @include phablet {
     min-height: calc(100vh - $spc-56);
   }
 
@@ -195,7 +195,7 @@ onMounted(() => {
     grid-row: 1;
     grid-column: 1/4;
     z-index: 1;
-    @include mobile {
+    @include phablet {
       grid-column: 1/7;
     }
   }
@@ -209,10 +209,13 @@ onMounted(() => {
     align-items: stretch;
     padding: clamp(0.5rem, 2vw, 1rem);
     border-radius: clamp(0.5rem, 2.5vw, 2.5rem);
+    justify-self: center;
 
-    @include mobile {
+    @include phablet {
       // gap: 2vw;
       padding: 4vw;
+      max-width: 500px;
+      width: 100%;
     }
   }
 
@@ -224,7 +227,7 @@ onMounted(() => {
     //   opacity: 0;
     // }
 
-    @include mobile {
+    @include phablet {
       grid-column: 1/7;
     }
   }
@@ -232,7 +235,7 @@ onMounted(() => {
   &__right {
     grid-column: 4/7;
 
-    @include mobile {
+    @include phablet {
       grid-column: 1/7;
       grid-row: 2;
     }
