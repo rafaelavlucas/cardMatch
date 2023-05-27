@@ -4,31 +4,63 @@ import FruitsData from "@/src/gamesData/FruitsData.json";
 import { DataProps, CategoryTitle } from "~/types/types";
 import useEventsBus from "~/utils/eventBus";
 
-const selectedCategory = ref<CategoryTitle | null>(null);
-const renderData = ref<DataProps | null>(null);
+const router = useRouter();
+const route = useRoute();
+
+const selectedCategory = ref<CategoryTitle | null>(
+  route.query.category as string
+);
+const gameData = ref<DataProps | null>(null);
 
 const { bus } = useEventsBus();
+
+const loadGameDataBasedOnCategory = () => {
+  switch (selectedCategory.value) {
+    case ANIMALS_CATEGORY:
+      gameData.value = AnimalsData;
+      break;
+
+    case FRUITS_CATEGORY:
+      gameData.value = FruitsData;
+
+    default:
+      break;
+  }
+};
+
+const addGameCategoryToQueryParam = () => {
+  router.push({
+    path: route.path,
+    query: { category: selectedCategory.value },
+  });
+};
+
+onMounted(() => {
+  if (selectedCategory.value) {
+    loadGameDataBasedOnCategory();
+  }
+});
 
 watch(
   () => bus.value.get("category"),
   ([clickedCategory]) => {
-    selectedCategory.value = clickedCategory;
-    switch (selectedCategory.value?.title) {
-      case "Animais":
-        renderData.value = AnimalsData;
-        break;
+    selectedCategory.value = clickedCategory.title;
 
-      case "Frutas e Vegetais":
-        renderData.value = FruitsData;
+    loadGameDataBasedOnCategory();
+    addGameCategoryToQueryParam();
+  }
+);
 
-      default:
-        break;
-    }
+watch(
+  () => route.query.category,
+  (category) => {
+    selectedCategory.value = category as string;
+    loadGameDataBasedOnCategory();
   }
 );
 </script>
 
 <template>
   <GameCategories v-if="!selectedCategory" />
-  <GameLayout v-if="selectedCategory" :data="renderData" />
+  <GameLayout v-if="selectedCategory" :data="gameData" />
 </template>

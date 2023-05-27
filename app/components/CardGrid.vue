@@ -1,9 +1,8 @@
 <script setup lang="ts">
 import useEventsBus from "@/utils/eventBus";
 import { ref } from "vue";
-import { Content } from "~/types/types";
+import { Content, FiltersProps } from "~/types/types";
 import { useRouter } from "vue-router";
-import { FiltersProps } from "./Filters.vue";
 
 const route = useRoute();
 const router = useRouter();
@@ -25,8 +24,10 @@ const props = defineProps({
 const { query } = useRoute();
 const { bus } = useEventsBus();
 
-const cards = ref(props.data);
-
+const cards = ref<Content[]>(props.data);
+const selectedCardFromList1 = ref<Content | null>(null);
+const selectedCardFromList2 = ref<Content | null>(null);
+const isAllMatched = ref(false);
 const list1 = ref({
   list: [...cards.value],
   dragging: true,
@@ -35,46 +36,45 @@ const list2 = ref({
   list: [...cards.value],
   dragging: false,
 });
-const isAllMatched = ref(false);
 
-const loadCards = () => {
-  isAllMatched.value = false;
+const loadCards = ({ filter }: { filter?: string | null } = {}) => {
   const newCards = [...cards.value];
 
-  const randomCards = newCards
-    .sort(() => Math.random() - Math.random())
-    .slice(0, 6);
-
-  const list2Random = [...randomCards].sort(
-    () => Math.random() - Math.random()
+  const filteredCards = computed(() =>
+    filter ? filterCardsByFilterType(newCards, filter) : newCards
   );
 
-  list1.value.list = randomCards;
+  isAllMatched.value = false;
 
+  const randomCards = getRandomCards(filteredCards.value);
+  const list2Random = sortCardsRandomly(randomCards);
+
+  list1.value.list = randomCards;
   list2.value.list = list2Random;
 };
-
-const selectedCardFromList1 = ref<Content | null>(null);
-const selectedCardFromList2 = ref<Content | null>(null);
 
 const selectCard = (card: Content) => {
   selectedCardFromList1.value = card;
 };
 
-const matchCard = (card: Content) => {
-  console.log(selectedCardFromList1);
+const areAllCardsMatched = (list: Content[]) => {
+  return list.every((card) => card.matched);
+};
 
+const matchCard = (card: Content) => {
   if (!selectedCardFromList1.value && !selectedCardFromList2.value) return;
 
   selectedCardFromList2.value = card;
 
-  if (selectedCardFromList1.value?.name === selectedCardFromList2.value?.name) {
-    selectedCardFromList1.value.matched = true;
+  const isSameCard =
+    selectedCardFromList1.value?.name === selectedCardFromList2.value?.name;
+
+  if (isSameCard) {
+    selectedCardFromList1.value!.matched = true;
     card.matched = true;
     selectedCardFromList1.value = null;
     selectedCardFromList2.value = null;
   } else {
-    // selectedCardFromList1.value!.matched = false;
     card.matched = false;
 
     setTimeout(() => {
@@ -82,14 +82,9 @@ const matchCard = (card: Content) => {
     }, 500);
   }
 
-  const areAllCardsMatched = (list: any[]) => {
-    return list.every((card) => card.matched);
-  };
-
   const allCardsInList1Matched = areAllCardsMatched(list1.value.list);
 
   if (allCardsInList1Matched) {
-    console.log("YAY");
     isAllMatched.value = true;
   }
 };
@@ -107,52 +102,26 @@ const resetCards = () => {
   isAllMatched.value = false;
 };
 
+const getRandomCards = (cards: Content[]) => {
+  return cards.sort(() => Math.random() - Math.random()).slice(0, 6);
+};
+
+const filterCardsByFilterType = (cards: Content[], filterValue: string) => {
+  return cards.filter((card) => card.genre.includes(filterValue));
+};
+
+const sortCardsRandomly = (cards: Content[]) => {
+  return [...cards].sort(() => Math.random() - Math.random());
+};
+
 const reloadGame = () => {
-  if (selectedFilter.value) {
-    const newCards = [...cards.value];
-    const filteredCards = computed(() =>
-      newCards.filter((card) => card.genre.includes(selectedFilter.value))
-    );
-
-    const randomCards = filteredCards.value
-      .sort(() => Math.random() - Math.random())
-      .slice(0, 6);
-
-    const list2Random = [...randomCards].sort(
-      () => Math.random() - Math.random()
-    );
-
-    list1.value.list = randomCards;
-    list2.value.list = list2Random;
-  } else {
-    loadCards();
-  }
+  loadCards({ filter: selectedFilter.value || null });
   resetCards();
 };
 
 const handleFilters = (clickedFilter: FiltersProps) => {
-  if (clickedFilter === "Todos") {
-    loadCards();
-    resetCards();
-  } else {
-    const newCards = [...cards.value];
-    const filteredCards = computed(() =>
-      newCards.filter((card) => card.genre.includes(clickedFilter))
-    );
-
-    const randomCards = filteredCards.value
-      .sort(() => Math.random() - Math.random())
-      .slice(0, 6);
-
-    const list2Random = [...randomCards].sort(
-      () => Math.random() - Math.random()
-    );
-
-    list1.value.list = randomCards;
-    list2.value.list = list2Random;
-
-    resetCards();
-  }
+  loadCards({ filter: clickedFilter || null });
+  resetCards();
 };
 
 watch(

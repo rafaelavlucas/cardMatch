@@ -1,17 +1,17 @@
 <script setup lang="ts">
 import useEventsBus from "@/utils/eventBus";
-import { CategoriesProps, CategoryTitle } from "~/types/types";
+import { CategoriesProps } from "~/types/types";
 
 const { bus, emit } = useEventsBus();
 
 const categories = ref<CategoriesProps[]>([
   {
-    title: "Animais",
+    title: ANIMALS_CATEGORY,
     img: "/images/categories/animals6.png",
     link: "/games/animals",
   },
   {
-    title: "Frutas e Vegetais",
+    title: FRUITS_CATEGORY,
     img: "/images/categories/fruits3.png",
     link: "/games/fruits",
   },

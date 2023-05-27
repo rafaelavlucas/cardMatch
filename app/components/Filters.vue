@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import useEventsBus from "@/utils/eventBus";
+import { FiltersProps } from "~/types/types";
 
-export type FiltersProps = string;
 const props = defineProps({
   filters: {
     type: Array as PropType<FiltersProps[]>,
@@ -12,7 +12,7 @@ const props = defineProps({
 const { emit } = useEventsBus();
 
 const filters = ref(props.filters);
-const selectedFilter = ref("Todos");
+const selectedFilter = ref(ALL_TEXT);
 
 const handleClick = ({ currentTarget }: Event, item: string) => {
   const target = currentTarget as HTMLButtonElement;
@@ -26,10 +26,10 @@ const handleClick = ({ currentTarget }: Event, item: string) => {
     <li>
       <button
         class="filters__item"
-        @click="(e) => handleClick(e, 'Todos')"
-        :class="{ active: 'Todos' === selectedFilter }"
+        @click="(e) => handleClick(e, ALL_TEXT)"
+        :class="{ active: ALL_TEXT === selectedFilter }"
       >
-        Todos
+        {{ ALL_TEXT }}
       </button>
     </li>
     <li v-for="(item, index) in filters" :key="index">
