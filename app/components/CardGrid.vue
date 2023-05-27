@@ -41,7 +41,9 @@ const loadCards = ({ filter }: { filter?: string | null } = {}) => {
   const newCards = [...cards.value];
 
   const filteredCards = computed(() =>
-    filter ? filterCardsByFilterType(newCards, filter) : newCards
+    filter && filter !== ALL_TEXT
+      ? filterCardsByFilterType(newCards, filter)
+      : newCards
   );
 
   isAllMatched.value = false;
