@@ -1,4 +1,4 @@
-import { FiltersProps } from "~/components/Filters.vue";
+export type FiltersProps = string;
 
 export interface DataProps {
   filters: FiltersProps[];
@@ -20,5 +20,5 @@ export interface CategoriesProps {
 }
 
 export type LevelsProps = string;
-export type CategoryTitle = any;
+export type CategoryTitle = string;
 // export type CategoryTitle = "Animais" | "Frutas e Vegetais";

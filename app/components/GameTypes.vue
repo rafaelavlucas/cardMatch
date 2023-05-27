@@ -7,12 +7,12 @@ interface GameTypesProps {
 
 const gameTypes = ref<GameTypesProps[]>([
   {
-    title: "Silhuetas",
+    title: SILHOUETTES_CATEGORY,
     img: "/images/categories/game1.png",
     link: "/games/shapes",
   },
   {
-    title: "Letras",
+    title: LETTERS_CATEGORY,
     img: "/images/categories/game2.png",
     link: "/games/letters",
   },
