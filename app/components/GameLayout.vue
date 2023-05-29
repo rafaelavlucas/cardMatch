@@ -10,9 +10,5 @@ const props = defineProps({
 </script>
 
 <template>
-  <div class="wrapper">
-    <ButtonBack />
-  </div>
-
   <CardGrid v-if="data" :data="data.content" :filters="data.filters" />
 </template>

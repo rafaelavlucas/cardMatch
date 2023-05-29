@@ -206,13 +206,13 @@ onMounted(() => {
     grid-template-columns: repeat(3, 1fr);
     // gap: 1.5vw;
     align-items: stretch;
-    padding: clamp(0.5rem, 2vw, 1rem);
+    padding: clamp(0.5rem, 1.2vw, 1rem);
     border-radius: clamp(0.5rem, 2.5vw, 2.5rem);
     justify-self: center;
 
     @include phablet {
       // gap: 2vw;
-      padding: clamp(0.8rem, 2.5vw, 1.5rem);
+      padding: clamp(0.5rem, 2.5vw, 1.5rem);
       max-width: 440px;
       width: 100%;
     }

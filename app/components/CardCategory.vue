@@ -22,7 +22,7 @@ const props = defineProps({
 <template>
   <div
     class="cardCategory"
-    :style="{ 'animation-delay': 0.3 * index + 0.6 + 's' }"
+    :style="{ 'animation-delay': 0.2 * index + 0.4 + 's' }"
   >
     <figure class="cardCategory__img">
       <img :src="img" :alt="title" />

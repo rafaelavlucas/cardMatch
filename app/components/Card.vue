@@ -46,7 +46,8 @@ const props = defineProps({
 
     @include phablet {
       // padding: min(2vw, 4rem);
-      grid-template-rows: 1fr clamp(1rem, 3.5vw, 3.5rem);
+      padding: 10% 6%;
+      grid-template-rows: 1fr clamp(1.4rem, 3.5vw, 3.5rem);
     }
   }
 
@@ -72,7 +73,7 @@ const props = defineProps({
     // padding-top: max(0.5rem, 1.5vw);
     font-family: $font;
     font-weight: bold;
-    font-size: clamp(0.5rem, 1.2vw, 1rem);
+    font-size: clamp(0.7rem, 1.2vw, 1rem);
     align-self: end;
     word-break: break-word;
     hyphens: auto;
@@ -80,7 +81,7 @@ const props = defineProps({
     grid-column: 1;
 
     @include phablet {
-      font-size: clamp(0.65rem, 1.8vw, 2rem);
+      font-size: clamp(0.7rem, 1.6vw, 2rem);
     }
   }
 

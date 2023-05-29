@@ -1,6 +1,7 @@
 <template>
   <header class="mainNav">
     <div class="mainNav__wrapper wrapper">
+      <ButtonBack />
       <NuxtLink to="/"
         ><figure class="mainNav__logo">
           <img src="/images/logo.svg" alt="Logo MM" /></figure
@@ -19,7 +20,7 @@
   padding: $spc-08 0;
   height: $spc-72;
 
-  @include mobile {
+  @include phablet {
     height: $spc-56;
   }
   &__wrapper {

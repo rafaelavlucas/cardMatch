@@ -27,10 +27,6 @@ const selectCategory = (category: CategoriesProps) => {
 </script>
 
 <template>
-  <div class="wrapper">
-    <ButtonBack />
-  </div>
-
   <div class="categories">
     <div class="wrapper">
       <p class="categories__title font-s color-neu-07">Escolhe uma categoria</p>
