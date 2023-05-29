@@ -21,18 +21,7 @@ defineEmits(["reloadGame"]);
   padding: 3vw;
   transition: all 0.4s ease;
 
-  animation: cenas 0.3s ease forwards;
-
-  @keyframes cenas {
-    0% {
-      opacity: 0;
-      transform: scale(0.8);
-    }
-    100% {
-      opacity: 1;
-      transform: scale(1);
-    }
-  }
+  animation: reveal 0.3s ease forwards;
 
   // display: none;
 

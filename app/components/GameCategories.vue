@@ -29,7 +29,7 @@ const selectCategory = (category: CategoriesProps) => {
 <template>
   <div class="categories">
     <div class="wrapper">
-      <p class="categories__title font-s color-neu-07">Escolhe uma categoria</p>
+      <p class="categories__title font-s color-neu-07">Escolhe a categoria</p>
       <ul class="categories__content">
         <li v-for="(category, index) in categories" :key="index">
           <CardCategory
@@ -75,9 +75,7 @@ const selectCategory = (category: CategoriesProps) => {
     margin: 0 auto;
     margin-bottom: 4vw;
     @include phablet {
-      grid-template-columns: repeat(2, 1fr);
-    }
-    @include mobile {
+      max-width: 440px;
       grid-template-columns: 1fr;
     }
   }

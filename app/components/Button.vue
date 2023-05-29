@@ -6,6 +6,14 @@ const props = defineProps({
     type: String,
     required: false,
   },
+  altText: {
+    type: String,
+    required: false,
+  },
+  icon: {
+    type: String,
+    required: false,
+  },
   link: {
     type: String || Function,
     required: false,
@@ -18,8 +26,9 @@ const props = defineProps({
 </script>
 
 <template>
-  <NuxtLink :to="link" class="cta" :class="variant">
-    {{ title }}
+  <NuxtLink :to="link" class="cta" :class="variant" :title="altText">
+    <i :class="icon"></i>
+    <span v-if="title">{{ title }}</span>
   </NuxtLink>
 </template>
 
@@ -30,6 +39,10 @@ const props = defineProps({
   transition: all 0.3s ease;
   font-size: clamp(1rem, 1.5vw, 1.2rem);
   font-weight: bold;
+
+  i {
+    font-size: $spc-24;
+  }
   &.cta-01 {
     background-color: rgb(var(--m-01));
     border-radius: $spc-32;
@@ -56,11 +69,12 @@ const props = defineProps({
     display: inline-flex;
     align-items: center;
 
-    &:hover {
-      transform: translateX(-2px);
-    }
     @include mobile {
       @include font-m;
+    }
+
+    &:hover {
+      opacity: 0.8;
     }
   }
 }

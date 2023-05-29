@@ -154,8 +154,12 @@ onMounted(() => {
               :card="card"
               :data-game="selectedGame"
               class="card--active"
-              :class="{ selected: card.name === selectedCardFromList1?.name }"
+              :class="{
+                selected: card.name === selectedCardFromList1?.name,
+                anime: isAllMatched === false,
+              }"
               @click="selectCard(card)"
+              :style="{ 'animation-delay': 0.2 * index + 0.4 + 's' }"
             />
           </li>
         </ul>
@@ -167,7 +171,11 @@ onMounted(() => {
               :card="card"
               :data-game="selectedGame"
               class="card--disabled"
+              :class="{
+                anime: isAllMatched === false,
+              }"
               @click="matchCard(card)"
+              :style="{ 'animation-delay': 0.2 * index + 0.4 + 's' }"
             />
           </li>
         </ul>

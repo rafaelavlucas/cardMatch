@@ -48,17 +48,11 @@ const props = defineProps({
   background-color: rgb(var(--neu-01));
   overflow: hidden;
   transition: all 0.3s ease;
-  animation: cenas 0.3s ease both;
+  animation: reveal 0.3s ease both;
 
-  @keyframes cenas {
-    0% {
-      opacity: 0;
-      transform: scale(0.8);
-    }
-    100% {
-      opacity: 1;
-      transform: scale(1);
-    }
+  @include phablet {
+    min-height: unset;
+    grid-template-rows: 3fr clamp(3rem, 6vh, 6rem);
   }
 
   &:hover {
@@ -80,8 +74,8 @@ const props = defineProps({
       object-fit: contain;
       max-height: 280px;
       min-height: 150px;
-      @include mobile {
-        max-height: 180px;
+      @include phablet {
+        max-height: 140px;
       }
     }
   }
@@ -95,7 +89,7 @@ const props = defineProps({
     z-index: 2;
     color: black;
     padding: 0 1rem;
-    font-size: clamp(1.2rem, 1.2vw, 1.3rem);
+    font-size: clamp(1.2rem, 1.2vw, 1.2rem);
   }
 }
 </style>

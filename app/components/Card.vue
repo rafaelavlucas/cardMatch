@@ -31,6 +31,7 @@ const props = defineProps({
 .card {
   $this: &;
   padding: clamp(0.2rem, 0.7vw, 0.7rem);
+  // animation: scaleCards 0.3s ease backwards;
 
   &__wrapper {
     // pointer-events: none;
@@ -179,9 +180,10 @@ const props = defineProps({
           opacity: 1;
           filter: none;
           background: rgb(var(--add-01), 0.15);
-          border: 2px solid rgb(var(--add-01));
+          border-color: transparent;
+          // border: 2px solid rgb(var(--add-01));
           pointer-events: none;
-          animation: success 0.3s 0s ease backwards;
+          animation: success 0.3s 0s ease both;
           z-index: 2;
 
           &:before {
@@ -221,7 +223,7 @@ const props = defineProps({
         }
         100% {
           transform: scale(1);
-
+          border-color: transparent;
           box-shadow: 0 0 0 2px rgb(var(--add-01));
           z-index: 3;
         }
@@ -308,6 +310,21 @@ const props = defineProps({
         }
       }
     }
+  }
+
+  @keyframes scaleCards {
+    0% {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  &.anime {
+    animation: reveal 0.3s ease backwards;
   }
 }
 </style>

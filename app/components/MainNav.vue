@@ -1,14 +1,21 @@
 <template>
   <header class="mainNav">
     <div class="mainNav__wrapper wrapper">
-      <ButtonBack />
-      <NuxtLink to="/"
-        ><figure class="mainNav__logo">
+      <ButtonBack class="mainNav__back" />
+
+      <NuxtLink to="/" class="mainNav__logo"
+        ><figure class="mainNav__logo-img">
           <img src="/images/logo.svg" alt="Logo MM" /></figure
       ></NuxtLink>
 
       <!-- <NuxtLink to="/">Início</NuxtLink> -->
-      <NuxtLink to="/about">Sobre</NuxtLink>
+      <Button
+        class="mainNav__about"
+        :altText="'Sobre'"
+        :variant="'cta-02'"
+        :icon="'icon-info'"
+        :to="'/about'"
+      />
     </div>
   </header>
 </template>
@@ -24,15 +31,29 @@
     height: $spc-56;
   }
   &__wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: $spc-24 1fr $spc-24;
+    justify-items: center;
   }
+
   &__logo {
-    max-width: $spc-56;
-    @include mobile {
-      max-width: $spc-40;
+    grid-column: 2;
+    &-img {
+      max-width: $spc-56;
+      display: flex;
+      align-items: center;
+
+      @include mobile {
+        max-width: $spc-40;
+      }
     }
+  }
+
+  &__about {
+    grid-column: 3;
+  }
+  &__back {
+    grid-column: 1;
   }
 }
 </style>

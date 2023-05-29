@@ -22,9 +22,7 @@ const gameTypes = ref<GameTypesProps[]>([
 <template>
   <div class="gameTypes">
     <div class="wrapper">
-      <p class="gameTypes__title font-s color-neu-07">
-        Escolhe um tipo de jogo
-      </p>
+      <p class="gameTypes__title font-s color-neu-07">Escolhe o tipo de jogo</p>
       <ul class="gameTypes__content">
         <li v-for="(game, index) in gameTypes" :key="index">
           <NuxtLink :to="game.link">
@@ -40,7 +38,6 @@ const gameTypes = ref<GameTypesProps[]>([
 @use "assets/style/index" as *;
 .gameTypes {
   $this: &;
-
   margin: 0 auto;
   min-height: calc(100vh - $spc-72);
   padding: $spc-40 24vw;
@@ -67,9 +64,7 @@ const gameTypes = ref<GameTypesProps[]>([
     margin: 0 auto;
     margin-bottom: 4vw;
     @include phablet {
-      grid-template-columns: repeat(2, 1fr);
-    }
-    @include mobile {
+      max-width: 440px;
       grid-template-columns: 1fr;
     }
   }
