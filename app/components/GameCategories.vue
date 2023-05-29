@@ -28,7 +28,7 @@ const selectCategory = (category: CategoriesProps) => {
 
 <template>
   <div class="wrapper">
-    <Button :title="'Voltar'" :link="'../'" :variant="'cta-02'" />
+    <ButtonBack />
   </div>
 
   <div class="categories">
@@ -39,6 +39,7 @@ const selectCategory = (category: CategoriesProps) => {
           <CardCategory
             :title="category.title"
             :img="category.img"
+            :index="index"
             @click="selectCategory(category)"
           />
         </li>

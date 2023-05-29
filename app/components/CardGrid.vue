@@ -2,13 +2,6 @@
 import useEventsBus from "@/utils/eventBus";
 import { ref } from "vue";
 import { Content, FiltersProps } from "~/types/types";
-import { useRouter } from "vue-router";
-
-const route = useRoute();
-const router = useRouter();
-
-const selectedGame = route.path.split("/")[2];
-const selectedFilter = ref("");
 
 const props = defineProps({
   data: {
@@ -21,13 +14,17 @@ const props = defineProps({
   },
 });
 
-const { query } = useRoute();
+const route = useRoute();
 const { bus } = useEventsBus();
+
+const selectedGame = route.path.split("/")[2];
+const selectedFilter = ref("");
 
 const cards = ref<Content[]>(props.data);
 const selectedCardFromList1 = ref<Content | null>(null);
 const selectedCardFromList2 = ref<Content | null>(null);
 const isAllMatched = ref(false);
+
 const list1 = ref({
   list: [...cards.value],
   dragging: true,
@@ -215,8 +212,8 @@ onMounted(() => {
 
     @include phablet {
       // gap: 2vw;
-      padding: 4vw;
-      max-width: 500px;
+      padding: clamp(0.8rem, 2.5vw, 1.5rem);
+      max-width: 440px;
       width: 100%;
     }
   }

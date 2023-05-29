@@ -28,7 +28,7 @@ const gameTypes = ref<GameTypesProps[]>([
       <ul class="gameTypes__content">
         <li v-for="(game, index) in gameTypes" :key="index">
           <NuxtLink :to="game.link">
-            <CardCategory :title="game.title" :img="game.img" />
+            <CardCategory :title="game.title" :img="game.img" :index="index" />
           </NuxtLink>
         </li>
       </ul>

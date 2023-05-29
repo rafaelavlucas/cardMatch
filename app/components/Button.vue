@@ -7,7 +7,7 @@ const props = defineProps({
     required: false,
   },
   link: {
-    type: String,
+    type: String || Function,
     required: false,
   },
   variant: {

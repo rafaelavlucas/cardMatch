@@ -11,7 +11,7 @@ const props = defineProps({
 
 <template>
   <div class="wrapper">
-    <Button :title="'Início'" :link="'../'" :variant="'cta-02'" />
+    <ButtonBack />
   </div>
 
   <CardGrid v-if="data" :data="data.content" :filters="data.filters" />

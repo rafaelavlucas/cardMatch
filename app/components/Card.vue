@@ -59,7 +59,7 @@ const props = defineProps({
     grid-column: 1;
     @include phablet {
       img {
-        max-height: 60px;
+        max-height: 8vh;
         object-fit: contain;
       }
     }
@@ -80,7 +80,7 @@ const props = defineProps({
     grid-column: 1;
 
     @include phablet {
-      font-size: clamp(0.5rem, 2.5vw, 2.5rem);
+      font-size: clamp(0.65rem, 1.8vw, 2rem);
     }
   }
 
@@ -132,7 +132,6 @@ const props = defineProps({
         &__wrapper {
           transition: all 0.3s ease;
           background: rgb(var(--m-01), 0.15);
-
           border-color: transparent;
           box-shadow: 0 0 0 2px rgb(var(--m-01));
         }
@@ -148,6 +147,10 @@ const props = defineProps({
       #{$this}__wrapper {
         transform: scale(1.05);
         @include shadowHover;
+
+        @include phablet {
+          transform: scale(1);
+        }
       }
     }
   }

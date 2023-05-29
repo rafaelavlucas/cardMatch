@@ -12,11 +12,18 @@ const props = defineProps({
     type: String,
     required: false,
   },
+  index: {
+    type: Number,
+    required: true,
+  },
 });
 </script>
 
 <template>
-  <div class="cardCategory">
+  <div
+    class="cardCategory"
+    :style="{ 'animation-delay': 0.3 * index + 0.6 + 's' }"
+  >
     <figure class="cardCategory__img">
       <img :src="img" :alt="title" />
     </figure>
@@ -41,6 +48,18 @@ const props = defineProps({
   background-color: rgb(var(--neu-01));
   overflow: hidden;
   transition: all 0.3s ease;
+  animation: cenas 0.3s ease both;
+
+  @keyframes cenas {
+    0% {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
 
   &:hover {
     transform: scale(1.05);
