@@ -26,7 +26,7 @@ const props = defineProps({
 .categoriesBlock {
   $this: &;
   margin: 0 auto;
-  min-height: calc(100vh - $spc-72);
+  min-height: calc(100dvh - $spc-72);
   padding: $spc-40 24vw;
   display: flex;
   align-items: center;
@@ -39,7 +39,7 @@ const props = defineProps({
 
   @include mobile {
     padding: 0;
-    min-height: calc(100vh - $spc-56);
+    min-height: calc(100dvh - $spc-56);
   }
 
   &__content {

@@ -187,16 +187,16 @@ onMounted(() => {
 <style lang="scss" scoped>
 @use "assets/style/index" as *;
 .cardGrid {
-  min-height: calc(100vh - $spc-72);
+  min-height: calc(100dvh - $spc-72);
   padding: $spc-40 0;
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: center;
-   animation: reveal 0.3s ease backwards;
+  animation: reveal 0.3s ease backwards;
 
   @include phablet {
-    min-height: calc(100vh - $spc-56);
+    min-height: calc(100dvh - $spc-56);
   }
 
   &__reload {
