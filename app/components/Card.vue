@@ -324,7 +324,7 @@ const props = defineProps({
   }
 
   &.anime {
-    animation: reveal 0.3s ease backwards;
+    animation: scaleCards 0.3s ease backwards;
   }
 }
 </style>

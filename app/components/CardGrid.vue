@@ -193,6 +193,7 @@ onMounted(() => {
   align-items: center;
   flex-direction: column;
   justify-content: center;
+   animation: reveal 0.3s ease backwards;
 
   @include phablet {
     min-height: calc(100vh - $spc-56);

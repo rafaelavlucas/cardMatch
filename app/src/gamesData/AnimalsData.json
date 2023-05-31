@@ -1,5 +1,5 @@
 {
-  "filters": ["Floresta", "Quinta", "Oceano", "Aves"],
+  "filters": ["Floresta", "Quinta", "Oceano", "Aves", "Insetos"],
   "content": [
     {
       "image": "/images/animals/lion.png",
@@ -407,6 +407,74 @@
       "name": "Pinguim",
       "genre": ["Oceano"],
       "letter": "P"
+    },
+    {
+      "image": "/images/animals/ant.png",
+      "name": "Formiga",
+      "genre": ["Insetos"],
+      "letter": "F"
+    }
+    ,
+    {
+      "image": "/images/animals/bee.png",
+      "name": "Abelha",
+      "genre": ["Insetos"],
+      "letter": "A"
+    },
+    {
+      "image": "/images/animals/beetle.png",
+      "name": "Besouro",
+      "genre": ["Insetos"],
+      "letter": "B"
+    }
+    ,
+    {
+      "image": "/images/animals/butterfly.png",
+      "name": "Borboleta",
+      "genre": ["Insetos"],
+      "letter": "B"
+    }
+    ,
+    {
+      "image": "/images/animals/cricket.png",
+      "name": "Grilo",
+      "genre": ["Insetos"],
+      "letter": "G"
+    }
+    ,
+    {
+      "image": "/images/animals/dragonfly.png",
+      "name": "Libelinha",
+      "genre": ["Insetos"],
+      "letter": "L"
+    }
+    ,
+    {
+      "image": "/images/animals/grasshoper.png",
+      "name": "Gafanhoto",
+      "genre": ["Insetos"],
+      "letter": "G"
+    }
+    ,
+    {
+      "image": "/images/animals/ladybug.png",
+      "name": "Joaninha",
+      "genre": ["Insetos"],
+      "letter": "J"
+    }
+    ,
+    {
+      "image": "/images/animals/snail.png",
+      "name": "Caracol",
+      "genre": ["Insetos"],
+      "letter": "C"
+    }
+    ,
+    {
+      "image": "/images/animals/spider.png",
+      "name": "Aranha",
+      "genre": ["Insetos"],
+      "letter": "A"
     }
   ]
 }

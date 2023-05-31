@@ -203,13 +203,13 @@
       "image": "/images/fruits/onion.png",
       "name": "Cebola",
       "genre": ["Vegetais"],
-      "letter": "M"
+      "letter": "C"
     },
     {
       "image": "/images/fruits/orange3.png",
       "name": "Laranja",
       "genre": ["Frutas"],
-      "letter": "C"
+      "letter": "L"
     },
     {
       "image": "/images/fruits/papaya.png",

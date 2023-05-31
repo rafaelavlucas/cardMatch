@@ -21,7 +21,7 @@ defineEmits(["reloadGame"]);
   padding: 3vw;
   transition: all 0.4s ease;
 
-  animation: reveal 0.3s ease forwards;
+  animation: scaleCards 0.3s ease forwards;
 
   // display: none;
 

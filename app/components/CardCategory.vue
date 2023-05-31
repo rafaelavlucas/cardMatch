@@ -48,7 +48,7 @@ const props = defineProps({
   background-color: rgb(var(--neu-01));
   overflow: hidden;
   transition: all 0.3s ease;
-  animation: reveal 0.3s ease both;
+  animation: scaleCards 0.3s ease both;
 
   @include phablet {
     min-height: unset;

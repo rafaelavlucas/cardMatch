@@ -54,6 +54,7 @@ const handleClick = ({ currentTarget }: Event, item: string) => {
   justify-content: center;
   flex-wrap: wrap;
   margin-bottom: 4vh;
+  animation: reveal 0.3s ease backwards;
 
   &__item {
     font-family: $font;
