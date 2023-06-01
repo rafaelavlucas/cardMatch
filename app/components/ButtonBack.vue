@@ -15,7 +15,7 @@ const handleBack = () => {
     v-show="route.path != isHp"
     :altText="'Voltar'"
     :variant="'cta-02'"
-    :icon="'icon-chevron-left'"
+    :icon="'chevron-left'"
     @click="handleBack()"
   />
 </template>

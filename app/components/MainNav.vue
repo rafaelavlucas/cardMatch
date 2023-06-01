@@ -1,3 +1,6 @@
+<script setup lang="ts">
+const showPoup = ref(false);
+</script>
 <template>
   <header class="mainNav">
     <div class="mainNav__wrapper wrapper">
@@ -13,11 +16,17 @@
         class="mainNav__about"
         :altText="'Sobre'"
         :variant="'cta-02'"
-        :icon="'icon-info'"
-        :to="'/about'"
+        :icon="'info'"
+        @click="showPoup = true"
       />
     </div>
   </header>
+  <Popup
+    v-if="showPoup"
+    :title="'Como jogar'"
+    :text="'texto'"
+    @closePopup="showPoup = false"
+  />
 </template>
 
 <style lang="scss" scoped>

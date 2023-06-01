@@ -1,5 +1,6 @@
 <script setup lang="ts">
 export type ButtonVariants = "cta-01" | "cta-02";
+export type ButtonSizes = "s" | "m" | "l";
 
 const props = defineProps({
   title: {
@@ -12,6 +13,10 @@ const props = defineProps({
   },
   icon: {
     type: String,
+    required: false,
+  },
+  iconSize: {
+    type: String as PropType<ButtonSizes>,
     required: false,
   },
   link: {
@@ -27,7 +32,7 @@ const props = defineProps({
 
 <template>
   <NuxtLink :to="link" class="cta" :class="variant" :title="altText">
-    <i :class="icon"></i>
+    <i :class="[`icon-${icon}`, `icon--${iconSize}`]"></i>
     <span v-if="title">{{ title }}</span>
   </NuxtLink>
 </template>
@@ -42,6 +47,18 @@ const props = defineProps({
 
   i {
     font-size: $spc-24;
+  }
+
+  .icon {
+    &--s {
+      font-size: $spc-16;
+    }
+    &--m {
+      font-size: $spc-24;
+    }
+    &--l {
+      font-size: $spc-32;
+    }
   }
   &.cta-01 {
     background-color: rgb(var(--m-01));
