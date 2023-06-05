@@ -21,8 +21,9 @@ const showPoup = ref(false);
       />
     </div>
   </header>
+
   <Popup
-    v-if="showPoup"
+    :state="showPoup"
     :title="'Como jogar'"
     :text="'texto'"
     @closePopup="showPoup = false"

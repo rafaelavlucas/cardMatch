@@ -8,29 +8,35 @@ const props = defineProps({
     type: String,
     required: false,
   },
+  state: {
+    type: Boolean,
+    required: true,
+  },
 });
 
 const emit = defineEmits(["closePopup"]);
 </script>
 
 <template>
-  <div class="popup">
-    <div class="popup__wrapper wrapper">
-      <div class="popup__container">
-        <Button
-          :variant="'cta-02'"
-          :icon="'x'"
-          :icon-size="'l'"
-          class="popup__close"
-          @click="$emit('closePopup')"
-        />
-        <article class="popup__content">
-          <h3 class="popup__title font-m color-m-01">{{ title }}</h3>
-          <p class="popup__text font-s color-neu-09">{{ text }}</p>
-        </article>
+  <transition tag="div" name="fade">
+    <div v-if="state" class="popup">
+      <div class="popup__wrapper wrapper">
+        <div class="popup__container">
+          <Button
+            :variant="'cta-02'"
+            :icon="'x'"
+            :icon-size="'l'"
+            class="popup__close"
+            @click="$emit('closePopup')"
+          />
+          <article class="popup__content">
+            <h3 class="popup__title font-m color-m-01">{{ title }}</h3>
+            <p class="popup__text font-s color-neu-09">{{ text }}</p>
+          </article>
+        </div>
       </div>
     </div>
-  </div>
+  </transition>
 </template>
 
 <style lang="scss" scoped>
@@ -41,11 +47,11 @@ const emit = defineEmits(["closePopup"]);
   z-index: 2;
   width: 100%;
   height: 100%;
-  background-color: rgba(var(--neu-08), 0.6);
+  background-color: rgba(var(--neu-09), 0.5);
   top: 0;
   left: 0;
   padding: $spc-40 0;
-  animation: reveal 0.3s ease backwards;
+  // animation: reveal 0.3s ease backwards;
 
   &__wrapper {
     width: 100%;
@@ -63,6 +69,7 @@ const emit = defineEmits(["closePopup"]);
     @include cardRadius;
     background-color: rgb(var(--neu-01));
     padding: clamp(2rem, 5vw, 5rem);
+    transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.1, 1.33);
   }
 
   &__close {
@@ -84,14 +91,22 @@ const emit = defineEmits(["closePopup"]);
     margin-top: $spc-32;
   }
 
-  // .list-enter-active,
-  // .list-leave-active {
-  //   transition: all 0.5s ease;
-  // }
-  // .list-enter-from,
-  // .list-leave-to {
-  //   opacity: 0;
-  //   transform: translateX(30px);
-  // }
+  &.fade-enter-active,
+  &.fade-leave-active {
+    transition: opacity 0.2s ease;
+    .popup__container {
+      transform: scale(1);
+    }
+  }
+
+  &.fade-enter-from,
+  &.fade-leave-to {
+    opacity: 0;
+    transition: opacity 0.15s ease;
+    .popup__container {
+      transition: transform 0.15s 0.1s ease;
+      transform: scale(0.9);
+    }
+  }
 }
 </style>

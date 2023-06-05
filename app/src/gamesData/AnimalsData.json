@@ -229,6 +229,12 @@
       "letter": "C"
     },
     {
+      "image": "/images/animals/snail.png",
+      "name": "Caracol",
+      "genre": ["Quinta"],
+      "letter": "C"
+    },
+    {
       "image": "/images/animals/duck.png",
       "name": "Pato",
       "genre": ["Quinta", "Aves"],
@@ -462,19 +468,8 @@
       "genre": ["Insetos"],
       "letter": "J"
     }
-    ,
-    {
-      "image": "/images/animals/snail.png",
-      "name": "Caracol",
-      "genre": ["Insetos"],
-      "letter": "C"
-    }
-    ,
-    {
-      "image": "/images/animals/spider.png",
-      "name": "Aranha",
-      "genre": ["Insetos"],
-      "letter": "A"
-    }
+
+    
+
   ]
 }

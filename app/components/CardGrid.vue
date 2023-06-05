@@ -148,7 +148,12 @@ onMounted(() => {
         />
 
         <ul class="cardGrid__left">
-          <li v-for="(card, index) in list1.list" :key="index">
+          <transition-group
+            name="list"
+            tag="li"
+            v-for="(card, index) in list1.list"
+            :key="index"
+          >
             <Card
               :matched="card.matched"
               :card="card"
@@ -161,11 +166,16 @@ onMounted(() => {
               @click="selectCard(card)"
               :style="{ 'animation-delay': 0.2 * index + 0.4 + 's' }"
             />
-          </li>
+          </transition-group>
         </ul>
 
         <ul class="cardGrid__right">
-          <li v-for="(card, index) in list2.list" :key="index">
+          <transition-group
+            name="list"
+            tag="li"
+            v-for="(card, index) in list2.list"
+            :key="index"
+          >
             <Card
               :matched="card.matched"
               :card="card"
@@ -177,7 +187,7 @@ onMounted(() => {
               @click="matchCard(card)"
               :style="{ 'animation-delay': 0.2 * index + 0.4 + 's' }"
             />
-          </li>
+          </transition-group>
         </ul>
       </div>
     </div>
@@ -247,6 +257,16 @@ onMounted(() => {
       grid-column: 1/7;
       grid-row: 2;
     }
+  }
+
+  .list-enter-active,
+  .list-leave-active {
+    transition: all 0.5s ease;
+  }
+  .list-enter-from,
+  .list-leave-to {
+    opacity: 0;
+    transform: translateX(30px);
   }
 }
 </style>
