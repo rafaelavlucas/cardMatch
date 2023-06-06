@@ -65,8 +65,13 @@ const matchCard = (card: Content) => {
 
   selectedCardFromList2.value = card;
 
-  const isSameCard =
-    selectedCardFromList1.value?.name === selectedCardFromList2.value?.name;
+  const isSameCard = validateCards({
+    leftCard: selectedCardFromList1.value,
+    rightCard: card,
+    gameType: selectedGame,
+  });
+  card.matched = false;
+  console.log(isSameCard);
 
   if (isSameCard) {
     selectedCardFromList1.value!.matched = true;
@@ -85,6 +90,23 @@ const matchCard = (card: Content) => {
 
   if (allCardsInList1Matched) {
     isAllMatched.value = true;
+  }
+};
+
+const validateCards = ({ leftCard, rightCard, gameType }) => {
+  switch (gameType) {
+    case SHAPES_CATEGORY.toLowerCase():
+      console.log("entrou");
+      return leftCard.name === rightCard.name;
+
+      break;
+    case LETTERS_CATEGORY.toLowerCase():
+      console.log("entrou2");
+      return leftCard.letter === rightCard.letter;
+      break;
+
+    default:
+      break;
   }
 };
 
@@ -148,12 +170,7 @@ onMounted(() => {
         />
 
         <ul class="cardGrid__left">
-          <transition-group
-            name="list"
-            tag="li"
-            v-for="(card, index) in list1.list"
-            :key="index"
-          >
+          <li name="list" v-for="(card, index) in list1.list" :key="index">
             <Card
               :matched="card.matched"
               :card="card"
@@ -166,16 +183,11 @@ onMounted(() => {
               @click="selectCard(card)"
               :style="{ 'animation-delay': 0.2 * index + 0.4 + 's' }"
             />
-          </transition-group>
+          </li>
         </ul>
 
         <ul class="cardGrid__right">
-          <transition-group
-            name="list"
-            tag="li"
-            v-for="(card, index) in list2.list"
-            :key="index"
-          >
+          <li name="list" v-for="(card, index) in list2.list" :key="index">
             <Card
               :matched="card.matched"
               :card="card"
@@ -187,7 +199,7 @@ onMounted(() => {
               @click="matchCard(card)"
               :style="{ 'animation-delay': 0.2 * index + 0.4 + 's' }"
             />
-          </transition-group>
+          </li>
         </ul>
       </div>
     </div>
@@ -266,7 +278,7 @@ onMounted(() => {
   .list-enter-from,
   .list-leave-to {
     opacity: 0;
-    transform: translateX(30px);
+    // transform: translateX(30px);
   }
 }
 </style>

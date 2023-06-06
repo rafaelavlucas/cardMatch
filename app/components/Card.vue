@@ -257,7 +257,7 @@ const props = defineProps({
       }
     }
 
-    &[data-game="shapes"] {
+    &[data-game="silhuetas"] {
       #{$this} {
         &__image {
           filter: contrast(0%);
@@ -272,7 +272,7 @@ const props = defineProps({
       }
     }
 
-    &[data-game="letters"] {
+    &[data-game="letras"] {
       #{$this} {
         &__image {
           visibility: hidden;
