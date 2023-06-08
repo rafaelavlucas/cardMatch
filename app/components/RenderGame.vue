@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import AnimalsData from "@/src/gamesData/AnimalsData.json";
 import FruitsData from "@/src/gamesData/FruitsData.json";
+import VehiclesData from "@/src/gamesData/VehiclesData.json";
 import { DataProps, CategoryTitle } from "~/types/types";
 import useEventsBus from "~/utils/eventBus";
 
@@ -29,6 +30,11 @@ const loadGameDataBasedOnCategory = () => {
 
     case FRUITS_CATEGORY:
       gameData.value = FruitsData;
+      break;
+
+    case VEHICLES_CATEGORY:
+      gameData.value = VehiclesData;
+      break;
 
     default:
       break;

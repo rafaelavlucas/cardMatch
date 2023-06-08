@@ -1,14 +1,14 @@
 export type FiltersProps = string;
 
 export interface DataProps {
-  filters: FiltersProps[];
+  filters?: FiltersProps[];
   content: Content[];
 }
 
 export interface Content {
   image: string;
   name: string;
-  genre: string[];
+  genre?: string[];
   letter?: string;
   matched?: boolean | null;
 }
@@ -16,7 +16,7 @@ export interface Content {
 export interface CategoriesProps {
   title: string;
   img: string;
-  link: string;
+  // link: string;
 }
 
 export type LevelsProps = string;

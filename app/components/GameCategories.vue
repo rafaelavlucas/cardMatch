@@ -8,12 +8,14 @@ const categories = ref<CategoriesProps[]>([
   {
     title: ANIMALS_CATEGORY,
     img: "/images/categories/animals6.png",
-    link: "/games/animals",
   },
   {
     title: FRUITS_CATEGORY,
     img: "/images/categories/fruits3.png",
-    link: "/games/fruits",
+  },
+  {
+    title: VEHICLES_CATEGORY,
+    img: "/images/categories/fruits3.png",
   },
 ]);
 
