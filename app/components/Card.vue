@@ -279,6 +279,10 @@ const props = defineProps({
         }
         &__letter {
           display: flex;
+          bottom: -13%;
+        }
+        &__name {
+          opacity: 0;
         }
       }
 
@@ -302,10 +306,15 @@ const props = defineProps({
             font-size: 3vw;
             bottom: -8%;
             align-self: end;
+            transform: none;
             @include phablet {
               font-size: 6vw;
               bottom: 0%;
             }
+          }
+
+          &__name {
+            opacity: 1;
           }
         }
       }

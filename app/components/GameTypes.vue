@@ -16,6 +16,11 @@ const gameTypes = ref<GameTypesProps[]>([
     img: "/images/categories/game2.png",
     link: "/jogos/letras",
   },
+  {
+    title: COLORS_CATEGORY,
+    img: "/images/categories/game2.png",
+    link: "/jogos/cores",
+  },
 ]);
 </script>
 

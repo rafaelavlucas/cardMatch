@@ -128,7 +128,7 @@ const getRandomCards = (cards: Content[]) => {
 };
 
 const filterCardsByFilterType = (cards: Content[], filterValue: string) => {
-  return cards.filter((card) => card.genre.includes(filterValue));
+  return cards.filter((card) => card.genre?.includes(filterValue));
 };
 
 const sortCardsRandomly = (cards: Content[]) => {

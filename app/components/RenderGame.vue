@@ -15,14 +15,7 @@ const gameData = ref<DataProps | null>(null);
 
 const { bus } = useEventsBus();
 
-// const data = {
-//   ANIMALS_CATEGORY: AnimalsData,
-//   FRUITS_CATEGORY: FruitsData,
-// }
-
 const loadGameDataBasedOnCategory = () => {
-  // gameData.value = data[selectedCategory.value]
-
   switch (selectedCategory.value) {
     case ANIMALS_CATEGORY:
       gameData.value = AnimalsData;

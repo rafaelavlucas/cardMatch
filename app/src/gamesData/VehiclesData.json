@@ -1,11 +1,105 @@
 {
-
   "content": [
     {
       "image": "/images/vehicles/car.png",
       "name": "Carro",
       "letter": "C"
-    }
+    },
+    {
+      "image": "/images/vehicles/airplane.png",
+      "name": "Avião",
+      "letter": "A"
+    },
+    {
+      "image": "/images/vehicles/ambulance.png",
+      "name": "Ambulância",
+      "letter": "A"
+    },
+    {
+      "image": "/images/vehicles/bicycle.png",
+      "name": "Bicicleta",
+      "letter": "B"
+    },
+    {
+      "image": "/images/vehicles/boat.png",
+      "name": "Barco",
+      "letter": "B"
+    },
+    {
+      "image": "/images/vehicles/cargoship.png",
+      "name": "Navio de carga",
+      "letter": "N"
+    },
 
+    {
+      "image": "/images/vehicles/cementtruck.png",
+      "name": "Camião de cimento",
+      "letter": "C"
+    },
+    {
+      "image": "/images/vehicles/dumptruck.png",
+      "name": "Camião",
+      "letter": "C"
+    },
+    {
+      "image": "/images/vehicles/eletricscooter.png",
+      "name": "Trotinete",
+      "letter": "T"
+    },
+    {
+      "image": "/images/vehicles/escavator.png",
+      "name": "Escavadora",
+      "letter": "E"
+    },
+    {
+      "image": "/images/vehicles/firetruck.png",
+      "name": "Camião dos bombeiros",
+      "letter": "C"
+    },
+    {
+      "image": "/images/vehicles/forklift.png",
+      "name": "Empilhadora",
+      "letter": "E"
+    },
+    {
+      "image": "/images/vehicles/helicopter.png",
+      "name": "Helicóptero",
+      "letter": "H"
+    },
+    {
+      "image": "/images/vehicles/scooter.png",
+      "name": "Mota",
+      "letter": "M"
+    },
+    {
+      "image": "/images/vehicles/ship.png",
+      "name": "Navio",
+      "letter": "N"
+    },
+    {
+      "image": "/images/vehicles/submarine.png",
+      "name": "Submarino",
+      "letter": "S"
+    },
+    {
+      "image": "/images/vehicles/tractor.png",
+      "name": "Trator",
+      "letter": "T"
+    },
+    {
+      "image": "/images/vehicles/train.png",
+      "name": "Comboio",
+      "letter": "C"
+    },
+    {
+      "image": "/images/vehicles/tram.png",
+      "name": "Elétrico",
+      "letter": "E"
+    },
+    {
+      "image": "/images/vehicles/van.png",
+      "name": "Carrinha",
+      "letter": "C"
+    }
   ]
 }
