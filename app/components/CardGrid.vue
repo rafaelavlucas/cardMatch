@@ -106,6 +106,7 @@ const getRandomCards = (cards: Content[]) => {
       return cards.sort(() => Math.random() - 0.5).slice(0, 6);
 
     case LETTERS_CATEGORY.toLocaleLowerCase():
+      const randomizeCards = cards.sort(() => Math.random() - 0.5);
       const uniqueLetters = new Set<string>();
 
       const checkIfLetterIsUnique = (letter: string) => {
@@ -116,7 +117,7 @@ const getRandomCards = (cards: Content[]) => {
         return false;
       };
 
-      const filteredCards = cards.filter((card) =>
+      const filteredCards = randomizeCards.filter((card) =>
         checkIfLetterIsUnique(card.letter!)
       );
 
