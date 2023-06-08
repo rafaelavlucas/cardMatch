@@ -101,21 +101,30 @@ const resetCards = () => {
 };
 
 const getRandomCards = (cards: Content[]) => {
-  const uniqueLetters = new Set<string>();
+  switch (selectedGame) {
+    case SHAPES_CATEGORY.toLocaleLowerCase():
+      return cards.sort(() => Math.random() - 0.5).slice(0, 6);
 
-  const checkIfLetterIsUnique = (letter: string) => {
-    if (!uniqueLetters.has(letter)) {
-      uniqueLetters.add(letter);
-      return true;
-    }
-    return false;
-  };
+    case LETTERS_CATEGORY.toLocaleLowerCase():
+      const uniqueLetters = new Set<string>();
 
-  const filteredCards = cards.filter((card) =>
-    checkIfLetterIsUnique(card.letter!)
-  );
+      const checkIfLetterIsUnique = (letter: string) => {
+        if (!uniqueLetters.has(letter)) {
+          uniqueLetters.add(letter);
+          return true;
+        }
+        return false;
+      };
 
-  return filteredCards.sort(() => Math.random() - 0.5).slice(0, 6);
+      const filteredCards = cards.filter((card) =>
+        checkIfLetterIsUnique(card.letter!)
+      );
+
+      return filteredCards.sort(() => Math.random() - 0.5).slice(0, 6);
+
+    default:
+      return cards.sort(() => Math.random() - 0.5).slice(0, 6);
+  }
 };
 
 const filterCardsByFilterType = (cards: Content[], filterValue: string) => {
