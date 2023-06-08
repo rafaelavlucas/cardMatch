@@ -65,13 +65,7 @@ const matchCard = (card: Content) => {
 
   selectedCardFromList2.value = card;
 
-  const isSameCard = validateCards({
-    leftCard: selectedCardFromList1.value,
-    rightCard: card,
-    gameType: selectedGame,
-  });
-  card.matched = false;
-  console.log(isSameCard);
+  const isSameCard = selectedCardFromList1.value?.name === card.name;
 
   if (isSameCard) {
     selectedCardFromList1.value!.matched = true;
@@ -93,23 +87,6 @@ const matchCard = (card: Content) => {
   }
 };
 
-const validateCards = ({ leftCard, rightCard, gameType }) => {
-  switch (gameType) {
-    case SHAPES_CATEGORY.toLowerCase():
-      console.log("entrou");
-      return leftCard.name === rightCard.name;
-
-      break;
-    case LETTERS_CATEGORY.toLowerCase():
-      console.log("entrou2");
-      return leftCard.letter === rightCard.letter;
-      break;
-
-    default:
-      break;
-  }
-};
-
 const resetCards = () => {
   list1.value.list.forEach((element) => {
     element.matched = null;
@@ -124,7 +101,30 @@ const resetCards = () => {
 };
 
 const getRandomCards = (cards: Content[]) => {
-  return cards.sort(() => Math.random() - Math.random()).slice(0, 6);
+  switch (selectedGame) {
+    case SHAPES_CATEGORY.toLocaleLowerCase():
+      return cards.sort(() => Math.random() - 0.5).slice(0, 6);
+
+    case LETTERS_CATEGORY.toLocaleLowerCase():
+      const uniqueLetters = new Set<string>();
+
+      const checkIfLetterIsUnique = (letter: string) => {
+        if (!uniqueLetters.has(letter)) {
+          uniqueLetters.add(letter);
+          return true;
+        }
+        return false;
+      };
+
+      const filteredCards = cards.filter((card) =>
+        checkIfLetterIsUnique(card.letter!)
+      );
+
+      return filteredCards.sort(() => Math.random() - 0.5).slice(0, 6);
+
+    default:
+      return cards.sort(() => Math.random() - 0.5).slice(0, 6);
+  }
 };
 
 const filterCardsByFilterType = (cards: Content[], filterValue: string) => {
