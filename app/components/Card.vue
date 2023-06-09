@@ -13,9 +13,11 @@ const props = defineProps({
   <div
     class="card"
     :class="{ matched: card.matched, unmatched: card.matched === false }"
+    :data-color="[`${card.color}`.toLocaleLowerCase()]"
   >
     <div class="card__wrapper color-neu-10 bg-neu-01">
       <span class="card__letter color-neu-09">{{ card.letter }}</span>
+      <span class="card__color color-neu-09">{{ card.color }}</span>
       <figure class="card__image">
         <img :src="card.image" :alt="card.name" />
       </figure>
@@ -101,6 +103,16 @@ const props = defineProps({
     @include phablet {
       // font-size: 10vw;
     }
+  }
+
+  &__color {
+    display: none;
+    grid-column: 1;
+    grid-row: 2;
+    font-weight: bold;
+    justify-content: center;
+    align-items: flex-end;
+    font-size: clamp(0.7rem, 1.2vw, 1rem);
   }
 
   &--active {
@@ -316,6 +328,143 @@ const props = defineProps({
           &__name {
             opacity: 1;
           }
+        }
+      }
+    }
+
+    &[data-game="cores"] {
+      #{$this} {
+        &__wrapper {
+          filter: none !important;
+          opacity: 1;
+          // background-color: purple;
+
+          &:after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: inherit;
+            z-index: -1;
+            grid-row: 1/2;
+            grid-column: 1/2;
+          }
+        }
+        &__image {
+          // visibility: hidden;
+          opacity: 0;
+        }
+        &__name {
+          opacity: 0;
+        }
+        &__color {
+          display: flex;
+        }
+      }
+
+      &.matched {
+        #{$this} {
+          &__wrapper {
+            &:after {
+              grid-row: 2/3;
+            }
+          }
+          &__image {
+            opacity: 1;
+            visibility: visible;
+            transform: scale(0.7);
+            top: -16%;
+            @include phablet {
+              transform: scale(0.6);
+              top: -20%;
+            }
+          }
+
+          &__color {
+            // color: white;
+            // background-color: rgba(var(--neu-01), 0.5);
+            // border-radius: 50%;
+            // transform: scale(0.5);
+            // font-size: 3vw;
+            // bottom: -8%;
+            // align-self: end;
+            // transform: none;
+            align-items: center;
+            color: white;
+          }
+
+          &__name {
+            opacity: 1;
+            grid-row: 1;
+            bottom: 10%;
+          }
+        }
+      }
+
+      &[data-color="roxo"] {
+        #{$this}__wrapper:after {
+          background-color: #8539ab;
+        }
+      }
+      &[data-color="vermelho"] {
+        #{$this}__wrapper:after {
+          background-color: #ea3030;
+        }
+      }
+      &[data-color="amarelo"] {
+        #{$this}__wrapper:after {
+          background-color: #ffe127;
+        }
+      }
+      &[data-color="azul"] {
+        #{$this}__wrapper:after {
+          background-color: #277dc8;
+        }
+      }
+      &[data-color="verde"] {
+        #{$this}__wrapper:after {
+          background-color: #249f40;
+        }
+      }
+      &[data-color="laranja"] {
+        #{$this}__wrapper:after {
+          background-color: #ff861f;
+        }
+      }
+      &[data-color="rosa"] {
+        #{$this}__wrapper:after {
+          background-color: #f065a5;
+        }
+      }
+      &[data-color="castanho"] {
+        #{$this}__wrapper:after {
+          background-color: #8c592e;
+        }
+      }
+      &[data-color="cinzento"] {
+        #{$this}__wrapper:after {
+          background-color: #828282;
+        }
+      }
+      &[data-color="preto"] {
+        #{$this}__wrapper:after {
+          background-color: black;
+        }
+      }
+      &[data-color="branco"] {
+        #{$this}__wrapper:after {
+          background-color: white;
+        }
+      }
+
+      &[data-color="branco"],
+      &[data-color="rosa"],
+      &[data-color="amarelo"] {
+        #{$this}__color {
+          color: rgb(var(--neu-09));
         }
       }
     }

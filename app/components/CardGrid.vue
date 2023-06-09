@@ -101,12 +101,13 @@ const resetCards = () => {
 };
 
 const getRandomCards = (cards: Content[]) => {
+  const randomizeCards = cards.sort(() => Math.random() - 0.5);
+
   switch (selectedGame) {
     case SHAPES_CATEGORY.toLocaleLowerCase():
       return cards.sort(() => Math.random() - 0.5).slice(0, 6);
 
     case LETTERS_CATEGORY.toLocaleLowerCase():
-      const randomizeCards = cards.sort(() => Math.random() - 0.5);
       const uniqueLetters = new Set<string>();
 
       const checkIfLetterIsUnique = (letter: string) => {
@@ -122,6 +123,23 @@ const getRandomCards = (cards: Content[]) => {
       );
 
       return filteredCards.sort(() => Math.random() - 0.5).slice(0, 6);
+
+    case COLORS_CATEGORY.toLocaleLowerCase():
+      const uniqueColors = new Set<string>();
+
+      const checkIfColorIsUnique = (color: string) => {
+        if (!uniqueColors.has(color)) {
+          uniqueColors.add(color);
+          return true;
+        }
+        return false;
+      };
+
+      const filteredCardsColor = randomizeCards.filter((card) =>
+        checkIfColorIsUnique(card.color!)
+      );
+
+      return filteredCardsColor.sort(() => Math.random() - 0.5).slice(0, 6);
 
     default:
       return cards.sort(() => Math.random() - 0.5).slice(0, 6);

@@ -1,9 +1,159 @@
 {
   "content": [
     {
-      "image": "/images/colors/backpack.jpeg",
+      "image": "/images/colors/backpack.png",
       "name": "Mochila",
       "color": "Roxo"
+    },
+    {
+      "image": "/images/colors/ball.png",
+      "name": "Bola",
+      "color": "Vermelho"
+    },
+    {
+      "image": "/images/colors/beanie.png",
+      "name": "Gorro",
+      "color": "Cinzento"
+    },
+    {
+      "image": "/images/colors/book.png",
+      "name": "Livro",
+      "color": "Verde"
+    },
+    {
+      "image": "/images/colors/bottle.png",
+      "name": "Garrafa",
+      "color": "Roxo"
+    },
+    {
+      "image": "/images/colors/bucket.png",
+      "name": "Balde",
+      "color": "Vermelho"
+    },
+    {
+      "image": "/images/colors/calculator.png",
+      "name": "Calculadora",
+      "color": "Preto"
+    },
+    {
+      "image": "/images/colors/cap.png",
+      "name": "Boné",
+      "color": "Azul"
+    },
+    {
+      "image": "/images/colors/chair.png",
+      "name": "Cadeira",
+      "color": "Amarelo"
+    },
+    {
+      "image": "/images/colors/flipflops.png",
+      "name": "Chinelos",
+      "color": "Laranja"
+    },
+    {
+      "image": "/images/colors/fork.png",
+      "name": "Garfo",
+      "color": "Cinzento"
+    },
+    {
+      "image": "/images/colors/hat.png",
+      "name": "Chapéu",
+      "color": "Vermelho"
+    },
+    {
+      "image": "/images/colors/jacket.png",
+      "name": "Casaco",
+      "color": "Castanho"
+    },
+    {
+      "image": "/images/colors/mug.png",
+      "name": "Caneca",
+      "color": "Azul"
+    },
+    {
+      "image": "/images/colors/pants.png",
+      "name": "Calças",
+      "color": "Azul"
+    },
+    {
+      "image": "/images/colors/pencil.png",
+      "name": "Lápis",
+      "color": "Verde"
+    },
+    {
+      "image": "/images/colors/plate.png",
+      "name": "Prato",
+      "color": "Branco"
+    },
+    {
+      "image": "/images/colors/pot.png",
+      "name": "Vaso",
+      "color": "Castanho"
+    },
+    {
+      "image": "/images/colors/ruler.png",
+      "name": "Régua",
+      "color": "Branco"
+    },
+    {
+      "image": "/images/colors/schovel.png",
+      "name": "Pá",
+      "color": "Laranja"
+    },
+    {
+      "image": "/images/colors/scissors.png",
+      "name": "Tesoura",
+      "color": "Verde"
+    },
+    {
+      "image": "/images/colors/slippers.png",
+      "name": "Pantufas",
+      "color": "Rosa"
+    },
+    {
+      "image": "/images/colors/sneakers.png",
+      "name": "Sapatilhas",
+      "color": "Branco"
+    },
+    {
+      "image": "/images/colors/socks.png",
+      "name": "Meias",
+      "color": "Laranja"
+    },
+    {
+      "image": "/images/colors/spoon.png",
+      "name": "Colher",
+      "color": "Cinzento"
+    },
+    {
+      "image": "/images/colors/stapler.png",
+      "name": "Agrafador",
+      "color": "Preto"
+    },
+    {
+      "image": "/images/colors/sunglasses.png",
+      "name": "Óculos de sol",
+      "color": "Preto"
+    },
+    {
+      "image": "/images/colors/sweatshirt.png",
+      "name": "Camisola",
+      "color": "Roxo"
+    },
+    {
+      "image": "/images/colors/teddy.png",
+      "name": "Peluche",
+      "color": "Castanho"
+    },
+    {
+      "image": "/images/colors/tennisball.png",
+      "name": "Bola de ténis",
+      "color": "Amarelo"
+    },
+    {
+      "image": "/images/colors/tshirt.png",
+      "name": "T-shirt",
+      "color": "Rosa"
     }
   ]
 }

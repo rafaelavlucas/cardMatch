@@ -10,6 +10,7 @@ export interface Content {
   name: string;
   genre?: string[];
   letter?: string;
+  color?: string;
   matched?: boolean | null;
 }
 
