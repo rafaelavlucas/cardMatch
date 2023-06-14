@@ -154,6 +154,81 @@
       "image": "/images/colors/tshirt.png",
       "name": "T-shirt",
       "color": "Rosa"
+    },
+    {
+      "image": "/images/colors/boots.png",
+      "name": "Botas",
+      "color": "Castanho"
+    },
+    {
+      "image": "/images/colors/box.png",
+      "name": "Caixa",
+      "color": "Rosa"
+    },
+    {
+      "image": "/images/colors/cup.png",
+      "name": "Copo",
+      "color": "Branco"
+    },
+    {
+      "image": "/images/colors/racket.png",
+      "name": "Raquete",
+      "color": "Preto"
+    },
+    {
+      "image": "/images/colors/rake.png",
+      "name": "Ancinho",
+      "color": "Amarelo"
+    },
+    {
+      "image": "/images/colors/swimmingring.png",
+      "name": "Boia",
+      "color": "Rosa"
+    },
+    {
+      "image": "/images/colors/watch.png",
+      "name": "Relógio",
+      "color": "Amarelo"
+    },
+    {
+      "image": "/images/colors/button.png",
+      "name": "Botão",
+      "color": "Laranja"
+    },
+    {
+      "image": "/images/colors/toothbrush.png",
+      "name": "Escova de dentes",
+      "color": "Verde"
+    },
+    {
+      "image": "/images/colors/phone.png",
+      "name": "Telefone",
+      "color": "Vermelho"
+    },
+    {
+      "image": "/images/colors/helmet.png",
+      "name": "Capacete",
+      "color": "Roxo"
+    },
+    {
+      "image": "/images/colors/radio.png",
+      "name": "Rádio",
+      "color": "Cinzento"
+    },
+    {
+      "image": "/images/colors/lamp.png",
+      "name": "Candeeiro",
+      "color": "Azul"
+    },
+    {
+      "image": "/images/colors/brush.png",
+      "name": "Escova de cabelo",
+      "color": "Laranja"
+    },
+    {
+      "image": "/images/colors/wateringcan.png",
+      "name": "Regador",
+      "color": "Rosa"
     }
   ]
 }

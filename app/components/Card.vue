@@ -457,6 +457,7 @@ const props = defineProps({
       &[data-color="branco"] {
         #{$this}__wrapper:after {
           background-color: white;
+          box-shadow: 0px 0px 0px 1px rgb(var(--neu-03));
         }
       }
 
