@@ -199,16 +199,17 @@ const props = defineProps({
           z-index: 2;
 
           &:before {
-            content: "✓";
+            content: "\e92c";
+            font-family: "feather" !important;
             width: clamp(1rem, 2vw, 2rem);
             height: clamp(1rem, 2vw, 2rem);
             font-size: clamp(1rem, 1.8vw, 2rem);
             position: absolute;
-            background: rgb(var(--add-01));
-            color: white;
+            // background: rgb(var(--add-01));
+            color: rgb(var(--add-01));
             opacity: 1;
             left: 3%;
-            top: 3%;
+            top: 2.5%;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -338,15 +339,19 @@ const props = defineProps({
           filter: none !important;
           opacity: 1;
           // background-color: purple;
+          // grid-template-rows: 1fr auto;
+          // gap: 10%;
 
           &:after {
+            transition: all 0.3s ease;
             content: "";
             position: absolute;
             width: 100%;
-            height: 100%;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
+            height: 110%;
+            left: 0;
+            top: 0;
+            // transform: translate(-50%, -50%);
+
             border-radius: inherit;
             z-index: -1;
             grid-row: 1/2;
@@ -370,6 +375,7 @@ const props = defineProps({
           &__wrapper {
             &:after {
               grid-row: 2/3;
+              height: 100%;
             }
           }
           &__image {
@@ -462,7 +468,6 @@ const props = defineProps({
       }
 
       &[data-color="branco"],
-      &[data-color="rosa"],
       &[data-color="amarelo"] {
         #{$this}__color {
           color: rgb(var(--neu-09));
