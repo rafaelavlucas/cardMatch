@@ -18,14 +18,14 @@ const gameTypes = ref<GameTypesProps[]>([
   },
   {
     title: COLORS_CATEGORY,
-    img: "/images/categories/game2.png",
+    img: "/images/categories/game3.png",
     link: "/jogos/cores",
   },
 ]);
 </script>
 
 <template>
-  <CategoriesBlock :title="'Escolhe o tipo de jogo'">
+  <CategoriesBlock :title="'Escolhe o tipo de jogo'" :grid="3">
     <li v-for="(game, index) in gameTypes" :key="index">
       <NuxtLink :to="game.link">
         <CardCategory :title="game.title" :img="game.img" :index="index" />

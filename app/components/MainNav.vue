@@ -27,7 +27,9 @@ const showPoup = ref(false);
     :title="'Como jogar'"
     :text="'texto'"
     @closePopup="showPoup = false"
-  />
+  >
+    <Video :source="'/howto.mp4'" />
+  </Popup>
 </template>
 
 <style lang="scss" scoped>

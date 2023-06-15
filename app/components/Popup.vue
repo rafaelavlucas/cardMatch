@@ -32,6 +32,7 @@ const emit = defineEmits(["closePopup"]);
           <article class="popup__content">
             <h3 class="popup__title font-m color-m-01">{{ title }}</h3>
             <p class="popup__text font-s color-neu-09">{{ text }}</p>
+            <slot></slot>
           </article>
         </div>
       </div>
@@ -44,7 +45,7 @@ const emit = defineEmits(["closePopup"]);
 
 .popup {
   position: absolute;
-  z-index: 2;
+  z-index: 4;
   width: 100%;
   height: 100%;
   background-color: rgba(var(--neu-09), 0.5);
@@ -65,11 +66,14 @@ const emit = defineEmits(["closePopup"]);
     @include MS-03;
     border: 1px solid rgb(var(--neu-03));
     width: clamp(40rem, 50vw, 600px);
-    height: 50dvh;
+    //    min-height: 50dvh;
     @include cardRadius;
     background-color: rgb(var(--neu-01));
     padding: clamp(2rem, 5vw, 5rem);
     transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.1, 1.33);
+    @include phablet {
+      padding: clamp(4rem, 5vw, 5rem) clamp(1rem, 4vw, 4rem);
+    }
   }
 
   &__close {
@@ -77,6 +81,11 @@ const emit = defineEmits(["closePopup"]);
     right: $spc-32;
     top: $spc-32;
     z-index: 2;
+
+    @include phablet {
+      right: $spc-16;
+      top: $spc-16;
+    }
   }
   &__content {
     height: 100%;

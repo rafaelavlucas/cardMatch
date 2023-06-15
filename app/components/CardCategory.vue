@@ -70,12 +70,12 @@ const props = defineProps({
     align-items: center;
     img {
       width: 100%;
-      height: 30vh;
+      max-height: 30vh;
       object-fit: contain;
       max-height: 280px;
-      min-height: 150px;
+      // min-height: 150px;
       @include phablet {
-        max-height: 140px;
+        max-height: 15vh;
       }
     }
   }

@@ -6,11 +6,15 @@ const props = defineProps({
     type: String,
     required: true,
   },
+  grid: {
+    type: Number,
+    required: false,
+  },
 });
 </script>
 
 <template>
-  <div class="categoriesBlock">
+  <div class="categoriesBlock" :data-grid="grid">
     <div class="wrapper">
       <p class="categoriesBlock__title font-s color-neu-07">{{ title }}</p>
       <ul class="categoriesBlock__content">
@@ -67,6 +71,33 @@ const props = defineProps({
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  &[data-grid="2"] {
+    #{$this}__content {
+      max-width: 800px;
+      grid-template-columns: repeat(2, 1fr);
+      @include phablet {
+        max-width: 400px;
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+  &[data-grid="3"] {
+    padding-left: 10vw;
+    padding-right: 10vw;
+    #{$this}__content {
+      max-width: 1000px;
+      grid-template-columns: repeat(3, 1fr);
+
+      @include phablet {
+        max-width: 400px;
+        grid-template-columns: 1fr;
+      }
+    }
+    .wrapper {
+      padding: 0;
+    }
   }
 }
 </style>

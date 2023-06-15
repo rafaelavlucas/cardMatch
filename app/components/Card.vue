@@ -16,8 +16,12 @@ const props = defineProps({
     :data-color="[`${card.color}`.toLocaleLowerCase()]"
   >
     <div class="card__wrapper color-neu-10 bg-neu-01">
-      <span class="card__letter color-neu-09">{{ card.letter }}</span>
-      <span class="card__color color-neu-09">{{ card.color }}</span>
+      <span v-if="card.letter" class="card__letter color-neu-09">{{
+        card.letter
+      }}</span>
+      <span v-if="card.color" class="card__color color-neu-09">{{
+        card.color
+      }}</span>
       <figure class="card__image">
         <img :src="card.image" :alt="card.name" />
       </figure>
@@ -39,7 +43,7 @@ const props = defineProps({
     // pointer-events: none;
     @include cardRadius;
     display: grid;
-    grid-template-rows: 1fr clamp(0.5rem, 3.5vw, 3.5rem);
+    grid-template-rows: 1fr clamp(0.5rem, 2.5vw, 2.5rem);
 
     // padding: clamp(0.5rem, 1vw, 1rem);
     padding: 10%;
@@ -100,6 +104,7 @@ const props = defineProps({
     font-weight: bold;
     justify-content: center;
     align-items: center;
+
     @include phablet {
       // font-size: 10vw;
     }
@@ -316,12 +321,12 @@ const props = defineProps({
             // background-color: rgba(var(--neu-01), 0.5);
             // border-radius: 50%;
             // transform: scale(0.5);
-            font-size: 3vw;
-            bottom: -8%;
+            font-size: clamp(1.5rem, 2.5vw, 2.5rem);
+            bottom: 0%;
             align-self: end;
             transform: none;
             @include phablet {
-              font-size: 6vw;
+              // font-size: 6vw;
               bottom: 0%;
             }
           }
@@ -347,7 +352,7 @@ const props = defineProps({
             content: "";
             position: absolute;
             width: 100%;
-            height: 110%;
+            height: 100%;
             left: 0;
             top: 0;
             // transform: translate(-50%, -50%);

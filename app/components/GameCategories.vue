@@ -15,7 +15,7 @@ const categories = ref<CategoriesProps[]>([
   },
   {
     title: VEHICLES_CATEGORY,
-    img: "/images/categories/fruits3.png",
+    img: "/images/categories/vehicles.png",
   },
 ]);
 
@@ -29,7 +29,7 @@ const selectCategory = (category: CategoriesProps) => {
 </script>
 
 <template>
-  <CategoriesBlock :title="'Escolhe a categoria'">
+  <CategoriesBlock :title="'Escolhe a categoria'" :grid="3">
     <li v-for="(category, index) in categories" :key="index">
       <CardCategory
         :title="category.title"

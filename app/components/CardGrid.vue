@@ -259,6 +259,7 @@ onMounted(() => {
     padding: clamp(0.5rem, 1.2vw, 1rem);
     border-radius: clamp(0.5rem, 2.5vw, 2.5rem);
     justify-self: center;
+    animation: reveal 0.3s 0.2s ease backwards;
 
     @include phablet {
       // gap: 2vw;

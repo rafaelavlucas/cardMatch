@@ -229,6 +229,73 @@
       "image": "/images/colors/wateringcan.png",
       "name": "Regador",
       "color": "Rosa"
+    },
+    {
+      "image": "/images/colors/bag.png",
+      "name": "Saco",
+      "color": "Castanho"
+    },
+    {
+      "image": "/images/colors/rainboots.png",
+      "name": "Galochas",
+      "color": "Amarelo"
+    },
+    {
+      "image": "/images/colors/scarf.png",
+      "name": "Cachecol",
+      "color": "Vermelho"
+    },
+    {
+      "image": "/images/colors/umbrella.png",
+      "name": "Chapéu de chuva",
+      "color": "Roxo"
+    },
+    {
+      "image": "/images/colors/shorts.png",
+      "name": "Calçoes",
+      "color": "Laranja"
+    },
+    {
+      "image": "/images/colors/towel.png",
+      "name": "Toalha",
+      "color": "Branco"
+    },
+    {
+      "image": "/images/colors/table.png",
+      "name": "Mesa",
+      "color": "Preto"
+    },
+    {
+      "image": "/images/colors/teapot.png",
+      "name": "Bule",
+      "color": "Azul"
+    },
+    {
+      "image": "/images/colors/clothespin.png",
+      "name": "Mola",
+      "color": "Azul"
+    },
+
+    {
+      "image": "/images/colors/notebook.png",
+      "name": "Caderno",
+      "color": "Amarelo"
+    },
+    {
+      "image": "/images/colors/toaster.png",
+      "name": "Torradeira",
+      "color": "Branco"
+    },
+
+    {
+      "image": "/images/colors/gloves.png",
+      "name": "Luvas",
+      "color": "Cinzento"
+    },
+    {
+      "image": "/images/colors/drum.png",
+      "name": "Tambor",
+      "color": "Vermelho"
     }
   ]
 }
