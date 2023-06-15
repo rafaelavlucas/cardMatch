@@ -4,7 +4,7 @@ const showPoup = ref(false);
 <template>
   <header class="mainNav">
     <div class="mainNav__wrapper wrapper">
-      <ButtonBack class="mainNav__back" />
+      <ButtonBack class="mainNav__back" @reload-game="reloadGame" />
 
       <NuxtLink to="/" class="mainNav__logo"
         ><figure class="mainNav__logo-img">
@@ -25,7 +25,7 @@ const showPoup = ref(false);
   <Popup
     :state="showPoup"
     :title="'Como jogar'"
-    :text="'texto'"
+    :text="'Clica num dos cartões do lado esquerdo, e encontra o par correspondente no lado direito.'"
     @closePopup="showPoup = false"
   >
     <Video :source="'/howto.mp4'" />

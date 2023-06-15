@@ -57,6 +57,7 @@ const handleClick = ({ currentTarget }: Event, item: string) => {
   animation: reveal 0.3s ease backwards;
 
   &__item {
+    transition: all 0.2s ease;
     font-family: $font;
     font-weight: bold;
     font-size: clamp(1rem, 1.5vw, 1.2rem);
@@ -71,7 +72,10 @@ const handleClick = ({ currentTarget }: Event, item: string) => {
     }
 
     &:hover {
-      opacity: 0.6;
+      // opacity: 0.6;
+      // background-color: rgb(var(--neu-01));
+      // color: rgb(var(--m-01));
+      box-shadow: inset 0px 0px 0px 2px rgb(var(--m-01));
     }
     &.active {
       background-color: rgb(var(--m-01));

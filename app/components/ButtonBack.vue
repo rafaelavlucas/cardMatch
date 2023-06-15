@@ -1,9 +1,8 @@
 <script setup lang="ts">
+import useEventsBus from "@/utils/eventBus";
 const router = useRouter();
 const route = useRoute();
 const isHp = "/";
-
-console.log(route.path);
 
 const handleBack = () => {
   router.back();

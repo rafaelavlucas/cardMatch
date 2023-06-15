@@ -296,6 +296,11 @@
       "image": "/images/colors/drum.png",
       "name": "Tambor",
       "color": "Vermelho"
+    },
+    {
+      "image": "/images/colors/comb.png",
+      "name": "Pente",
+      "color": "Azul"
     }
   ]
 }

@@ -98,6 +98,7 @@ const emit = defineEmits(["closePopup"]);
 
   &__text {
     margin-top: $spc-32;
+    line-height: normal;
   }
 
   &.fade-enter-active,

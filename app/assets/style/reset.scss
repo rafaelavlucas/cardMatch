@@ -197,9 +197,9 @@ input[type="number"] {
   }
 }
 
-// Remove scaleCards icon in IE and Edge for password inputs //
+// Remove scale icon in IE and Edge for password inputs //
 input::-ms-clear,
-input::-ms-scaleCards {
+input::-ms-scale {
   display: none;
 }
 

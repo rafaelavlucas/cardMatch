@@ -5,7 +5,8 @@ defineEmits(["reloadGame"]);
 <template>
   <div class="reload">
     <p class="reload__text">Clica para jogar novamente!</p>
-    <button class="reload__button" @click="$emit('reloadGame')">Jogar</button>
+
+    <Button :title="'Jogar'" :variant="'cta-01'" @click="$emit('reloadGame')" />
   </div>
 </template>
 
@@ -21,7 +22,7 @@ defineEmits(["reloadGame"]);
   padding: 3vw;
   transition: all 0.4s ease;
 
-  animation: scaleCards 0.3s ease forwards;
+  animation: scale 0.3s ease forwards;
 
   // display: none;
 

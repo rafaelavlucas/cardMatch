@@ -37,7 +37,7 @@ const props = defineProps({
 .card {
   $this: &;
   padding: clamp(0.2rem, 0.7vw, 0.7rem);
-  // animation: scaleCards 0.3s ease backwards;
+  // animation: scale 0.3s ease backwards;
 
   &__wrapper {
     // pointer-events: none;
@@ -481,19 +481,8 @@ const props = defineProps({
     }
   }
 
-  @keyframes scaleCards {
-    0% {
-      opacity: 0;
-      transform: scale(0.8);
-    }
-    100% {
-      opacity: 1;
-      transform: scale(1);
-    }
-  }
-
   &.anime {
-    animation: scaleCards 0.3s ease backwards;
+    animation: scale 0.3s ease backwards;
   }
 }
 </style>
