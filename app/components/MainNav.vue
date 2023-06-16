@@ -4,7 +4,7 @@ const showPoup = ref(false);
 <template>
   <header class="mainNav">
     <div class="mainNav__wrapper wrapper">
-      <ButtonBack class="mainNav__back" @reload-game="reloadGame" />
+      <ButtonBack class="mainNav__back" />
 
       <NuxtLink to="/" class="mainNav__logo"
         ><figure class="mainNav__logo-img">
