@@ -1,5 +1,5 @@
 <script setup lang="ts">
-export type ButtonVariants = "cta-01" | "cta-02";
+export type ButtonVariants = "cta-01" | "cta-02" | "cta-02--alt";
 export type ButtonSizes = "s" | "m" | "l";
 
 const props = defineProps({
@@ -85,13 +85,23 @@ const props = defineProps({
     color: rgb(var(--m-01));
     display: inline-flex;
     align-items: center;
+    gap: $spc-08;
+
+    span {
+      transform: translateY(1px);
+    }
 
     @include mobile {
-      @include font-m;
+      font-size: 0.8rem;
     }
 
     &:hover {
       opacity: 0.8;
+    }
+
+    &--alt {
+      @extend .cta-02;
+      flex-direction: row-reverse;
     }
   }
 }

@@ -1,10 +1,15 @@
 <script setup lang="ts">
 const showPoup = ref(false);
+const router = useRouter();
+const route = useRoute();
+const isHp = "/";
+const isGameTypes = "/jogos";
+console.log(route.path);
 </script>
 <template>
   <header class="mainNav">
     <div class="mainNav__wrapper wrapper">
-      <ButtonBack class="mainNav__back" />
+      <ButtonBack class="mainNav__back" :title="'Voltar'" />
 
       <NuxtLink to="/" class="mainNav__logo"
         ><figure class="mainNav__logo-img">
@@ -14,8 +19,9 @@ const showPoup = ref(false);
       <!-- <NuxtLink to="/">Início</NuxtLink> -->
       <Button
         class="mainNav__about"
-        :altText="'Sobre'"
-        :variant="'cta-02'"
+        :altText="'Como Jogar'"
+        :title="'Instruções'"
+        :variant="'cta-02--alt'"
         :icon="'info'"
         @click="showPoup = true"
       />
@@ -25,7 +31,7 @@ const showPoup = ref(false);
   <Popup
     :state="showPoup"
     :title="'Como jogar'"
-    :text="'Clica num dos cartões do lado esquerdo, e encontra o par correspondente no lado direito.'"
+    :text="'Clica num dos cartões, e encontra o par correspondente.'"
     @closePopup="showPoup = false"
   >
     <Video :source="'/howto.mp4'" />
@@ -44,7 +50,7 @@ const showPoup = ref(false);
   }
   &__wrapper {
     display: grid;
-    grid-template-columns: $spc-24 1fr $spc-24;
+    grid-template-columns: 1fr auto 1fr;
     justify-items: center;
   }
 
@@ -63,9 +69,11 @@ const showPoup = ref(false);
 
   &__about {
     grid-column: 3;
+    justify-self: flex-end;
   }
   &__back {
     grid-column: 1;
+    justify-self: flex-start;
   }
 }
 </style>
