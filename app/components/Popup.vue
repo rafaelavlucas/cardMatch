@@ -30,7 +30,7 @@ const emit = defineEmits(["closePopup"]);
             @click="$emit('closePopup')"
           />
           <article class="popup__content">
-            <h3 class="popup__title font-m color-m-01">{{ title }}</h3>
+            <h3 class="popup__title font-m bold color-m-01">{{ title }}</h3>
             <p class="popup__text font-s color-neu-09">{{ text }}</p>
             <slot></slot>
           </article>

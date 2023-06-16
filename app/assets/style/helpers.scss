@@ -67,6 +67,10 @@ $color: (
   @include font-m;
 }
 
+.bold {
+  font-weight: 600;
+}
+
 //////Aspect Ratio//////
 .ratio-1-1 {
   @include ratio-1-1;

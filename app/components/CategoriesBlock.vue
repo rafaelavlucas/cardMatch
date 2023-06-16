@@ -16,7 +16,7 @@ const props = defineProps({
 <template>
   <div class="categoriesBlock" :data-grid="grid">
     <div class="wrapper">
-      <p class="categoriesBlock__title font-s color-neu-07">{{ title }}</p>
+      <p class="categoriesBlock__title font-m color-neu-07">{{ title }}</p>
       <ul class="categoriesBlock__content">
         <slot></slot>
       </ul>
