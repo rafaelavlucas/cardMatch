@@ -26,7 +26,7 @@ const handleClick = ({ currentTarget }: Event, item: string) => {
     <li>
       <button
         class="filters__item"
-        @click="(e) => handleClick(e, ALL_TEXT)"
+        @click="(e: MouseEvent) => handleClick(e, ALL_TEXT)"
         :class="{ active: ALL_TEXT === selectedFilter }"
       >
         {{ ALL_TEXT }}
@@ -35,7 +35,7 @@ const handleClick = ({ currentTarget }: Event, item: string) => {
     <li v-for="(item, index) in filters" :key="index">
       <button
         class="filters__item"
-        @click="(e) => handleClick(e, item)"
+        @click="(e: MouseEvent) => handleClick(e, item)"
         :class="{ active: item === selectedFilter }"
       >
         {{ item }}

@@ -173,7 +173,7 @@ watch(
 );
 
 onMounted(() => {
-  loadCards();
+  reloadGame();
 });
 </script>
 
