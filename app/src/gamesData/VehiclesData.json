@@ -100,6 +100,36 @@
       "image": "/images/vehicles/van.png",
       "name": "Carrinha",
       "letter": "C"
+    },
+    {
+      "image": "/images/vehicles/spacerocket.png",
+      "name": "Foguetão",
+      "letter": "F"
+    },
+    {
+      "image": "/images/vehicles/spaceshuttle.png",
+      "name": "Vaivem espacial",
+      "letter": "V"
+    },
+    {
+      "image": "/images/vehicles/spacecraft.png",
+      "name": "Nave espacial",
+      "letter": "N"
+    },
+    {
+      "image": "/images/vehicles/tuktuk.png",
+      "name": "Tuk tuk",
+      "letter": "T"
+    },
+    {
+      "image": "/images/vehicles/bus.png",
+      "name": "Autocarro",
+      "letter": "A"
+    },
+    {
+      "image": "/images/vehicles/policecar.png",
+      "name": "Carro da polícia",
+      "letter": "C"
     }
   ]
 }
