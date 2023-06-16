@@ -12,14 +12,14 @@ const gameTypes = ref<GameTypesProps[]>([
     link: "/jogos/silhuetas",
   },
   {
-    title: LETTERS_CATEGORY,
-    img: "/images/categories/game2.png",
-    link: "/jogos/letras",
-  },
-  {
     title: COLORS_CATEGORY,
     img: "/images/categories/game3.png",
     link: "/jogos/cores",
+  },
+  {
+    title: LETTERS_CATEGORY,
+    img: "/images/categories/game2.png",
+    link: "/jogos/letras",
   },
 ]);
 </script>
