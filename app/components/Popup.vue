@@ -15,13 +15,23 @@ const props = defineProps({
 });
 
 const emit = defineEmits(["closePopup"]);
+
+const popupRef = ref<HTMLDivElement | null>(null);
+
+const clickOutside = ({ target }: Event) => {
+  if (!popupRef.value) return;
+
+  if (!(popupRef.value === target || popupRef.value.contains(target as Node))) {
+    emit("closePopup");
+  }
+};
 </script>
 
 <template>
   <transition tag="div" name="fade">
     <div v-if="state" class="popup">
-      <div class="popup__wrapper wrapper">
-        <div class="popup__container">
+      <div class="popup__wrapper wrapper" @click="clickOutside">
+        <div class="popup__container" ref="popupRef">
           <Button
             :variant="'cta-02'"
             :icon="'x'"
