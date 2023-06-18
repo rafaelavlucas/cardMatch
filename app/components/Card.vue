@@ -36,7 +36,7 @@ const props = defineProps({
 
 .card {
   $this: &;
-  padding: clamp(0.2rem, 0.7vw, 0.7rem);
+  padding: clamp(0.3rem, 0.7vw, 0.7rem);
   // animation: scale 0.3s ease backwards;
 
   &__wrapper {
@@ -53,22 +53,35 @@ const props = defineProps({
 
     @include phablet {
       // padding: min(2vw, 4rem);
-      padding: 10% 6%;
+      padding: 10% 8%;
       grid-template-rows: 1fr clamp(1.4rem, 3.5vw, 3.5rem);
     }
   }
 
   &__image {
+    position: relative;
     transition: transform 0.3s ease;
     pointer-events: none;
-    border-radius: clamp(0.1rem, 0.8vw, 0.5rem);
+
     overflow: hidden;
     grid-row: 1;
     grid-column: 1;
+    img {
+      object-fit: contain;
+    }
     @include phablet {
       img {
-        max-height: 8vh;
-        object-fit: contain;
+        max-height: 20vh;
+      }
+    }
+    @include mobile {
+      img {
+        max-height: 9vh;
+      }
+    }
+    @include mobile-h {
+      img {
+        max-height: 15vh;
       }
     }
   }
@@ -118,6 +131,9 @@ const props = defineProps({
     justify-content: center;
     align-items: flex-end;
     font-size: clamp(0.7rem, 1.2vw, 1rem);
+    word-break: break-word;
+    hyphens: auto;
+    text-align: center;
   }
 
   &--active {
@@ -152,7 +168,7 @@ const props = defineProps({
           transition: all 0.3s ease;
           background: rgb(var(--m-01), 0.15);
           border-color: transparent;
-          box-shadow: 0 0 0 2px rgb(var(--m-01));
+          box-shadow: inset 0 0 0 2px rgb(var(--m-01));
         }
       }
     }
@@ -164,7 +180,7 @@ const props = defineProps({
     &:hover {
       cursor: pointer;
       #{$this}__wrapper {
-        transform: scale(1.05);
+        //  transform: scale(1.05);
         @include shadowHover;
 
         @include phablet {
@@ -180,7 +196,7 @@ const props = defineProps({
         opacity: 0.8;
         filter: grayscale(100%);
         cursor: default;
-        border: 1px dashed rgb(var(--neu-07));
+        border: 1px dashed rgb(var(--neu-05));
       }
       &__image {
         opacity: 0.6;
@@ -253,7 +269,7 @@ const props = defineProps({
           transition: all 0.3s ease;
           background: rgb(var(--add-02), 0.15);
           border-color: transparent;
-          box-shadow: 0px 0px 0px 2px rgb(var(--add-02));
+          box-shadow: inset 0px 0px 0px 2px rgb(var(--add-02));
           filter: grayscale(0);
           animation: error 0.3s 0s ease backwards;
         }
@@ -355,9 +371,9 @@ const props = defineProps({
             height: 100%;
             left: 0;
             top: 0;
+            border-radius: clamp(0.3rem, 0.8vw, 0.8rem);
             // transform: translate(-50%, -50%);
 
-            border-radius: inherit;
             z-index: -1;
             grid-row: 1/2;
             grid-column: 1/2;
@@ -477,6 +493,18 @@ const props = defineProps({
         #{$this}__color {
           color: rgb(var(--neu-09));
         }
+      }
+    }
+  }
+  &[data-game="cores"] {
+    @include mobile {
+      img {
+        max-height: 25vh;
+      }
+    }
+    @include mobile-h {
+      img {
+        max-height: 19vh;
       }
     }
   }

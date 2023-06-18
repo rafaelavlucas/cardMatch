@@ -4,7 +4,7 @@ defineEmits(["reloadGame"]);
 
 <template>
   <div class="reload">
-    <p class="reload__text">Clica para jogar novamente!</p>
+    <p class="reload__text font-m">Clica para jogar novamente!</p>
 
     <Button :title="'Jogar'" :variant="'cta-01'" @click="$emit('reloadGame')" />
   </div>
@@ -24,6 +24,10 @@ defineEmits(["reloadGame"]);
 
   animation: scale 0.3s ease forwards;
 
+  @include phablet {
+    gap: $spc-24;
+  }
+
   // display: none;
 
   &.show {
@@ -31,18 +35,9 @@ defineEmits(["reloadGame"]);
   }
 
   &__text {
-    font-size: clamp(1rem, 1.5vw, 1.2rem);
+    // font-size: clamp(1rem, 1.5vw, 1.2rem);
     color: rgb(var(--neu-10));
     text-align: center;
-  }
-  &__button {
-    font-weight: bold;
-    font-size: clamp(1rem, 1.5vw, 1.2rem);
-    border-radius: 32px;
-    background-color: rgb(var(--neu-03));
-    color: rgb(var(--neu-10));
-    padding: clamp(0.4rem, 0.8vw, 0.8rem) clamp(0.8rem, 1.5vw, 2rem);
-    cursor: pointer;
   }
 }
 </style>

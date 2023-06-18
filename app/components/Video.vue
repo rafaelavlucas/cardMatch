@@ -19,9 +19,13 @@ const props = defineProps({
 @use "assets/style/index" as *;
 
 .video {
+  margin-top: $spc-24;
   video {
-    aspect-ratio: 16/9;
     width: 100%;
+
+    @include mobile-h {
+      max-height: 180px;
+    }
   }
 }
 </style>

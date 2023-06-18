@@ -1,5 +1,5 @@
 <script setup lang="ts">
-export type ButtonVariants = "cta-01" | "cta-02" | "cta-02--alt";
+export type ButtonVariants = "cta-01" | "cta-02" | "cta-02--alt" | "cta-icon";
 export type ButtonSizes = "s" | "m" | "l";
 
 const props = defineProps({
@@ -42,31 +42,22 @@ const props = defineProps({
 
 .cta {
   transition: all 0.3s ease;
-  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  font-size: 1.2rem;
   font-weight: bold;
+  user-select: none;
 
-  i {
-    font-size: $spc-24;
+  @include mobile {
+    font-size: 0.9rem;
   }
 
-  .icon {
-    &--s {
-      font-size: $spc-16;
-    }
-    &--m {
-      font-size: $spc-24;
-    }
-    &--l {
-      font-size: $spc-32;
-    }
-  }
   &.cta-01 {
     background-color: rgb(var(--m-01));
     border-radius: $spc-32;
 
     color: rgb(var(--neu-01));
 
-    padding: clamp(0.4rem, 0.8vw, 0.8rem) clamp(0.8rem, 1.5vw, 2rem);
+    padding: $spc-08 $spc-24;
+    height: $spc-40;
     box-shadow: 0px 0.4rem 1rem -0.2rem rgb(var(--m-01));
     display: inline-flex;
     align-items: center;
@@ -75,9 +66,9 @@ const props = defineProps({
       transform: translateY(2px);
     }
     @include mobile {
-      @include font-m;
-      height: $spc-48;
-      padding: $spc-08 $spc-24;
+      // @include font-m;
+      height: $spc-32;
+      padding: $spc-08 $spc-16;
     }
   }
 
@@ -92,16 +83,50 @@ const props = defineProps({
     }
 
     @include mobile {
+      gap: $spc-04;
       font-size: 0.8rem;
+      i {
+        font-size: $spc-16;
+      }
     }
 
-    &:hover {
-      opacity: 0.8;
+    @media (hover: hover) {
+      &:hover {
+        opacity: 0.8;
+      }
     }
 
     &--alt {
       @extend .cta-02;
       flex-direction: row-reverse;
+    }
+  }
+
+  &.cta-icon {
+    color: rgb(var(--m-01));
+    display: inline-flex;
+    align-items: center;
+    gap: $spc-08;
+
+    span {
+      transform: translateY(1px);
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+  .icon {
+    &--s {
+      font-size: $spc-16;
+    }
+    &--m {
+      font-size: $spc-24;
+    }
+    &--l {
+      font-size: $spc-32;
     }
   }
 }

@@ -23,6 +23,9 @@ $spc-120: 7.5rem;
   @include phablet {
     padding: 0 4vw;
   }
+  @include mobile-h {
+    padding: 0 3vw;
+  }
 }
 
 @mixin grid {

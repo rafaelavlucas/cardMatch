@@ -49,7 +49,7 @@ const props = defineProps({
   &__content {
     max-width: 800px;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 24px;
     cursor: pointer;
     margin: 0 auto;
@@ -64,6 +64,10 @@ const props = defineProps({
     text-align: center;
     margin-bottom: 4vh;
     animation: reveal 0.3s ease backwards;
+    user-select: none;
+    @include mobile-h {
+      margin-bottom: 6vh;
+    }
   }
 
   &__btnContainer {
@@ -81,11 +85,19 @@ const props = defineProps({
         max-width: 400px;
         grid-template-columns: 1fr;
       }
+      @include mobile-h {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
   }
   &[data-grid="3"] {
     padding-left: 10vw;
     padding-right: 10vw;
+
+    @include mobile-h {
+      padding-left: 3vw;
+      padding-right: 3vw;
+    }
     #{$this}__content {
       max-width: 1000px;
       grid-template-columns: repeat(3, 1fr);
@@ -94,9 +106,10 @@ const props = defineProps({
         max-width: 400px;
         grid-template-columns: 1fr;
       }
-    }
-    .wrapper {
-      padding: 0;
+      @include mobile-h {
+        grid-template-columns: repeat(3, 1fr);
+        max-width: unset;
+      }
     }
   }
 }

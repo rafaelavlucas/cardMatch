@@ -1,6 +1,8 @@
 // Breakpoints - Media Queries
+$mobile-h: 620px;
 $mobile: 512px;
 $phablet: 820px;
+$phablet-h: 1180px;
 $tablet: 1024px;
 $laptop: 1366px;
 $desktop: 1600px;
@@ -13,7 +15,12 @@ $desktop-m: 1920px;
 }
 
 @mixin mobile {
-  @media (max-width: #{$mobile}) {
+  @media (max-width: #{$mobile}), (max-height: $mobile-h) {
+    @content;
+  }
+}
+@mixin mobile-h {
+  @media (max-height: #{$mobile-h}) {
     @content;
   }
 }

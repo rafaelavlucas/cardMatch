@@ -44,7 +44,7 @@ const props = defineProps({
   font-weight: bold;
   min-height: 200px;
   display: grid;
-  grid-template-rows: 3fr clamp(4rem, 8vh, 6rem);
+  grid-template-rows: 3fr clamp(4rem, 6vh, 6rem);
   background-color: rgb(var(--neu-01));
   overflow: hidden;
   transition: all 0.3s ease;
@@ -52,12 +52,13 @@ const props = defineProps({
 
   @include phablet {
     min-height: unset;
-    grid-template-rows: 3fr clamp(3rem, 6vh, 6rem);
+    grid-template-rows: 3fr clamp(3rem, 5vh, 5rem);
+  }
+  @include mobile {
+    grid-template-rows: 3fr clamp(2.5rem, 4vh, 4rem);
   }
 
   &:hover {
-    transform: scale(1.05);
-
     @include shadowHover;
   }
 
@@ -77,6 +78,9 @@ const props = defineProps({
       @include phablet {
         max-height: 15vh;
       }
+      @include mobile-h {
+        max-height: 30vh;
+      }
     }
   }
 
@@ -89,7 +93,8 @@ const props = defineProps({
     z-index: 2;
     color: black;
     padding: 0 1rem;
-    font-size: clamp(1.2rem, 1.2vw, 1.2rem);
+    font-size: clamp(1rem, 1.2vw, 1.2rem);
+    user-select: none;
   }
 }
 </style>

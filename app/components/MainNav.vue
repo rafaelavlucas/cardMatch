@@ -48,6 +48,9 @@ console.log(route.path);
   @include phablet {
     height: $spc-56;
   }
+  @include mobile-h {
+    height: $spc-56;
+  }
   &__wrapper {
     display: grid;
     grid-template-columns: 1fr auto 1fr;
@@ -62,6 +65,9 @@ console.log(route.path);
       align-items: center;
 
       @include mobile {
+        max-width: $spc-40;
+      }
+      @include mobile-h {
         max-width: $spc-40;
       }
     }
