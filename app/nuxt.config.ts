@@ -40,56 +40,56 @@ export default defineNuxtConfig({
       icons: [
         {
           src: "/icons/icon-48.svg",
-          sizes: "72x72",
-          type: "image/svg",
+          sizes: "48x48",
+          type: "image/svg+xml",
            
         },
         {
           src: "/icons/icon-72.svg",
           sizes: "72x72",
-          type: "image/svg",
+          type: "image/svg+xml",
            
         },
         {
           src: "/icons/icon-96.svg",
           sizes: "96x96",
-          type: "image/svg",
+          type: "image/svg+xml",
            
         },
         {
           src: "/icons/icon-128.svg",
           sizes: "128x128",
-          type: "image/svg",
+          type: "image/svg+xml",
            
         },
         {
           src: "/icons/icon-144.svg",
           sizes: "144x144",
-          type: "image/svg",
+          type: "image/svg+xml",  
            
         },
         {
           src: "/icons/icon-152.svg",
           sizes: "152x152",
-          type: "image/svg",
+          type: "image/svg+xml",
            
         },
         {
           src: "/icons/icon-192.svg",
           sizes: "192x192",
-          type: "image/svg",
+          type: "image/svg+xml",
            
         },
         {
           src: "/icons/icon-284.svg",
-          sizes: "284x284",
-          type: "image/svg",
+          sizes: "284x284", 
+          type: "image/svg+xml",
            
         },
         {
           src: "/icons/icon-512.svg",
           sizes: "512x512",
-          type: "image/svg",
+          type: "image/svg+xml",
            
         }
       ] 
