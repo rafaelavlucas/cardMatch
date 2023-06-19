@@ -29,11 +29,13 @@ export default defineNuxtConfig({
     manifest: {
       name: "Matchimatch",
       short_name: "Matchimatch",
+      description: "Jogo de correspondência", 
       theme_color: "#F99532",
       background_color: "#F99532",
       display: "standalone",
-      scope: "./",
-      start_url: "./",
+      scope: "/",
+      id:'/',
+      start_url: "/",
 
       icons: [
         {
