@@ -29,7 +29,7 @@ export default defineNuxtConfig({
     manifest: {
       name: "Matchimatch",
       short_name: "Matchimatch",
-      description: "Jogo de correspondência", 
+      description: "App didática para crianças, com diferentes tipos de jogos de correspondência. Inspirada na pedagogia Montessori.", 
       theme_color: "#F99532",
       background_color: "#F99532",
       display: "standalone",
