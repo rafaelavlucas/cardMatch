@@ -38,7 +38,7 @@
       "letter": "Z"
     },
     {
-      "image": "/images/animals/gorila2.png",
+      "image": "/images/animals/gorila3.png",
       "name": "Gorila",
       "genre": ["Floresta"],
       "letter": "G"
@@ -292,7 +292,7 @@
       "letter": "G"
     },
     {
-      "image": "/images/animals/peacock.png",
+      "image": "/images/animals/peacock2.png",
       "name": "Pavão",
       "genre": ["Aves"],
       "letter": "P"
@@ -419,8 +419,7 @@
       "name": "Formiga",
       "genre": ["Insetos"],
       "letter": "F"
-    }
-    ,
+    },
     {
       "image": "/images/animals/bee.png",
       "name": "Abelha",
@@ -432,44 +431,36 @@
       "name": "Besouro",
       "genre": ["Insetos"],
       "letter": "B"
-    }
-    ,
+    },
     {
       "image": "/images/animals/butterfly.png",
       "name": "Borboleta",
       "genre": ["Insetos"],
       "letter": "B"
-    }
-    ,
+    },
     {
       "image": "/images/animals/cricket.png",
       "name": "Grilo",
       "genre": ["Insetos"],
       "letter": "G"
-    }
-    ,
+    },
     {
       "image": "/images/animals/dragonfly.png",
       "name": "Libelinha",
       "genre": ["Insetos"],
       "letter": "L"
-    }
-    ,
+    },
     {
       "image": "/images/animals/grasshoper.png",
       "name": "Gafanhoto",
       "genre": ["Insetos"],
       "letter": "G"
-    }
-    ,
+    },
     {
       "image": "/images/animals/ladybug.png",
       "name": "Joaninha",
       "genre": ["Insetos"],
       "letter": "J"
     }
-
-    
-
   ]
 }

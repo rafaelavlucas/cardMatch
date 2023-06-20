@@ -23,8 +23,9 @@ onMounted(() => {
     <div class="mainNav__wrapper wrapper">
       <ButtonBack class="mainNav__back" :title="'Voltar'" />
 
-      <NuxtLink to="/" class="mainNav__logo"
-        ><figure class="mainNav__logo-img">
+      <NuxtLink to="/" class="mainNav__logo">
+        <h1 class="mainNav__title">Matchimatch</h1>
+        <figure class="mainNav__logo-img">
           <img src="/images/logo.svg" alt="Logo MM" /></figure
       ></NuxtLink>
 
@@ -62,6 +63,12 @@ onMounted(() => {
   }
   @include mobile-h {
     height: $spc-56;
+  }
+
+  &__title {
+    font-size: 0;
+    opacity: 0;
+    position: absolute;
   }
   &__wrapper {
     display: grid;

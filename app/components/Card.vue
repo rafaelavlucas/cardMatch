@@ -134,6 +134,9 @@ const props = defineProps({
     word-break: break-word;
     hyphens: auto;
     text-align: center;
+    @include phablet {
+      font-size: clamp(0.7rem, 1.6vw, 2rem);
+    }
   }
 
   &--active {
