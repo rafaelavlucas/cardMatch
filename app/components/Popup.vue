@@ -28,7 +28,7 @@ const clickOutside = ({ target }: Event) => {
 </script>
 
 <template>
-  <transition tag="div" name="fade">
+  <transition name="fade">
     <div v-if="state" class="popup">
       <div class="popup__wrapper wrapper" @click="clickOutside">
         <div class="popup__container" ref="popupRef">
@@ -112,9 +112,6 @@ const clickOutside = ({ target }: Event) => {
     height: 100%;
     display: flex;
     flex-direction: column;
-  }
-
-  &__title {
   }
 
   &__text {

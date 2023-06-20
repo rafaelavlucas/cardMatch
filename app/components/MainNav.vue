@@ -1,10 +1,21 @@
 <script setup lang="ts">
-const showPoup = ref(false);
+const showPopup = ref(!JSON.parse(localStorage.getItem("visited")!));
 const router = useRouter();
 const route = useRoute();
 const isHp = "/";
 const isGameTypes = "/jogos";
-console.log(route.path);
+
+const showPopupOnce = () => {
+  if (localStorage.getItem("visited")) {
+    showPopup.value = false;
+  } else {
+    localStorage.setItem("visited", JSON.stringify(true));
+  }
+};
+
+onMounted(() => {
+  showPopupOnce();
+});
 </script>
 <template>
   <header class="mainNav">
@@ -23,16 +34,16 @@ console.log(route.path);
         :title="'Instruções'"
         :variant="'cta-02--alt'"
         :icon="'info'"
-        @click="showPoup = true"
+        @click="showPopup = true"
       />
     </div>
   </header>
 
   <Popup
-    :state="showPoup"
+    :state="showPopup"
     :title="'Como jogar'"
     :text="'Clica num dos cartões, e encontra o par correspondente.'"
-    @closePopup="showPoup = false"
+    @closePopup="showPopup = false"
   >
     <Video :source="'/howto.mp4'" />
   </Popup>
