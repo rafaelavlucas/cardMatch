@@ -4,7 +4,7 @@
 export default defineNuxtConfig({
   app: {
     head: {
-      title: "Card Match",
+      title: "Matchimatch",
       htmlAttrs: {
         lang: "pt",
       },

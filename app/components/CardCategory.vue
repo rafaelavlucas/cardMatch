@@ -25,7 +25,7 @@ const props = defineProps({
     :style="{ 'animation-delay': 0.2 * index + 0.4 + 's' }"
   >
     <figure class="cardCategory__img">
-      <img :src="img" :alt="title" />
+      <img :src="img" :alt="title" loading="lazy" />
     </figure>
     <h4 class="cardCategory__title">{{ title }}</h4>
   </div>
