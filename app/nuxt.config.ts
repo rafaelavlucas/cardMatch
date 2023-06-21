@@ -11,11 +11,11 @@ export default defineNuxtConfig({
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        {
+        // {
 
-          name: 'App didática para crianças, com diferentes tipos de jogos de correspondência. Inspirada na pedagogia Montessori.',
-          content: 'App didática para crianças, com diferentes tipos de jogos de correspondência. Inspirada na pedagogia Montessori.'
-        }
+        //   name: 'App didática para crianças, com diferentes tipos de jogos de correspondência. Inspirada na pedagogia Montessori.',
+        //   content: 'App didática para crianças, com diferentes tipos de jogos de correspondência. Inspirada na pedagogia Montessori.'
+        // }
       ],
       link: [
         {
