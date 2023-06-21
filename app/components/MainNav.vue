@@ -1,6 +1,6 @@
 <script setup lang="ts">
-// const showPopup = ref(!JSON.parse(localStorage.getItem("visited")!));
-const showPopup = ref(true);
+const showPopup = ref(false);
+
 const router = useRouter();
 const route = useRoute();
 const isHp = "/";
@@ -11,6 +11,7 @@ const showPopupOnce = () => {
     showPopup.value = false;
   } else {
     localStorage.setItem("visited", JSON.stringify(true));
+    showPopup.value = true;
   }
 };
 
