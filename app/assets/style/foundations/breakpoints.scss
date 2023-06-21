@@ -2,7 +2,8 @@
 $mobile-h: 620px;
 $mobile: 512px;
 $phablet: 820px;
-$phablet-h: 1180px;
+$phablet-s: 768px;
+$phablet-h: 1024px;
 $tablet: 1024px;
 $laptop: 1366px;
 $desktop: 1600px;
@@ -27,6 +28,17 @@ $desktop-m: 1920px;
 
 @mixin phablet {
   @media (max-width: #{$phablet}) {
+    @content;
+  }
+}
+
+@mixin phablet-s {
+  @media (max-width: #{$phablet-s}) {
+    @content;
+  }
+}
+@mixin phablet-h {
+  @media (max-width: #{$phablet}), (max-height: #{$phablet-h}) {
     @content;
   }
 }

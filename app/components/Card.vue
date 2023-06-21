@@ -71,9 +71,10 @@ const props = defineProps({
     }
     @include phablet {
       img {
-        max-height: 20vh;
+        max-height: 11vh;
       }
     }
+
     @include mobile {
       img {
         max-height: 9vh;
