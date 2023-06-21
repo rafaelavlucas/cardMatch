@@ -23,7 +23,7 @@ const props = defineProps({
         card.color
       }}</span>
       <figure class="card__image">
-        <img :src="card.image" :alt="card.name" loading="lazy" />
+        <img :src="card.image" :alt="card.name" />
       </figure>
 
       <p class="card__name">{{ card.name }}</p>
