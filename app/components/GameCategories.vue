@@ -4,6 +4,8 @@ import { CategoriesProps } from "~/types/types";
 
 const { bus, emit } = useEventsBus();
 
+// const emit = defineEmits(["category"]);
+
 const categories = ref<CategoriesProps[]>([
   {
     title: ANIMALS_CATEGORY,

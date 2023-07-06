@@ -513,6 +513,29 @@ const props = defineProps({
     }
   }
 
+  &[data-level="2"] {
+    #{$this} {
+      &__image {
+        // grid-row: 1/3;
+        transform: translateY(10%);
+      }
+      &__name {
+        opacity: 0;
+      }
+    }
+    &.matched {
+      #{$this} {
+        &__image {
+          // grid-row: 1/3;
+          transform: translateY(0%);
+        }
+        &__name {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
   &.anime {
     animation: scale 0.3s ease backwards;
   }

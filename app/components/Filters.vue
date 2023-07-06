@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import useEventsBus from "@/utils/eventBus";
 import { FiltersProps } from "~/types/types";
 
 const props = defineProps({
@@ -9,14 +8,14 @@ const props = defineProps({
   },
 });
 
-const { emit } = useEventsBus();
+const emit = defineEmits(["selectedFilter"]);
 
 const filters = ref(props.filters);
 const selectedFilter = ref(ALL_TEXT);
 
 const handleClick = ({ currentTarget }: Event, item: string) => {
   const target = currentTarget as HTMLButtonElement;
-  emit("filter", target.innerText);
+  emit("selectedFilter", target.innerText);
   selectedFilter.value = item;
 };
 </script>
@@ -53,7 +52,7 @@ const handleClick = ({ currentTarget }: Event, item: string) => {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  margin-bottom: 4vh;
+  margin-bottom: 3vh;
   animation: reveal 0.3s ease backwards;
 
   &__item {

@@ -135,12 +135,6 @@
       "letter": "C"
     },
     {
-      "image": "/images/animals/crocodile.png",
-      "name": "Crocodilo",
-      "genre": ["Floresta"],
-      "letter": "C"
-    },
-    {
       "image": "/images/animals/racoon.png",
       "name": "Texugo",
       "genre": ["Floresta"],

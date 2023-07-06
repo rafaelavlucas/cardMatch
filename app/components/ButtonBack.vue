@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import useEventsBus from "@/utils/eventBus";
 const router = useRouter();
 const route = useRoute();
 const isHp = "/";

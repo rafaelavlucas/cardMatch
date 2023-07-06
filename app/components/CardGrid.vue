@@ -18,6 +18,7 @@ const route = useRoute();
 const { bus } = useEventsBus();
 
 const selectedGame = route.path.split("/")[2];
+const selectedLevel = ref("1");
 const selectedFilter = ref("");
 
 const cards = ref<Content[]>(props.data);
@@ -159,18 +160,24 @@ const reloadGame = () => {
   resetCards();
 };
 
-const handleFilters = (clickedFilter: FiltersProps) => {
-  loadCards({ filter: clickedFilter || null });
-  resetCards();
+const handleFilters = (clickedFilterValue: string) => {
+  selectedFilter.value = clickedFilterValue;
+  reloadGame();
 };
 
-watch(
-  () => bus.value.get("filter"),
-  ([clickedFilter]: [clickedFilter: FiltersProps]) => {
-    handleFilters(clickedFilter);
-    selectedFilter.value = clickedFilter;
-  }
-);
+// watch(
+//   () => bus.value.get("filter"),
+//   ([clickedFilter]: [clickedFilter: FiltersProps]) => {
+//     handleFilters(clickedFilter);
+//     selectedFilter.value = clickedFilter;
+//   }
+// );
+
+// watch(selectedFilter, (newValue, oldValue) => {
+//   loadCards({ filter: newValue || null });
+//   resetCards();
+
+// });
 
 onMounted(() => {
   reloadGame();
@@ -180,7 +187,14 @@ onMounted(() => {
 <template>
   <div :ref="'refReload'" class="cardGrid">
     <div class="wrapper">
-      <Filters class="cardGrid__filters" :filters="filters" v-if="filters" />
+      <Filters
+        class="cardGrid__filters"
+        :filters="filters"
+        v-if="filters"
+        @selected-filter="
+          (clickedFilterValue) => handleFilters(clickedFilterValue)
+        "
+      />
       <div class="justGrid">
         <Reload
           v-if="isAllMatched"
@@ -194,6 +208,7 @@ onMounted(() => {
               :matched="card.matched"
               :card="card"
               :data-game="selectedGame"
+              :data-level="selectedLevel"
               class="card--active"
               :class="{
                 selected: card.name === selectedCardFromList1?.name,
@@ -211,6 +226,7 @@ onMounted(() => {
               :matched="card.matched"
               :card="card"
               :data-game="selectedGame"
+              :data-level="selectedLevel"
               class="card--disabled"
               :class="{
                 anime: isAllMatched === false,
@@ -221,6 +237,12 @@ onMounted(() => {
           </li>
         </ul>
       </div>
+      <Levels
+        :title="'Nível'"
+        @level="
+          (clickedLevel) => ((selectedLevel = clickedLevel), reloadGame())
+        "
+      />
     </div>
   </div>
 </template>

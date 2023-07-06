@@ -11,6 +11,8 @@ const route = useRoute();
 const selectedCategory = ref<CategoryTitle | null>(
   route.query.category as string
 );
+// const clickedCategory = ref("");
+
 const gameData = ref<DataProps | null>(null);
 
 const { bus } = useEventsBus();
@@ -56,6 +58,12 @@ watch(
     addGameCategoryToQueryParam();
   }
 );
+
+// watch(clickedCategory, (newValue, oldValue) => {
+//   clickedCategory.value = newValue;
+//   loadGameDataBasedOnCategory();
+//   addGameCategoryToQueryParam();
+// });
 
 watch(
   () => route.query.category,

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from "vue";
-import useEventsBus from "@/utils/eventBus";
+
 import { LevelsProps } from "~/types/types";
 import { useRouter } from "vue-router";
 
@@ -14,21 +14,20 @@ const props = defineProps({
 
 const route = useRoute();
 const router = useRouter();
-const { emit } = useEventsBus();
 
-const selectedLevel = ref(route.query.level || "1");
-const levels: LevelsProps[] = ["1", "2", "3"];
+const emit = defineEmits(["level"]);
+
+const selectedLevel = ref("1");
+const levels: LevelsProps[] = ["1", "2"];
 
 const handleClick = (level: LevelsProps) => {
   selectedLevel.value = level;
 
   emit("level", selectedLevel.value);
 
-  if (!route.query.level) return;
-
   router.push({
-    path: route.path,
     query: {
+      ...route.query,
       level: selectedLevel.value,
     },
   });
@@ -56,10 +55,11 @@ const handleClick = (level: LevelsProps) => {
 @use "assets/style/index" as *;
 .levels {
   $this: &;
-  margin-top: 4vh;
+  margin-top: 3vh;
   text-align: center;
+  animation: reveal 0.3s ease backwards;
   &__title {
-    margin-bottom: $spc-16;
+    margin-bottom: $spc-08;
   }
   &__items {
     display: flex;
@@ -90,7 +90,7 @@ const handleClick = (level: LevelsProps) => {
     &.active {
       border-color: rgb(var(--m-01));
       color: rgb(var(--m-01));
-      // pointer-events: none;
+      pointer-events: none;
     }
   }
 }
